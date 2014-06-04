@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<schema>
+	<entities>
+		<entity name="Meal">
+			<field name="name" type="string" />
+			<relationship name="foods" inverse="meal" entity="Food" type="toMany" />
+		</entity>
+		<entity name="Food">
+			<field name="name" type="string" />
+			<field name="amount" type="float" />
+			<relationship name="meal" inverse="foods" entity="Meal" type="toOne" />
+		</entity>
+	</entities>
+	<models>
+		<model name="NutritionModel">
+			<struct entity="Meal">
+				<property name="name" />
+				<property name="foods">
+					<property name="name" />
+					<property name="amount" />
+				</property>
+			</struct>
+			<struct entity="Food">
+				<property name="name" />
+				<property name="amount" />
+			</struct>
+		</model>
+	</models>
+</schema>
