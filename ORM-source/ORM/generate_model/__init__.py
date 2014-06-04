@@ -14,15 +14,17 @@ import os
 
 def generateComporatorHeaderFile(modelName, struct):
     methods = []
+    imports = []
     for field in struct.entity.fields:
         type = ''
         if field.type == 'string':
             type = 'FieldString'
         if field.type == 'float':
             type = 'FieldFloat'
+        imports.append(type + '.h')
         methods.append('@property (nonatomic, readonly) {t} *{n};'.format(t = type, n = field.name))
     className = '{mn}{en}ComporatorContext'.format(mn = modelName, en = struct.entity.name)
-    return headerFileTemplate([], [], className, methods)
+    return headerFileTemplate(imports, [], className, methods)
 
 def generateComporatorSourceFile(modelName, struct):
     declarationMethods = []
@@ -49,6 +51,7 @@ def generateComporatorSourceFile(modelName, struct):
             type = 'FieldFloat'
         initMethod += '\t\tself.{n} = [[{t} alloc] initWithName:@"{n}"];\n'.format(n = field.name, t = type)
     initMethod += '\t}\n';
+    initMethod += 'return self;\n';
     initMethod += '}\n';
     methods = []
     methods.append(initMethod)
@@ -64,7 +67,7 @@ def generateHeaderFile(model):
     
     typedefs = []
     for struct in model.structs:
-        typedefs.append('typedef Condition* (^{mn}{en}Comporator)({mn}{en}ComporatorContext*);'.format(mn = model.name, en = struct.entity.name))
+        typedefs.append('typedef Condition* (^{mn}{en}Comporator)({mn}{en}ComporatorContext *ctx);'.format(mn = model.name, en = struct.entity.name))
     
     imports = []
     imports.append('Condition.h')

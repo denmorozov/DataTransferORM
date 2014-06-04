@@ -20,12 +20,12 @@
 
 - (ConditionString *)equal:(NSString *)string
 {
-	return [[ConditionString alloc] initWithFieldName:self.name equalToString:string]];
+	return [[ConditionString alloc] initWithFieldName:self.name equalToString:string];
 }
 
 - (ConditionString *)like:(NSString *)pattern
 {
-	return [[ConditionString alloc] initWithFieldName:self.name likeToPattern:string]];
+	return [[ConditionString alloc] initWithFieldName:self.name likeToPattern:pattern];
 }
 
 @end

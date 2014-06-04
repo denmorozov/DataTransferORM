@@ -1,31 +1,5 @@
 #import "ConditionAnd.h"
 
-Condition * AND(Condition *condition1, Condition *condition2)
-{
-	return [[ConditionAnd alloc] initWithConditions:@[condition1, condition2]];
-}
-
-Condition * AND(Condition *condition1, Condition *condition2, Condition *condition3)
-{
-	return [[ConditionAnd alloc] initWithConditions:@[condition1, condition2, condition3]];
-}
-
-Condition * AND(Condition *condition1, Condition *condition2, Condition *condition3, Condition *condition4)
-{
-	return [[ConditionAnd alloc] initWithConditions:@[condition1, condition2, condition3, condition4]];
-}
-
-Condition * AND(Condition *condition1, Condition *condition2, Condition *condition3, Condition *condition4, Condition *condition5)
-{
-	return [[ConditionAnd alloc] initWithConditions:@[condition1, condition2, condition3, condition4, condition5]];
-}
-
-Condition * AND(Condition *condition1, Condition *condition2, Condition *condition3, Condition *condition4, Condition *condition5, Condition *condition6)
-{
-	return [[ConditionAnd alloc] initWithConditions:@[condition1, condition2, condition3, condition4, condition5, condition6]];
-}
-
-
 @interface Condition ()
 
 - (NSString *)condition;
