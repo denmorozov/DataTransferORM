@@ -13,11 +13,11 @@ How to
 Notes
 ------------------------
 
-Don't use many-to-many
+Don't use many-to-many (will fix in next versions)
 
-Don't use inverse properties in *struct* tag
+Don't use inverse properties in *struct* tag (will fix in next versions)
 
-Don't use Circular references in DataBase
+Don't use Circular references in DataBase (will fix in next versions)
 
 In next versions
 ------------------------
