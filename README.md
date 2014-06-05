@@ -3,6 +3,11 @@ DataTransferORM
 
 ORM for objective-c
 
+Killer feature
+------------------------
+
+Fast development
+
 How to
 ------------------------
 
@@ -21,6 +26,8 @@ Don't use Circular references in DataBase (will fix in next versions)
 
 In next versions
 ------------------------
+
+Fix notes
 
 Migration
 
