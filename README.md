@@ -31,4 +31,4 @@ Fix notes
 
 Migration
 
-Personal classes for every structs in *model* tag
+Personal DTO-classes for every structs in *model* tag
