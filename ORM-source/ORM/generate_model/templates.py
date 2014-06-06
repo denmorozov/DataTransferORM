@@ -45,7 +45,7 @@ def headerFileTemplate(importBlock, typedefBlock, className, methodsBlock):
     lines.append('@end')
     return '\n'.join(lines)
 
-def sourceFileTemplate(importBlock: list, declarationMethodsBlock, className, methodsBlock):
+def sourceFileTemplate(importBlock, declarationMethodsBlock, className, methodsBlock):
     lines = []
     lines.append('#import "{cn}.h"'.format(cn = className))
     lines.append('')
