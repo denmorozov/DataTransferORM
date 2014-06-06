@@ -49,7 +49,7 @@ How to
 
 ```python ORM-source/ORM/orm.py --schema <xml_schema_path> --directory <output_dir_path>```
 
-**Step 3 - Copy and add files from <output_dir_path> to your project:**
+**Step 3 - Copy and add files from ```<output_dir_path>``` to your project:**
 
 **Step 4 - Using in your project:**
 
@@ -74,8 +74,6 @@ NSArray *arr = [model foodObjectsWithComporator:^Condition *(NutritionModelFoodC
 
 Features
 ------------------------
-
-Create fetch condition is very simple
 
 Create fetch condition is very simple
 
