@@ -49,7 +49,7 @@ How to
 
 ```python ORM-source/ORM/orm.py --schema <xml_schema_path> --directory <output_dir_path>```
 
-**Step 3 - Copy and add files from ```<output_dir_path>``` to your project:**
+**Step 3 - Copy and add files to your project from ```<output_dir_path>```**
 
 **Step 4 - Using in your project:**
 
@@ -69,6 +69,30 @@ NSArray *arr = [model foodObjectsWithComporator:^Condition *(NutritionModelFoodC
     //follow code is equal to condition:
     //(((food.name = 'meat') OR (food.name = 'apple')) AND (food.amount > 1.5f))
     return AND( OR([ctx.name equal:@"meat"], [ctx.name equal:@"apple"], nil), [ctx.amount more:1.5f], nil);
+}];
+```
+
+```
+//create Meal in DB
+NutritionModel *model = [[NutritionModel alloc] init];
+MealDTO *m = [[MealDTO alloc] init];
+m.name = @"steak";
+
+FoodDTO *f = [[FoodDTO alloc] init];
+f.amount = 2.1f;
+f.name = @"meat";
+
+m.foods = @[f];
+
+[model createMealDTO:m];
+```
+
+```
+//fetch Meal objects from DB
+NutritionModel *model = [[NutritionModel alloc] init];
+NSArray *arr = [model mealObjectsWithComporator:^Condition *(NutritionModelMealComporatorContext *ctx) {
+    //follow code is equal to condition: (meal.name = 'steak')
+    return [ctx.name equal:@"steak"];
 }];
 ```
 
