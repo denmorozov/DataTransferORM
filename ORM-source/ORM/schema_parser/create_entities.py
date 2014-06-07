@@ -21,6 +21,9 @@ def createHeaderEntity(entity, directory):
         if field.type == 'float':
             type = 'CGFloat'
             mutateAttr = 'assign'
+        if field.type == 'boolean':
+            type = 'BOOL'
+            mutateAttr = 'assign'
         pointer = '*' if (mutateAttr == 'strong') else ''
         file.write('@property (nonatomic, {ma}) {t} {p}{n};'.format(ma = mutateAttr, t = type, p = pointer, n = field.name))
         file.write('\n')
