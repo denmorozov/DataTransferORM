@@ -24,6 +24,9 @@ def createHeaderEntity(entity, directory):
         if field.type == 'boolean':
             type = 'BOOL'
             mutateAttr = 'assign'
+        if field.type == 'date':
+            type = 'NSDate'
+            type = 'strong'
         pointer = '*' if (mutateAttr == 'strong') else ''
         file.write('@property (nonatomic, {ma}) {t} {p}{n};'.format(ma = mutateAttr, t = type, p = pointer, n = field.name))
         file.write('\n')

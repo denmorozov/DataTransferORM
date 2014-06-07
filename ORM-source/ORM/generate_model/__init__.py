@@ -23,6 +23,8 @@ def generateComporatorHeaderFile(modelName, struct):
             type = 'FieldFloat'
         if field.type == 'boolean':
             type = 'FieldBoolean'
+        if field.type == 'date':
+            type = 'FieldDate'
         imports.append(type + '.h')
         methods.append('@property (nonatomic, readonly) {t} *{n};'.format(t = type, n = field.name))
     className = '{mn}{en}ComporatorContext'.format(mn = modelName, en = struct.entity.name)
@@ -38,6 +40,8 @@ def generateComporatorSourceFile(modelName, struct):
             type = 'FieldFloat'
         if field.type == 'boolean':
             type = 'FieldBoolean'
+        if field.type == 'date':
+            type = 'FieldDate'
         declarationMethods.append('@property (nonatomic, readwrite) {t} *{n};'.format(t = type, n = field.name))
     className = '{mn}{en}ComporatorContext'.format(mn = modelName, en = struct.entity.name)
     
@@ -55,6 +59,8 @@ def generateComporatorSourceFile(modelName, struct):
             type = 'FieldFloat'
         if field.type == 'boolean':
             type = 'FieldBoolean'
+        if field.type == 'date':
+            type = 'FieldDate'
         initMethod += '\t\tself.{n} = [[{t} alloc] initWithName:@"{n}"];\n'.format(n = field.name, t = type)
     initMethod += '\t}\n';
     initMethod += 'return self;\n';
