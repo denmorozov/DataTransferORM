@@ -28,4 +28,9 @@
 	return [[ConditionString alloc] initWithFieldName:self.name likeToPattern:pattern];
 }
 
+- (ConditionString *)null
+{
+	return [[ConditionString alloc] initIsNULLWithFieldName:self.name];
+}
+
 @end

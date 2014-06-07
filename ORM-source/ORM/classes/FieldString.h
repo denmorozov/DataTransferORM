@@ -7,5 +7,6 @@
 
 - (ConditionString *)equal:(NSString *)string;
 - (ConditionString *)like:(NSString *)pattern;
+- (ConditionString *)null;
 
 @end

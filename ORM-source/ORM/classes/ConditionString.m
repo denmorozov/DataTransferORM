@@ -32,4 +32,16 @@
 	return self;
 }
 
+- (instancetype)initIsNULLWithFieldName:(NSString *)fieldName
+{
+	self = [super init];
+	
+	if (self)
+	{
+		self.condition = [NSString stringWithFormat:@"(%@ == '%@')", fieldName, nil];
+	}
+	
+	return self;
+}
+
 @end
