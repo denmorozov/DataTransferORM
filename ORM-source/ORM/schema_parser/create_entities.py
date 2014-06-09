@@ -19,17 +19,22 @@ def createHeaderEntity(entity, directory):
             type = 'NSString'
             mutateAttr = 'strong'
         if field.type == 'float':
-            type = 'CGFloat'
+            type = 'float'
             mutateAttr = 'assign'
         if field.type == 'boolean':
             type = 'BOOL'
             mutateAttr = 'assign'
         if field.type == 'date':
             type = 'NSDate'
-            type = 'strong'
+            mutateAttr = 'strong'
         if field.type == 'double':
             type = 'double'
-            type = 'assign'
+            mutateAttr = 'assign'
+        if field.type == 'data':
+            type = 'NSData'
+            mutateAttr = 'strong'
+        if type == None:
+            print('Bad type "{t}"', t = field.type)
         pointer = '*' if (mutateAttr == 'strong') else ''
         file.write('@property (nonatomic, {ma}) {t} {p}{n};'.format(ma = mutateAttr, t = type, p = pointer, n = field.name))
         file.write('\n')

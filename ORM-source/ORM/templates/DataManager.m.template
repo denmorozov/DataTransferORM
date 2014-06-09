@@ -79,12 +79,12 @@
 					-NSInteger32AttributeType = 200,
 					-NSInteger64AttributeType = 300,
 					NSDecimalAttributeType = 400,
-					-NSDoubleAttributeType = 500,
+					+NSDoubleAttributeType = 500,
 					+NSFloatAttributeType = 600,
 					+NSStringAttributeType = 700,
 					+NSBooleanAttributeType = 800,
 					+NSDateAttributeType = 900,
-					-NSBinaryDataAttributeType = 1000,
+					+NSBinaryDataAttributeType = 1000,
 					NSTransformableAttributeType = 1800,
 					?NSObjectIDAttributeType = 2000
 					*/
@@ -95,6 +95,22 @@
 					else if ([field[@"type"] isEqualToString:@"float"])
 					{
 						attribute.attributeType = NSFloatAttributeType;
+					}
+					else if ([field[@"type"] isEqualToString:@"double"])
+					{
+						attribute.attributeType = NSDoubleAttributeType;
+					}
+					else if ([field[@"type"] isEqualToString:@"boolean"])
+					{
+						attribute.attributeType = NSBooleanAttributeType;
+					}
+					else if ([field[@"type"] isEqualToString:@"date"])
+					{
+						attribute.attributeType = NSDateAttributeType;
+					}
+					else if ([field[@"type"] isEqualToString:@"data"])
+					{
+						attribute.attributeType = NSBinaryDataAttributeType;
 					}
 				}
 				if ([field[@"property"] isEqualToString:@"relationship"])

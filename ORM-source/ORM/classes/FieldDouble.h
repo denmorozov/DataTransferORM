@@ -1,7 +1,7 @@
 
 #import "ConditionDouble.h"
 
-@interface FieldFloat : NSObject
+@interface FieldDouble : NSObject
 
 - (instancetype)initWithName:(NSString *)name;
 

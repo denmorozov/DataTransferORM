@@ -16,7 +16,7 @@ def generateComporatorHeaderFile(modelName, struct):
     methods = []
     imports = []
     for field in struct.entity.fields:
-        type = ''
+        type = None
         if field.type == 'string':
             type = 'FieldString'
         if field.type == 'float':
@@ -27,6 +27,8 @@ def generateComporatorHeaderFile(modelName, struct):
             type = 'FieldDate'
         if field.type == 'double':
             type = 'FieldDouble'
+        if type == None:
+            continue
         imports.append(type + '.h')
         methods.append('@property (nonatomic, readonly) {t} *{n};'.format(t = type, n = field.name))
     className = '{mn}{en}ComporatorContext'.format(mn = modelName, en = struct.entity.name)
@@ -35,7 +37,7 @@ def generateComporatorHeaderFile(modelName, struct):
 def generateComporatorSourceFile(modelName, struct):
     declarationMethods = []
     for field in struct.entity.fields:
-        type = ''
+        type = None
         if field.type == 'string':
             type = 'FieldString'
         if field.type == 'float':
@@ -46,6 +48,8 @@ def generateComporatorSourceFile(modelName, struct):
             type = 'FieldDate'
         if field.type == 'double':
             type = 'FieldDouble'
+        if type == None:
+            continue
         declarationMethods.append('@property (nonatomic, readwrite) {t} *{n};'.format(t = type, n = field.name))
     className = '{mn}{en}ComporatorContext'.format(mn = modelName, en = struct.entity.name)
     
@@ -56,7 +60,7 @@ def generateComporatorSourceFile(modelName, struct):
     initMethod += '\tif (self)\n';
     initMethod += '\t{\n';
     for field in struct.entity.fields:
-        type = ''
+        type = None
         if field.type == 'string':
             type = 'FieldString'
         if field.type == 'float':
@@ -67,6 +71,8 @@ def generateComporatorSourceFile(modelName, struct):
             type = 'FieldDate'
         if field.type == 'double':
             type = 'FieldDouble'
+        if type == None:
+            continue
         initMethod += '\t\tself.{n} = [[{t} alloc] initWithName:@"{n}"];\n'.format(n = field.name, t = type)
     initMethod += '\t}\n';
     initMethod += 'return self;\n';
