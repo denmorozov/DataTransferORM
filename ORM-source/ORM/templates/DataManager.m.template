@@ -116,6 +116,10 @@
 					{
 						attribute.attributeType = NSInteger32AttributeType;
 					}
+					else if ([field[@"type"] isEqualToString:@"integer64"])
+					{
+						attribute.attributeType = NSInteger64AttributeType;
+					}
 				}
 				if ([field[@"property"] isEqualToString:@"relationship"])
 				{

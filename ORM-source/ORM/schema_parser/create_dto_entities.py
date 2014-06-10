@@ -37,6 +37,9 @@ def createHeaderDTOEntity(entity, directory):
         if field.type == 'integer32':
             type = 'int32_t'
             mutateAttr = 'assign'
+        if field.type == 'integer64':
+            type = 'int64_t'
+            mutateAttr = 'assign'
         if type == None:
             print('Bad type "{t}"', t = field.type)
         pointer = '*' if (mutateAttr == 'strong') else ''
