@@ -33,6 +33,9 @@ def createHeaderEntity(entity, directory):
         if field.type == 'data':
             type = 'NSData'
             mutateAttr = 'strong'
+        if field.type == 'integer32':
+            type = 'int32_t'
+            mutateAttr = 'assign'
         if type == None:
             print('Bad type "{t}"', t = field.type)
         pointer = '*' if (mutateAttr == 'strong') else ''

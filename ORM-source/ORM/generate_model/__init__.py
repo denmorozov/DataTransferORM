@@ -27,6 +27,8 @@ def generateComporatorHeaderFile(modelName, struct):
             type = 'FieldDate'
         if field.type == 'double':
             type = 'FieldDouble'
+        if field.type == 'integer32':
+            type = 'FieldInteger32'
         if type == None:
             continue
         imports.append(type + '.h')
@@ -48,6 +50,8 @@ def generateComporatorSourceFile(modelName, struct):
             type = 'FieldDate'
         if field.type == 'double':
             type = 'FieldDouble'
+        if field.type == 'integer32':
+            type = 'FieldInteger32'
         if type == None:
             continue
         declarationMethods.append('@property (nonatomic, readwrite) {t} *{n};'.format(t = type, n = field.name))
@@ -71,6 +75,8 @@ def generateComporatorSourceFile(modelName, struct):
             type = 'FieldDate'
         if field.type == 'double':
             type = 'FieldDouble'
+        if field.type == 'integer32':
+            type = 'FieldInteger32'
         if type == None:
             continue
         initMethod += '\t\tself.{n} = [[{t} alloc] initWithName:@"{n}"];\n'.format(n = field.name, t = type)

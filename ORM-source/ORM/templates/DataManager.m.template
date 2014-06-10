@@ -76,7 +76,7 @@
 					/*
 					NSUndefinedAttributeType = 0,
 					NSInteger16AttributeType = 100,
-					-NSInteger32AttributeType = 200,
+					+NSInteger32AttributeType = 200,
 					-NSInteger64AttributeType = 300,
 					NSDecimalAttributeType = 400,
 					+NSDoubleAttributeType = 500,
@@ -111,6 +111,10 @@
 					else if ([field[@"type"] isEqualToString:@"data"])
 					{
 						attribute.attributeType = NSBinaryDataAttributeType;
+					}
+					else if ([field[@"type"] isEqualToString:@"integer32"])
+					{
+						attribute.attributeType = NSInteger32AttributeType;
 					}
 				}
 				if ([field[@"property"] isEqualToString:@"relationship"])
