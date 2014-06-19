@@ -14,7 +14,7 @@
 	
 	if (self)
 	{
-		self.condition = [NSString stringWithFormat:@"(%@ == %li)", fieldName, value];
+		self.condition = [NSString stringWithFormat:@"(%@ == %lli)", fieldName, value];
 	}
 	
 	return self;
@@ -26,7 +26,7 @@
 	
 	if (self)
 	{
-		self.condition = [NSString stringWithFormat:@"(%@ > %li)", fieldName, value];
+		self.condition = [NSString stringWithFormat:@"(%@ > %lli)", fieldName, value];
 	}
 	
 	return self;
@@ -38,7 +38,7 @@
 	
 	if (self)
 	{
-		self.condition = [NSString stringWithFormat:@"(%@ >= %li)", fieldName, value];
+		self.condition = [NSString stringWithFormat:@"(%@ >= %lli)", fieldName, value];
 	}
 	
 	return self;
@@ -50,7 +50,7 @@
 	
 	if (self)
 	{
-		self.condition = [NSString stringWithFormat:@"(%@ < %li)", fieldName, value];
+		self.condition = [NSString stringWithFormat:@"(%@ < %lli)", fieldName, value];
 	}
 	
 	return self;
@@ -62,7 +62,7 @@
 	
 	if (self)
 	{
-		self.condition = [NSString stringWithFormat:@"(%@ <= %li)", fieldName, value];
+		self.condition = [NSString stringWithFormat:@"(%@ <= %lli)", fieldName, value];
 	}
 	
 	return self;
