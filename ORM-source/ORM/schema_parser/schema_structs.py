@@ -32,10 +32,11 @@ class Entity:
         return None
 
 class ModelStructProperty:
-    def __init__(self, name, relationship, properties):
+    def __init__(self, name, relationship, properties, id):
         self.name = name
         self.relationship = relationship
         self.properties = properties
+        self.id = id
     def entities(self):
         result = []
         if self.relationship != None:
@@ -46,9 +47,10 @@ class ModelStructProperty:
         return result
 
 class ModelStruct:
-    def __init__(self, entity, properties):
+    def __init__(self, entity, properties, id):
         self.entity = entity
         self.properties = properties
+        self.id = id
     def entities(self):
         result = [self.entity.name]
         for structProperty in self.properties:

@@ -25,7 +25,8 @@ def parseProperties(propertiesRoot, entityRoot, entities):
             subproperties = parseProperties(propertyElement, entity, entities)
         if relationship != None and subproperties == None:
             subproperties = []
-        property = ModelStructProperty(propertyElement.attrib['name'], relationship, subproperties)
+        id = propertyElement.attrib['id'] if ('id' in propertyElement.attrib) else None
+        property = ModelStructProperty(propertyElement.attrib['name'], relationship, subproperties, id)
         properties.append(property)
     return properties
 
@@ -64,10 +65,11 @@ def parse(filePath):
         structs = []
         for structElement in list(modelElement):
             entityName = structElement.attrib['entity']
+            id = structElement.attrib['id'] if ('id' in structElement.attrib) else None
             
             properties = parseProperties(structElement, entities[entityName], entities)
             
-            structs.append(ModelStruct(entities[entityName], properties))
+            structs.append(ModelStruct(entities[entityName], properties, id))
         
         models.append(Model(modelElement.attrib['name'], structs))
     
