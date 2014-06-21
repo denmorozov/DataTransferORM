@@ -1,98 +1,60 @@
 from generate_model.templates import methodTemplate
 
-def generateSetPropertiesForToManyForSelect(entity, property, tabs):
-    
-    lines = []
-    
-    lines.append('')
-    
-    var = entity.name.lower()
-    subentity = property.relationship.entity.name
-    subvar = property.relationship.entity.name.lower()
-    collectionName = subvar + 'List'
-    
-    lines.append(tabs + 'NSMutableArray *{cn} = [NSMutableArray new];'.format(cn = collectionName))
-    
-    #foreach begin
-    lines.append(tabs + 'for ({se} *{sv} in {v}.{pn})'.format(se = subentity, sv = subvar, v = var, pn = property.name))
-    lines.append(tabs + '{')
-    
-    lines.append(tabs + '\t' + '{se}DTO *{sv}DTO = [[{se}DTO alloc] init];'.format(sv = subvar, se = subentity));
-    lines.append(tabs + '\t' + '[{cn} addObject:{sv}DTO];'.format(cn = collectionName, sv = subvar))
-    
-    #generate set sub-properties
-    subpropertiesList = generateSetPropertiesForSelect(entity, property.relationship.entity, property.properties, tabs + '\t')
-    lines += subpropertiesList #join two arrays
-    
-    lines.append(tabs + '}')
-    #forneach end
-    
-    lines.append(tabs + '{v}DTO.{pn} = {cn};'.format(cn = collectionName, v = var, pn = property.name))
-    
-    return lines
+class ConvertToDTOMethodDef:
+    def __init__(self, name, entity, properties, id):
+        self.name = name
+        self.entity = entity
+        self.properties = properties
+        self.id = id
 
-def generateSetPropertiesForToOneForSelect(entity, property, tabs):
-    lines = []
-    var = entity.name.lower()
-    subentity = property.relationship.entity.name
-    subvar = property.relationship.entity.name.lower()
-    lines.append(tabs + '')
-    lines.append(tabs + 'if ({v}.{pn} != nil)'.format(v = var, pn = property.name))
-    lines.append(tabs + '{')
-    lines.append(tabs + '\t' + '{se}DTO *{sv}DTO = [[{se}DTO alloc] init];'.format(se = subentity, sv = subvar))
-    lines.append(tabs + '\t' + '{se} *{sv} = {v}.{sv};'.format(se = subentity, sv = subvar, v = var))
-    lines += generateSetPropertiesForSelect(entity, property.relationship.entity, property.properties, tabs + '\t')
-    lines.append(tabs + '\t' + '{v}DTO.{pn} = {sv}DTO;'.format(sv = subvar, v = var, pn = property.name))
-    lines.append(tabs + '}')
-    
-    return lines
+def methodDefById(defs, id):
+    for d in defs:
+        if d.id == id:
+            return d
+    return None
 
-def generateSetPropertiesForSelect(rootentity, entity, properties, tabs):
-    lines = []
-    
-    lines.append('{t}{v}DTO.objectID = {v}.objectID;'.format(t = tabs, v = entity.name.lower()))
-    
+def makeMethodsDefs(name, entity, properties, id):
+    result = []
+    result.append(ConvertToDTOMethodDef(name, entity, properties, id))
     for property in properties:
-        
-        #scalar property
-        if property.relationship == None:
-            lines.append('{t}{v}DTO.{pn} = {v}.{pn};'.format(t = tabs, v = entity.name.lower(), pn = property.name))
-            continue
-        
-        #check inverse property
-        if rootentity != None and rootentity.containsRelationshipWithNameAndInverse(property.relationship.inverse, property.relationship.name) == True:
-            continue
-        
-        if property.relationship.type == 'toMany':
-            lines += generateSetPropertiesForToManyForSelect(entity, property, tabs)
-        
-        if property.relationship.type == 'toOne':
-            lines += generateSetPropertiesForToOneForSelect(entity, property, tabs)
-        
-    return lines
+        if property.relationship != None:
+            subname = None if property.id != None and len(property.properties) == 0 else name + property.relationship.name
+            result += makeMethodsDefs(subname, property.relationship.entity, property.properties, property.id)
+    return result;
 
 def generateConvertToDTOMethod(model):
+    
+    methodsDefs = makeMethodsDefs(model.name + model.structs[0].entity.name, model.structs[0].entity, model.structs[0].properties, model.structs[0].id)
+    
     lines = []
-    for struct in model.structs:
-        entity = struct.entity.name
-        var = struct.entity.name.lower()
-        
-        lines.append('- (NSArray *){v}ObjectsConvertToDTO:(NSArray *)array'.format(v = var))
-        
-        lines.append('{')
-        lines.append('\tNSMutableArray *result = [[NSMutableArray alloc] initWithCapacity:array.count];')
-        lines.append('\t')
-        lines.append('\tfor ({e} *{v} in array)'.format(e = entity, v = var))
-        lines.append('\t{')
-        lines.append('\t\t{e}DTO *{v}DTO = [[{e}DTO alloc] init];'.format(e = entity, v = var))
-        lines += generateSetPropertiesForSelect(None, struct.entity, struct.properties, '\t\t')
-        lines.append('\t\t')
-        lines.append('\t\t[result addObject:{v}DTO];'.format(v = var))
-        lines.append('\t}')
-        lines.append('\t')
-        lines.append('\treturn result.copy;')
-        
-        lines.append('}')
+    
+    for d in methodsDefs:
+        if d.name != None:
+            lines.append('- ({n}DTO *){n}With{e}:({e} *){ev}'.format(n = d.name, e = d.entity.name, ev = d.entity.name.lower()))
+            lines.append('{')
+            lines.append('\t{n}DTO *{ev}DTO = [{n}DTO new];'.format(n = d.name, ev = d.entity.name.lower()))
+            for property in d.properties:
+                if property.relationship == None:
+                    lines.append('\t{ev}DTO.{pn} = {ev}.{pn};'.format(n = d.name, pn = property.name, ev = d.entity.name.lower()))
+                elif property.relationship != None and property.relationship.type == 'toMany':
+                    lines.append('\tfor ({se} *{sev} in {ev}.{pn})'.format(se = property.relationship.entity.name, sev = property.relationship.entity.name.lower(), ev = d.entity.name.lower(), pn = property.name))
+                    lines.append('\t{')
+                    if property.id != None and len(property.properties) == 0:
+                        dd = methodDefById(methodsDefs, property.id)
+                        lines.append('\t\t{sn}DTO *sub{sev}DTO = [self {sn}With{se}:{sev}];'.format(sn = dd.name, sev = dd.entity.name.lower(), se = dd.entity.name))
+                        lines.append('\t\t[{ev}DTO add{pn}object:sub{sev}DTO];'.format(ev = d.entity.name.lower(), sev = dd.entity.name.lower(), pn = property.name))
+                    else:
+                        lines.append('\t\t{sn}DTO *sub{sev}DTO = [self {sn}With{se}:{sev}];'.format(sn = d.name + property.name, sev = property.relationship.entity.name.lower(), se = property.relationship.entity.name))
+                        lines.append('\t\t[{ev}DTO add{pn}object:sub{sev}DTO];'.format(ev = d.entity.name.lower(), sev = property.relationship.entity.name.lower(), pn = property.name))
+                    lines.append('\t}')
+                elif property.relationship != None and property.relationship.type == 'toOne':
+                    if property.id != None and len(property.properties) == 0:
+                        dd = methodDefById(methodsDefs, property.id)
+                        lines.append('\t{ev}DTO.{sev} = [self {sn}With{se}:{sev}];'.format(ev = d.entity.name.lower(), sn = dd.name, sev = dd.entity.name.lower(), se = dd.entity.name))
+                    else:
+                        lines.append('\t{ev}DTO.{sev} = [self {sn}With{se}:{ev}.{sev}];'.format(ev = d.entity.name.lower(), sn = d.name + property.name, sev = property.relationship.entity.name.lower(), se = property.relationship.entity.name))
+            lines.append('\treturn {ev}DTO;'.format(ev = d.entity.name.lower()))
+            lines.append('}')
     
     return '\n'.join(lines)
 
