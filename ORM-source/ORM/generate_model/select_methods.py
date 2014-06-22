@@ -15,7 +15,8 @@ def methodDefById(defs, id):
 
 def makeMethodsDefs(name, entity, properties, id):
     result = []
-    result.append(ConvertToDTOMethodDef(name, entity, properties, id))
+    if name != None:
+        result.append(ConvertToDTOMethodDef(name, entity, properties, id))
     for property in properties:
         if property.relationship != None:
             subname = None if property.id != None and len(property.properties) == 0 else name + property.relationship.name
@@ -23,16 +24,18 @@ def makeMethodsDefs(name, entity, properties, id):
     return result;
 
 def generateConvertToDTOMethod(model):
-    
-    methodsDefs = makeMethodsDefs(model.name + model.structs[0].entity.name, model.structs[0].entity, model.structs[0].properties, model.structs[0].id)
-    
     lines = []
-    
-    for d in methodsDefs:
-        if d.name != None:
-            lines.append('- ({n}DTO *){n}With{e}:({e} *){ev}'.format(n = d.name, e = d.entity.name, ev = d.entity.name.lower()))
+    for struct in model.structs:
+        methodsDefs = makeMethodsDefs(model.name + struct.entity.name, struct.entity, struct.properties, struct.id)
+        for d in methodsDefs:
+            lines.append('- ({n}DTO *){n}With{e}:({e} *){ev} withContext:(ModelContext *)ctx'.format(n = d.name, e = d.entity.name, ev = d.entity.name.lower()))
             lines.append('{')
+            lines.append('\tif ([ctx containsWithObjectID:{ev}.objectID withClass:{n}DTO.class])'.format(n = d.name, ev = d.entity.name.lower()))
+            lines.append('\t{')
+            lines.append('\t\treturn [ctx objectWithObjectID:{ev}.objectID withClass:{n}DTO.class];'.format(n = d.name, ev = d.entity.name.lower()))
+            lines.append('\t}')
             lines.append('\t{n}DTO *{ev}DTO = [{n}DTO new];'.format(n = d.name, ev = d.entity.name.lower()))
+            lines.append('\t[ctx addObject:{ev}DTO];'.format(ev = d.entity.name.lower()))
             for property in d.properties:
                 if property.relationship == None:
                     lines.append('\t{ev}DTO.{pn} = {ev}.{pn};'.format(n = d.name, pn = property.name, ev = d.entity.name.lower()))
@@ -41,18 +44,18 @@ def generateConvertToDTOMethod(model):
                     lines.append('\t{')
                     if property.id != None and len(property.properties) == 0:
                         dd = methodDefById(methodsDefs, property.id)
-                        lines.append('\t\t{sn}DTO *sub{sev}DTO = [self {sn}With{se}:{sev}];'.format(sn = dd.name, sev = dd.entity.name.lower(), se = dd.entity.name))
+                        lines.append('\t\t{sn}DTO *sub{sev}DTO = [self {sn}With{se}:{sev} withContext:ctx];'.format(sn = dd.name, sev = dd.entity.name.lower(), se = dd.entity.name))
                         lines.append('\t\t[{ev}DTO add{pn}object:sub{sev}DTO];'.format(ev = d.entity.name.lower(), sev = dd.entity.name.lower(), pn = property.name))
                     else:
-                        lines.append('\t\t{sn}DTO *sub{sev}DTO = [self {sn}With{se}:{sev}];'.format(sn = d.name + property.name, sev = property.relationship.entity.name.lower(), se = property.relationship.entity.name))
+                        lines.append('\t\t{sn}DTO *sub{sev}DTO = [self {sn}With{se}:{sev} withContext:ctx];'.format(sn = d.name + property.name, sev = property.relationship.entity.name.lower(), se = property.relationship.entity.name))
                         lines.append('\t\t[{ev}DTO add{pn}object:sub{sev}DTO];'.format(ev = d.entity.name.lower(), sev = property.relationship.entity.name.lower(), pn = property.name))
                     lines.append('\t}')
                 elif property.relationship != None and property.relationship.type == 'toOne':
                     if property.id != None and len(property.properties) == 0:
                         dd = methodDefById(methodsDefs, property.id)
-                        lines.append('\t{ev}DTO.{sev} = [self {sn}With{se}:{sev}];'.format(ev = d.entity.name.lower(), sn = dd.name, sev = dd.entity.name.lower(), se = dd.entity.name))
+                        lines.append('\t{ev}DTO.{sev} = [self {sn}With{se}:{sev} withContext:ctx];'.format(ev = d.entity.name.lower(), sn = dd.name, sev = dd.entity.name.lower(), se = dd.entity.name))
                     else:
-                        lines.append('\t{ev}DTO.{sev} = [self {sn}With{se}:{ev}.{sev}];'.format(ev = d.entity.name.lower(), sn = d.name + property.name, sev = property.relationship.entity.name.lower(), se = property.relationship.entity.name))
+                        lines.append('\t{ev}DTO.{sev} = [self {sn}With{se}:{ev}.{sev} withContext:ctx];'.format(ev = d.entity.name.lower(), sn = d.name + property.name, sev = property.relationship.entity.name.lower(), se = property.relationship.entity.name))
             lines.append('\treturn {ev}DTO;'.format(ev = d.entity.name.lower()))
             lines.append('}')
     
@@ -94,7 +97,11 @@ def generateSelectDTOMethod(model):
         tryBlock.append('}')
         tryBlock.append('else')
         tryBlock.append('{')
-        tryBlock.append('\tresult = [self {v}ObjectsConvertToDTO:array];'.format(v = var))
+        tryBlock.append('\tModelContext *ctx = [ModelContext new];')
+        tryBlock.append('\tfor ({e} *{ev} in array)'.format(e = entity, ev = var))
+        tryBlock.append('\t{')
+        tryBlock.append('\t\t[result addObject:[self {mn}{e}With{e}:{ev} withContext:ctx]];'.format(e = entity, mn = model.name, ev = var))
+        tryBlock.append('\t}')
         tryBlock.append('}')
         
         exceptionBlock = ['NSLog(@"%@", e);']
@@ -102,5 +109,5 @@ def generateSelectDTOMethod(model):
         
         methodName = '- (NSArray *){v}ObjectsWithComporator:({mn}{en}Comporator)comporator'.format(mn = model.name, v = var, en = entity)
         
-        methods.append(methodName + '\n' + methodTemplate(['NSArray *result = nil;'], tryBlock, exceptionBlock, finallyBlock, ['return result;']))
+        methods.append(methodName + '\n' + methodTemplate(['NSMutableArray *result = [NSMutableArray new];'], tryBlock, exceptionBlock, finallyBlock, ['return result.copy;']))
     return '\n'.join(methods)
