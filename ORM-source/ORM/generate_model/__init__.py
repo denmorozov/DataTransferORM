@@ -1,9 +1,6 @@
 from generate_model.save_methods import generateSaveMethod
 from generate_model.save_methods import generateSaveDTOMethod
 from generate_model.save_methods import generateSaveDTOMethodsNames
-from generate_model.create_methods import generateCreateMethod
-from generate_model.create_methods import generateCreateDTOMethod
-from generate_model.create_methods import generateCreateDTOMethodsNames
 from generate_model.select_methods import generateSelectDTOMethod
 from generate_model.select_methods import generateSelectDTOMethodsNames
 from generate_model.select_methods import generateConvertToDTOMethod
@@ -99,7 +96,6 @@ def generateHeaderFile(model):
     
     methods += generateSelectDTOMethodsNames(model)
     methods += generateSaveDTOMethodsNames(model)
-    methods += generateCreateDTOMethodsNames(model)
     
     typedefs = []
     for struct in model.structs:
@@ -122,8 +118,6 @@ def generateSourceFile(model):
     methods.append(generateSelectDTOMethod(model))
     methods.append(generateSaveMethod(model))
     methods.append(generateSaveDTOMethod(model))
-    methods.append(generateCreateMethod(model))
-    methods.append(generateCreateDTOMethod(model))
     
     imports = []
     imports.append('DataManager.h')

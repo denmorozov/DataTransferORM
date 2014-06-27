@@ -1,33 +1,10 @@
 from generate_model.templates import methodTemplate
 
-class ConvertToDTOMethodDef:
-    def __init__(self, name, entity, properties, id):
-        self.name = name
-        self.entity = entity
-        self.properties = properties
-        self.id = id
-
-def methodDefById(defs, id):
-    for d in defs:
-        if d.id == id:
-            return d
-    return None
-
-def makeMethodsDefs(name, entity, properties, id):
-    result = []
-    if name != None:
-        result.append(ConvertToDTOMethodDef(name, entity, properties, id))
-    for property in properties:
-        if property.relationship != None:
-            subname = None if property.id != None and len(property.properties) == 0 else name + property.relationship.name
-            result += makeMethodsDefs(subname, property.relationship.entity, property.properties, property.id)
-    return result;
-
 def generateConvertToDTOMethod(model):
     lines = []
     for struct in model.structs:
-        methodsDefs = makeMethodsDefs(model.name + struct.entity.name, struct.entity, struct.properties, struct.id)
-        for d in methodsDefs:
+        classesDefs = struct.classesDefs()
+        for d in classesDefs:
             lines.append('- ({n}DTO *){n}With{e}:({e} *){ev} withContext:(ModelContext *)ctx'.format(n = d.name, e = d.entity.name, ev = d.entity.name.lower()))
             lines.append('{')
             lines.append('\tif ([ctx containsWithObjectID:{ev}.objectID withClass:{n}DTO.class])'.format(n = d.name, ev = d.entity.name.lower()))
@@ -43,7 +20,7 @@ def generateConvertToDTOMethod(model):
                     lines.append('\tfor ({se} *{sev} in {ev}.{pn})'.format(se = property.relationship.entity.name, sev = property.relationship.entity.name.lower(), ev = d.entity.name.lower(), pn = property.name))
                     lines.append('\t{')
                     if property.id != None and len(property.properties) == 0:
-                        dd = methodDefById(methodsDefs, property.id)
+                        dd = struct.classDefById(property.id)
                         lines.append('\t\t{sn}DTO *sub{sev}DTO = [self {sn}With{se}:{sev} withContext:ctx];'.format(sn = dd.name, sev = dd.entity.name.lower(), se = dd.entity.name))
                         lines.append('\t\t[{ev}DTO add{pn}object:sub{sev}DTO];'.format(ev = d.entity.name.lower(), sev = dd.entity.name.lower(), pn = property.name))
                     else:
@@ -52,7 +29,7 @@ def generateConvertToDTOMethod(model):
                     lines.append('\t}')
                 elif property.relationship != None and property.relationship.type == 'toOne':
                     if property.id != None and len(property.properties) == 0:
-                        dd = methodDefById(methodsDefs, property.id)
+                        dd = struct.classDefById(property.id)
                         lines.append('\t{ev}DTO.{sev} = [self {sn}With{se}:{sev} withContext:ctx];'.format(ev = d.entity.name.lower(), sn = dd.name, sev = dd.entity.name.lower(), se = dd.entity.name))
                     else:
                         lines.append('\t{ev}DTO.{sev} = [self {sn}With{se}:{ev}.{sev} withContext:ctx];'.format(ev = d.entity.name.lower(), sn = d.name + property.name, sev = property.relationship.entity.name.lower(), se = property.relationship.entity.name))

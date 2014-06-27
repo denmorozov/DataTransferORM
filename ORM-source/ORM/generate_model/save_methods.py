@@ -1,124 +1,80 @@
 from generate_model.templates import methodTemplate
 
-def generateSetPropertiesForToManyForSave(entity, property, tabs):
-    
-    lines = []
-    
-    lines.append('')
-    
-    var = entity.name.lower()
-    subentity = property.relationship.entity.name
-    subvar = property.relationship.entity.name.lower()
-    collectionName = subvar + 'List'
-    
-    lines.append(tabs + 'NSMutableSet *{cn}New = [NSMutableSet set];'.format(cn = collectionName))
-    lines.append(tabs + 'NSMutableSet *{cn}Old = {v}.{pn}.mutableCopy;'.format(cn = collectionName, v = var, pn = property.name))
-    
-    #forneach begin
-    lines.append(tabs + 'for ({se}DTO *{sv}DTO in {v}DTO.{pn})'.format(se = subentity, sv = subvar, v = var, pn = property.name))
-    lines.append(tabs + '{')
-    
-    #generate follow source code
-    #   if (dto.objectID == nil)
-    #   {
-    #       entityVar = (EntityClass *)[NSEntityDescription insertNewObjectForEntityForName:@"EntityName" inManagedObjectContext:context];
-    #   }
-    #   else
-    #   {
-    #       entityVar = (EntityClass *)[context objectWithID:dto.objectID];
-    #       [collectionOld removeObject:entityVar];
-    #   }
-    #   [collectionNew addObject:entityVar];
-    subtabs = tabs + '\t'
-    lines.append(subtabs + '{se} *{sv} = nil;'.format(se = subentity, sv = subvar))
-    lines.append(subtabs + 'if ({sv}DTO.objectID == nil)'.format(sv = subvar))
-    lines.append(subtabs + '{')
-    lines.append(subtabs + '\t' + '{sv} = ({se} *)[NSEntityDescription insertNewObjectForEntityForName:@"{se}" inManagedObjectContext:context];'.format(sv = subvar, se = subentity));
-    lines.append(subtabs + '}')
-    lines.append(subtabs + 'else')
-    lines.append(subtabs + '{')
-    lines.append(subtabs + '\t' + '{sv} = ({se} *)[context objectWithID:{sv}DTO.objectID];'.format(sv = subvar, se = subentity))
-    lines.append(subtabs + '\t' + '[{cn}Old removeObject:{sv}];'.format(cn = collectionName, sv = subvar))
-    lines.append(subtabs + '}');
-    lines.append(subtabs + '[{cn}New addObject:{sv}];'.format(cn = collectionName, sv = subvar))
-    
-    #generate set sub-properties
-    subpropertiesList = generateSetPropertiesForSave(entity, property.relationship.entity, property.properties, tabs + '\t')
-    lines += subpropertiesList #join two arrays
-    
-    lines.append(tabs + '}')
-    #foreach end
-    
-    lines.append(tabs + '{v}.{pn} = {cn}New;'.format(cn = collectionName, v = var, pn = property.name))
-    
-    #remove old objects
-    #foreach begin
-    lines.append(tabs + 'for ({se} *{sv} in {cn}Old)'.format(se = subentity, sv = subvar, cn = collectionName))
-    lines.append(tabs + '{')
-    lines.append(tabs + '\t' + '[context deleteObject:{sv}];'.format(sv = subvar))
-    lines.append(tabs + '}')
-    #foreach end
-    
-    return lines
-
-def generateSetPropertiesForToOneForSave(entity, property, tabs):
-    lines = []
-    var = entity.name.lower()
-    subentity = property.relationship.entity.name
-    subvar = property.relationship.entity.name.lower()
-    lines.append(tabs + '')
-    lines.append(tabs + 'if ({v}DTO.{pn} == nil)'.format(v = var, pn = property.name))
-    lines.append(tabs + '{')
-    lines.append(tabs + '\t' + '{v}.{pn} = nil;'.format(v = var, pn = property.name))
-    lines.append(tabs + '}')
-    lines.append(tabs + 'else')
-    lines.append(tabs + '{')
-    lines.append(tabs + '\t' + 'if ({v}.{pn} == nil)'.format(v = var, pn = property.name))
-    lines.append(tabs + '\t' + '{')
-    lines.append(tabs + '\t' + '\t' + '{v}.{pn} = ({se} *)[NSEntityDescription insertNewObjectForEntityForName:@"{se}" inManagedObjectContext:context];'.format(v = var, pn = property.name, se = subentity))
-    lines.append(tabs + '\t' + '}')
-    lines.append(tabs + '\t' + '{se} *{sv} = {v}.{pn};'.format(se = subentity, sv = subvar, v = var, pn = property.name))
-    lines.append(tabs + '\t' + '{se}DTO *{sv}DTO = {v}DTO.{pn};'.format(se = subentity, sv = subvar, v = var, pn = property.name))
-    lines += generateSetPropertiesForSave(entity, property.relationship.entity, property.properties, tabs + '\t')
-    lines.append(tabs + '}')
-    return lines
-
-def generateSetPropertiesForSave(rootentity, entity, properties, tabs):
-    lines = []
-    
-    for property in properties:
-        
-        #scalar property
-        if property.relationship == None:
-            lines.append('{t}{v}.{pn} = {v}DTO.{pn};'.format(t = tabs, v = entity.name.lower(), pn = property.name))
-            continue
-        
-        #check inverse property
-        if rootentity != None and rootentity.containsRelationshipWithNameAndInverse(property.relationship.inverse, property.relationship.name) == True:
-            continue
-        
-        if property.relationship.type == 'toMany':
-            lines += generateSetPropertiesForToManyForSave(entity, property, tabs)
-        
-        if property.relationship.type == 'toOne':
-            lines += generateSetPropertiesForToOneForSave(entity, property, tabs)
-        
-    return lines
-
 def generateSaveMethod(model):
     lines = []
     for struct in model.structs:
-        entity = struct.entity.name
-        var = struct.entity.name.lower()
-        
-        lines.append('- (void)save{e}DTO:({e}DTO *){v}DTO with{e}:({e} *){v} inContext:(NSManagedObjectContext *)context'.format(e = entity, v = var))
-        
-        lines.append('{')
-        
-        lines += generateSetPropertiesForSave(None, struct.entity, struct.properties, '\t')
-        
-        lines.append('}')
-    
+        classesDefs = struct.classesDefs()
+        for d in classesDefs:
+            DTOName = d.name
+            entity = d.entity.name
+            entityVar = d.entity.name.lower()
+            lines.append('- (void)save{e}:({e} *){ev} with{n}DTO:({n}DTO *)dto withContext:(ModelContext *)ctx'.format(n = DTOName, e = entity, ev = entityVar))
+            lines.append('{')
+            for property in d.properties:
+                if property.relationship == None:
+                    lines.append('\t' + '{ev}.{pn} = dto.{pn};'.format(pn = property.name, ev = entityVar))
+                elif property.relationship != None and property.relationship.type == 'toMany':
+                    collectionName = property.relationship.entity.name.lower() + 'List'
+                    subEntity = property.relationship.entity.name
+                    subEntityVar = property.relationship.entity.name.lower()
+                    subDTO = DTOName + property.name + 'DTO'
+                    propertyName = property.name
+                    if property.id != None and len(property.properties) == 0:
+                        dd = struct.classDefById(property.id)
+                        subDTO = dd.name + "DTO"
+                    lines.append('\t' + '{')
+                    lines.append('\t\t' + 'NSMutableSet *{cn}New = [NSMutableSet set];'.format(cn = collectionName))
+                    lines.append('\t\t' + 'NSMutableSet *{cn}Old = {ev}.{pn}.mutableCopy;'.format(cn = collectionName, ev = entityVar, pn = propertyName))
+                    lines.append('\t\t' + 'for ({sd} *item in dto.{pn})'.format(sd = subDTO, pn = propertyName))
+                    lines.append('\t\t' + '{')
+                    lines.append('\t\t\t' + '{se} *{sev};'.format(se = subEntity, sev = subEntityVar))
+                    lines.append('\t\t\t' + 'if ([ctx containsEntityObjectForDTO:item] == YES)')
+                    lines.append('\t\t\t' + '{')
+                    lines.append('\t\t\t\t' + '{sev} = ({se} *)[ctx entityObjectForDTO:item];'.format(se = subEntity, sev = subEntityVar))
+                    lines.append('\t\t\t' + '}')
+                    lines.append('\t\t\t' + 'else')
+                    lines.append('\t\t\t' + '{')
+                    lines.append('\t\t\t\t' + 'if (item.objectID == nil)')
+                    lines.append('\t\t\t\t' + '{')
+                    lines.append('\t\t\t\t\t' + '{sev} = ({se} *)[NSEntityDescription insertNewObjectForEntityForName:@"{se}" inManagedObjectContext:context];'.format(se = subEntity, sev = subEntityVar))
+                    lines.append('\t\t\t\t' + '}')
+                    lines.append('\t\t\t\t' + 'else')
+                    lines.append('\t\t\t\t' + '{')
+                    lines.append('\t\t\t\t\t' + '{sev} = ({se} *)[context objectWithID:item.objectID];'.format(sev = subEntityVar, se = subEntity))
+                    lines.append('\t\t\t\t' + '}')
+                    lines.append('\t\t\t\t' + '[ctx addEntityObject:{sev} forDTO:item];'.format(sev = subEntityVar))
+                    lines.append('\t\t\t\t' + '[self save{se}:{sev} with{sd}:item withContext:ctx];'.format(se = subEntity, sev = subEntityVar, sd = subDTO))
+                    lines.append('\t\t\t' + '}')
+                    lines.append('\t\t\t' + '[{cn}New addObject:{sev}];'.format(cn = collectionName, sev = subEntityVar))
+                    lines.append('\t\t' + '}')
+                    lines.append('\t\t' + '{ev}.{pn} = {cn}New.copy;'.format(cn = collectionName, ev = entityVar, pn = propertyName))
+                    lines.append('\t' + '}')
+                elif property.relationship != None and property.relationship.type == 'toOne':
+                    subEntity = property.relationship.entity.name
+                    subEntityVar = property.relationship.entity.name.lower()
+                    propertyName = property.name
+                    lines.append('\t' + '{')
+                    lines.append('\t\t' + '{se} *{sev};'.format(se = subEntity, sev = subEntityVar))
+                    lines.append('\t\t' + 'if ([ctx containsEntityObjectForDTO:dto.{pn}] == YES)'.format(pn = propertyName))
+                    lines.append('\t\t' + '{')
+                    lines.append('\t\t\t' + '{sev} = ({se} *)[ctx entityObjectForDTO:item];'.format(se = subEntity, sev = subEntityVar))
+                    lines.append('\t\t' + '}')
+                    lines.append('\t\t' + 'else')
+                    lines.append('\t\t' + '{')
+                    lines.append('\t\t\t' + 'if (dto.{pn}.objectID == nil)'.format(pn = propertyName))
+                    lines.append('\t\t\t' + '{')
+                    lines.append('\t\t\t\t' + '{sev} = ({se} *)[NSEntityDescription insertNewObjectForEntityForName:@"{se}" inManagedObjectContext:context];'.format(se = subEntity, sev = subEntityVar))
+                    lines.append('\t\t\t' + '}')
+                    lines.append('\t\t\t' + 'else')
+                    lines.append('\t\t\t' + '{')
+                    lines.append('\t\t\t\t' + '{sev} = ({se} *)[context objectWithID:item.objectID];'.format(sev = subEntityVar, se = subEntity))
+                    lines.append('\t\t\t' + '}')
+                    lines.append('\t\t\t' + '[ctx addEntityObject:{sev} forDTO:dto.{pn}];'.format(sev = subEntityVar, pn = propertyName))
+                    lines.append('\t\t\t' + '[self save{se}:{sev} with{sd}:dto.{pn} withContext:ctx];'.format(se = subEntity, sev = subEntityVar, sd = subDTO, pn = propertyName))
+                    lines.append('\t\t' + '}')
+                    lines.append('\t\t' + '{e}.{pn} = {sev};'.format(e = entityVar, pn = propertyName, sev = subEntityVar))
+                    lines.append('\t' + '}')
+            lines.append('}')
     return '\n'.join(lines)
 
 def generateSaveDTOMethodsNames(model):
@@ -134,17 +90,25 @@ def generateSaveDTOMethod(model):
     for struct in model.structs:
         entity = struct.entity.name
         var = struct.entity.name.lower()
-    
+        
         tryBlock = []
-        tryBlock.append('{e} *{v} = ({e} *)[context objectWithID:{v}DTO.objectID];'.format(e = entity, v = var))
-        tryBlock.append('[self save{e}DTO:{v}DTO with{e}:{v} inContext:context];'.format(e = entity, v = var))
+        tryBlock.append('{e} *{v};'.format(e = entity, v = var))
+        tryBlock.append('if ({v}DTO.objectID != nil)'.format(v = var))
+        tryBlock.append('{')
+        tryBlock.append('\t{v} = ({e} *)[context objectWithID:{v}DTO.objectID];'.format(e = entity, v = var))
+        tryBlock.append('}')
+        tryBlock.append('else')
+        tryBlock.append('{')
+        tryBlock.append('\t{v} = ({e} *)[NSEntityDescription insertNewObjectForEntityForName:@"{e}" inManagedObjectContext:context];'.format(e = entity, v = var))
+        tryBlock.append('}')
+        tryBlock.append('[self save{e}:{v} with{n}DTO:{v}DTO inContext:context];'.format(e = entity, v = var, n = model.name + entity))
         tryBlock.append('[context save:nil];')
-    
+        
         exceptionBlock = ['NSLog(@"%@", e);']
         finallyBlock = []
-    
+        
         methodName = '- (void)save{e}DTO:({e}DTO *){v}DTO'.format(e = entity, v = var)
-    
+        
         methods.append(methodName + '\n' + methodTemplate([], tryBlock, exceptionBlock, finallyBlock, []))
     return '\n'.join(methods)
 
