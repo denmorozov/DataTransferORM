@@ -5,35 +5,36 @@ def generateConvertToDTOMethod(model):
     for struct in model.structs:
         classesDefs = struct.classesDefs()
         for d in classesDefs:
-            lines.append('- ({n}DTO *){n}With{e}:({e} *){ev} withContext:(ModelContext *)ctx'.format(n = d.name, e = d.entity.name, ev = d.entity.name.lower()))
+            DTOName = d.name
+            entity = d.entity.name
+            entityVar = entity.lower()
+            lines.append('- ({n}DTO *){n}With{e}:({e} *){ev} withContext:(ModelContext *)ctx'.format(n = DTOName, e = entity, ev = entityVar))
             lines.append('{')
-            lines.append('\tif ([ctx containsWithObjectID:{ev}.objectID withClass:{n}DTO.class])'.format(n = d.name, ev = d.entity.name.lower()))
-            lines.append('\t{')
-            lines.append('\t\treturn [ctx objectWithObjectID:{ev}.objectID withClass:{n}DTO.class];'.format(n = d.name, ev = d.entity.name.lower()))
-            lines.append('\t}')
-            lines.append('\t{n}DTO *{ev}DTO = [{n}DTO new];'.format(n = d.name, ev = d.entity.name.lower()))
-            lines.append('\t[ctx addObject:{ev}DTO];'.format(ev = d.entity.name.lower()))
+            lines.append('\t' + 'if ([ctx containsWithObjectID:{ev}.objectID withClass:{n}DTO.class])'.format(n = DTOName, ev = entityVar))
+            lines.append('\t' + '{')
+            lines.append('\t\t' + 'return [ctx objectWithObjectID:{ev}.objectID withClass:{n}DTO.class];'.format(n = DTOName, ev = entityVar))
+            lines.append('\t' + '}')
+            lines.append('\t' + '{n}DTO *dto = [{n}DTO new];'.format(n = DTOName))
+            lines.append('\t' + '[ctx addObject:dto];')
             for property in d.properties:
+                subDTOName = d.name + property.name
+                subEntity = property.relationship.entity.name if property.relationship != None else None
+                subEntityVar = subEntity.lower() if subEntity != None else None
+                propertyName = property.name
+                if property.id != None and len(property.properties) == 0:
+                    dd = struct.classDefById(property.id)
+                    subDTOName = dd.name
                 if property.relationship == None:
-                    lines.append('\t{ev}DTO.{pn} = {ev}.{pn};'.format(n = d.name, pn = property.name, ev = d.entity.name.lower()))
+                    lines.append('\t' + 'dto.{pn} = {ev}.{pn};'.format(pn = property.name, ev = entityVar))
                 elif property.relationship != None and property.relationship.type == 'toMany':
-                    lines.append('\tfor ({se} *{sev} in {ev}.{pn})'.format(se = property.relationship.entity.name, sev = property.relationship.entity.name.lower(), ev = d.entity.name.lower(), pn = property.name))
-                    lines.append('\t{')
-                    if property.id != None and len(property.properties) == 0:
-                        dd = struct.classDefById(property.id)
-                        lines.append('\t\t{sn}DTO *sub{sev}DTO = [self {sn}With{se}:{sev} withContext:ctx];'.format(sn = dd.name, sev = dd.entity.name.lower(), se = dd.entity.name))
-                        lines.append('\t\t[{ev}DTO add{pn}object:sub{sev}DTO];'.format(ev = d.entity.name.lower(), sev = dd.entity.name.lower(), pn = property.name))
-                    else:
-                        lines.append('\t\t{sn}DTO *sub{sev}DTO = [self {sn}With{se}:{sev} withContext:ctx];'.format(sn = d.name + property.name, sev = property.relationship.entity.name.lower(), se = property.relationship.entity.name))
-                        lines.append('\t\t[{ev}DTO add{pn}object:sub{sev}DTO];'.format(ev = d.entity.name.lower(), sev = property.relationship.entity.name.lower(), pn = property.name))
-                    lines.append('\t}')
+                    lines.append('\t' + 'for ({se} *{sev} in {ev}.{pn})'.format(se = subEntity, sev = subEntityVar, ev = entityVar, pn = propertyName))
+                    lines.append('\t' + '{')
+                    lines.append('\t\t' + '{sn}DTO *sub{sev}DTO = [self {sn}With{se}:{sev} withContext:ctx];'.format(sn = subDTOName, sev = subEntityVar, se = subEntity))
+                    lines.append('\t\t' + '[dto add{pn}object:sub{sev}DTO];'.format(sev = subEntityVar, pn = propertyName))
+                    lines.append('\t' + '}')
                 elif property.relationship != None and property.relationship.type == 'toOne':
-                    if property.id != None and len(property.properties) == 0:
-                        dd = struct.classDefById(property.id)
-                        lines.append('\t{ev}DTO.{sev} = [self {sn}With{se}:{sev} withContext:ctx];'.format(ev = d.entity.name.lower(), sn = dd.name, sev = dd.entity.name.lower(), se = dd.entity.name))
-                    else:
-                        lines.append('\t{ev}DTO.{sev} = [self {sn}With{se}:{ev}.{sev} withContext:ctx];'.format(ev = d.entity.name.lower(), sn = d.name + property.name, sev = property.relationship.entity.name.lower(), se = property.relationship.entity.name))
-            lines.append('\treturn {ev}DTO;'.format(ev = d.entity.name.lower()))
+                    lines.append('\t' + 'dto.{pn} = [self {sn}With{se}:{ev}.{pn} withContext:ctx];'.format(ev = entityVar, sn = subDTOName, pn = propertyName, se = subEntity))
+            lines.append('\t' + 'return dto;')
             lines.append('}')
     
     return '\n'.join(lines)

@@ -11,17 +11,17 @@ def generateSaveMethod(model):
             lines.append('- (void)save{e}:({e} *){ev} with{n}DTO:({n}DTO *)dto withContext:(ModelContext *)ctx'.format(n = DTOName, e = entity, ev = entityVar))
             lines.append('{')
             for property in d.properties:
+                subEntity = property.relationship.entity.name if property.relationship != None else None
+                subEntityVar = subEntity.lower() if subEntity != None else None
+                subDTO = DTOName + property.name + 'DTO'
+                propertyName = property.name
+                if property.id != None and len(property.properties) == 0:
+                    dd = struct.classDefById(property.id)
+                    subDTO = dd.name + "DTO"
                 if property.relationship == None:
-                    lines.append('\t' + '{ev}.{pn} = dto.{pn};'.format(pn = property.name, ev = entityVar))
+                    lines.append('\t' + '{ev}.{pn} = dto.{pn};'.format(pn = propertyName, ev = entityVar))
                 elif property.relationship != None and property.relationship.type == 'toMany':
                     collectionName = property.relationship.entity.name.lower() + 'List'
-                    subEntity = property.relationship.entity.name
-                    subEntityVar = property.relationship.entity.name.lower()
-                    subDTO = DTOName + property.name + 'DTO'
-                    propertyName = property.name
-                    if property.id != None and len(property.properties) == 0:
-                        dd = struct.classDefById(property.id)
-                        subDTO = dd.name + "DTO"
                     lines.append('\t' + '{')
                     lines.append('\t\t' + 'NSMutableSet *{cn}New = [NSMutableSet set];'.format(cn = collectionName))
                     lines.append('\t\t' + 'NSMutableSet *{cn}Old = {ev}.{pn}.mutableCopy;'.format(cn = collectionName, ev = entityVar, pn = propertyName))
@@ -50,9 +50,6 @@ def generateSaveMethod(model):
                     lines.append('\t\t' + '{ev}.{pn} = {cn}New.copy;'.format(cn = collectionName, ev = entityVar, pn = propertyName))
                     lines.append('\t' + '}')
                 elif property.relationship != None and property.relationship.type == 'toOne':
-                    subEntity = property.relationship.entity.name
-                    subEntityVar = property.relationship.entity.name.lower()
-                    propertyName = property.name
                     lines.append('\t' + '{')
                     lines.append('\t\t' + '{se} *{sev};'.format(se = subEntity, sev = subEntityVar))
                     lines.append('\t\t' + 'if ([ctx containsEntityObjectForDTO:dto.{pn}] == YES)'.format(pn = propertyName))
