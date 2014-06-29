@@ -1,4 +1,5 @@
 from generate_model.templates import methodTemplate
+from helpers import upperCaseForFirstSymbol
 
 def generateConvertToDTOMethod(model):
     lines = []
@@ -17,10 +18,11 @@ def generateConvertToDTOMethod(model):
             lines.append('\t' + '{n}DTO *dto = [{n}DTO new];'.format(n = DTOName))
             lines.append('\t' + '[ctx addObject:dto];')
             for property in d.properties:
-                subDTOName = d.name + property.name
+                subDTOName = d.name + upperCaseForFirstSymbol(property.name)
                 subEntity = property.relationship.entity.name if property.relationship != None else None
                 subEntityVar = subEntity.lower() if subEntity != None else None
                 propertyName = property.name
+                PropertyName = upperCaseForFirstSymbol(propertyName)
                 if property.id != None and len(property.properties) == 0:
                     dd = struct.classDefById(property.id)
                     subDTOName = dd.name
@@ -30,7 +32,7 @@ def generateConvertToDTOMethod(model):
                     lines.append('\t' + 'for ({se} *{sev} in {ev}.{pn})'.format(se = subEntity, sev = subEntityVar, ev = entityVar, pn = propertyName))
                     lines.append('\t' + '{')
                     lines.append('\t\t' + '{sn}DTO *sub{sev}DTO = [self {sn}With{se}:{sev} withContext:ctx];'.format(sn = subDTOName, sev = subEntityVar, se = subEntity))
-                    lines.append('\t\t' + '[dto add{pn}object:sub{sev}DTO];'.format(sev = subEntityVar, pn = propertyName))
+                    lines.append('\t\t' + '[dto add{pn}Object:sub{sev}DTO];'.format(sev = subEntityVar, pn = PropertyName))
                     lines.append('\t' + '}')
                 elif property.relationship != None and property.relationship.type == 'toOne':
                     lines.append('\t' + 'dto.{pn} = [self {sn}With{se}:{ev}.{pn} withContext:ctx];'.format(ev = entityVar, sn = subDTOName, pn = propertyName, se = subEntity))

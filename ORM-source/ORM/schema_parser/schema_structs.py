@@ -1,3 +1,5 @@
+from helpers import upperCaseForFirstSymbol
+
 class Field:
     def __init__(self, name, type):
         self.name = name
@@ -78,7 +80,7 @@ class ModelStruct:
             result.append(StructClassDef(name, entity, properties, id))
         for property in properties:
             if property.relationship != None:
-                subname = None if property.id != None and len(property.properties) == 0 else name + property.relationship.name
+                subname = None if property.id != None and len(property.properties) == 0 else name + upperCaseForFirstSymbol(property.relationship.name)
                 result += self.makeClassesDefs(subname, property.relationship.entity, property.properties, property.id)
         return result;
 

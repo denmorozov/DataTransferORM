@@ -1,4 +1,5 @@
 from generate_model.templates import methodTemplate
+from helpers import upperCaseForFirstSymbol
 
 def generateSaveMethod(model):
     lines = []
@@ -13,8 +14,9 @@ def generateSaveMethod(model):
             for property in d.properties:
                 subEntity = property.relationship.entity.name if property.relationship != None else None
                 subEntityVar = subEntity.lower() if subEntity != None else None
-                subDTO = DTOName + property.name + 'DTO'
+                subDTO = DTOName + upperCaseForFirstSymbol(property.name) + 'DTO'
                 propertyName = property.name
+                PropertyName = upperCaseForFirstSymbol(property.name)
                 if property.id != None and len(property.properties) == 0:
                     dd = struct.classDefById(property.id)
                     subDTO = dd.name + "DTO"
