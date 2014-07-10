@@ -32,6 +32,11 @@ class Entity:
             if r.name == name:
                 return r
         return None
+    def fieldByName(self, name):
+        for f in self.fields:
+            if f.name == name:
+                return f
+        return None
 
 class StructClassDef:
     def __init__(self, name, entity, properties, id):

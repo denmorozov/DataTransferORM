@@ -4,7 +4,7 @@ from schema_parser.schema_structs import Entity
 from schema_parser.schema_structs import ModelStructProperty
 from schema_parser.schema_structs import ModelStruct
 from schema_parser.schema_structs import Model
-from schema_parser.create_dto_entities import createDTOEntities
+from schema_parser.create_dto_classes import createDTOClasses
 from schema_parser.create_entities import createEntities
 
 import glob

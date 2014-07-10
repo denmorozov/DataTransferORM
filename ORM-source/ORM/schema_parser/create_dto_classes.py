@@ -1,19 +1,27 @@
 import os
+from helpers import upperCaseForFirstSymbol
 
-def createHeaderDTOEntity(entity, directory):
-    fileName = entity.name + 'DTO.h'
+def createHeaderDTOEntity(classDef, directory):
+    fileName = classDef.name + 'DTO.h'
     file = open(os.path.join(directory, fileName), 'w+')
     file.write('#import <CoreData/CoreData.h>')
     file.write('\n')
-    for r in entity.relationships:
-        file.write('@class {en}DTO;'.format(en = r.entity.name))
+    for property in classDef.properties:
+        if property.relationship == None:
+            continue
+        subDTOName = classDef.name + upperCaseForFirstSymbol(property.name)
+        file.write('@class {sn}DTO;'.format(sn = subDTOName))
         file.write('\n')
     file.write('\n')
-    file.write('@interface {className}DTO : NSObject'.format(className = entity.name))
+    file.write('@interface {cn}DTO : NSObject'.format(cn = classDef.name))
     file.write('\n')
     
     file.write('@property (nonatomic, strong) NSManagedObjectID *objectID;\n')
-    for field in entity.fields:
+    
+    for property in classDef.properties:
+        if property.relationship != None:
+            continue
+        field = classDef.entity.fieldByName(property.name)
         type = None
         mutateAttr = None
         if field.type == 'string':
@@ -46,11 +54,18 @@ def createHeaderDTOEntity(entity, directory):
         file.write('@property (nonatomic, {ma}) {t} {p}{n};'.format(ma = mutateAttr, t = type, p = pointer, n = field.name))
         file.write('\n')
     
-    for r in entity.relationships:
-        if r.type == 'toMany':
-            file.write('@property (nonatomic, strong) NSArray *{name};'.format(name = r.name))
-        if r.type == 'toOne':
-            file.write('@property (nonatomic, strong) {e}DTO *{n};'.format(e = r.entity.name, n = r.name))
+    for property in classDef.properties:
+        if property.relationship != None and property.relationship.type == 'toMany':
+            subDTOName = classDef.name + upperCaseForFirstSymbol(property.name)
+            propertyName = property.name
+            PropertyName = upperCaseForFirstSymbol(propertyName)
+            file.write('@property (nonatomic, strong) NSArray *{name};'.format(name = propertyName))
+            file.write('\n')
+            file.write('- (void)add{pn}Object:({sn}DTO *)object;'.format(pn = PropertyName, sn = subDTOName))
+        if property.relationship != None and property.relationship.type == 'toOne':
+            subDTOName = classDef.name + upperCaseForFirstSymbol(property.name)
+            propertyName = property.name
+            file.write('@property (nonatomic, strong) {sn}DTO *{n};'.format(sn = subDTOName, n = propertyName))
         file.write('\n')
     
     file.write('@end')
@@ -73,9 +88,10 @@ def createSourceFileDTOEntity(entity, directory):
     
     file.close()
 
-def createDTOEntities(entities, directory):
-    if not os.path.exists(directory):
-        os.makedirs(directory)
-    for entity in entities:
-        createHeaderDTOEntity(entity, directory)
-        createSourceFileDTOEntity(entity, directory)
+def createDTOClasses(models, directory):
+    for model in models:
+        for struct in model.structs:
+            classesDefs = struct.classesDefs()
+            for d in classesDefs:
+                createHeaderDTOEntity(d, directory)
+                #createSourceFileDTOEntity(entity, directory)
