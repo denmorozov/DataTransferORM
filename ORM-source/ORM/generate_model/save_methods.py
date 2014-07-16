@@ -81,7 +81,7 @@ def generateSaveDTOMethodsNames(model):
     for struct in model.structs:
         entity = struct.entity.name
         var = struct.entity.name.lower()
-        methodsNames.append('- (void)save{e}DTO:({e}DTO *){v}DTO;'.format(e = entity, v = var))
+        methodsNames.append('- (void)save{mn}{e}DTO:({mn}{e}DTO *){v}DTO;'.format(e = entity, v = var, mn = model.name))
     return methodsNames
 
 def generateSaveDTOMethod(model):
@@ -106,7 +106,7 @@ def generateSaveDTOMethod(model):
         exceptionBlock = ['NSLog(@"%@", e);']
         finallyBlock = []
         
-        methodName = '- (void)save{e}DTO:({e}DTO *){v}DTO'.format(e = entity, v = var)
+        methodName = '- (void)save{mn}{e}DTO:({mn}{e}DTO *){v}DTO'.format(e = entity, v = var, mn = model.name)
         
         methods.append(methodName + '\n' + methodTemplate([], tryBlock, exceptionBlock, finallyBlock, []))
     return '\n'.join(methods)

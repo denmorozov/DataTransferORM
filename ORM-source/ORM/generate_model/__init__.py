@@ -105,8 +105,8 @@ def generateHeaderFile(model):
     imports.append('Condition.h')
     for struct in model.structs:
         imports.append('{mn}{en}ComporatorContext.h'.format(mn = model.name, en = struct.entity.name))
-    for entityName in model.entities():
-        imports.append(entityName + 'DTO.h')
+    for struct in model.structs:
+        imports.append(model.name + struct.entity.name + 'DTO.h')
     
     return headerFileTemplate(imports, typedefs, model.name, methods)
 
