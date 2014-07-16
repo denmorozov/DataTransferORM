@@ -123,6 +123,7 @@ def generateSourceFile(model):
     imports.append('DataManager.h')
     for entityName in model.entities():
         imports.append(entityName + '.h')
+    imports.append('ModelContext.h')
     
     return sourceFileTemplate(imports, [], model.name, methods)
 

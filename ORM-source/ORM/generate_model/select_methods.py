@@ -16,7 +16,7 @@ def generateConvertToDTOMethod(model):
             lines.append('\t\t' + 'return [ctx objectWithObjectID:{ev}.objectID withClass:{n}DTO.class];'.format(n = DTOName, ev = entityVar))
             lines.append('\t' + '}')
             lines.append('\t' + '{n}DTO *dto = [{n}DTO new];'.format(n = DTOName))
-            lines.append('\t' + '[ctx addObject:dto];')
+            lines.append('\t' + '[ctx addObject:dto withObjectID:{ev}.objectID];'.format(ev = entityVar))
             for property in d.properties:
                 subDTOName = d.name + upperCaseForFirstSymbol(property.name)
                 subEntity = property.relationship.entity.name if property.relationship != None else None
