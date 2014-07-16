@@ -5,8 +5,11 @@ def createHeaderEntity(entity, directory):
     file = open(os.path.join(directory, fileName), 'w+')
     file.write('#import <CoreData/CoreData.h>')
     file.write('\n')
-    for r in entity.relationships:
-        file.write('@class {en};'.format(en = r.entity.name))
+    forwardDecEntities = set(map(lambda r: r.entity.name, entity.relationships))
+    for name in forwardDecEntities:
+    	if name == entity.name:
+    	    continue
+        file.write('@class {en};'.format(en = name))
         file.write('\n')
     file.write('\n')
     file.write('@interface {className} : NSManagedObject'.format(className = entity.name))
