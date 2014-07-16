@@ -37,7 +37,12 @@ def main(argv):
         
         generate_data_manager.create_data_manager(entities, filesPath)
         
-        schema_parser.createDTOEntities(entities, os.path.join(filesPath , 'DTO'))
+        if not os.path.exists(os.path.join(filesPath , 'DTO')):
+            os.makedirs(os.path.join(filesPath , 'DTO'))
+        schema_parser.createDTOClasses(models, os.path.join(filesPath , 'DTO'))
+
+        if not os.path.exists(os.path.join(filesPath , 'entities')):
+            os.makedirs(os.path.join(filesPath , 'entities'))        
         schema_parser.createEntities(entities, os.path.join(filesPath , 'entities'))
         
         for model in models:
