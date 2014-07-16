@@ -49,7 +49,7 @@ def createHeaderDTOEntity(classDef, directory):
             type = 'int64_t'
             mutateAttr = 'assign'
         if type == None:
-            print('Bad type "{t}"', t = field.type)
+            print('Bad type "{t}"'.format(t = field.type))
         pointer = '*' if (mutateAttr == 'strong') else ''
         file.write('@property (nonatomic, {ma}) {t} {p}{n};'.format(ma = mutateAttr, t = type, p = pointer, n = field.name))
         file.write('\n')
