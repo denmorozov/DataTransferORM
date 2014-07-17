@@ -1,0 +1,737 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CB13E3381977EF8100BA975C /* Condition.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E2EE1977EF8100BA975C /* Condition.m */; };
+		CB13E3391977EF8100BA975C /* ConditionAnd.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E2F01977EF8100BA975C /* ConditionAnd.m */; };
+		CB13E33A1977EF8100BA975C /* ConditionBoolean.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E2F21977EF8100BA975C /* ConditionBoolean.m */; };
+		CB13E33B1977EF8100BA975C /* ConditionDate.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E2F41977EF8100BA975C /* ConditionDate.m */; };
+		CB13E33C1977EF8100BA975C /* ConditionDouble.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E2F61977EF8100BA975C /* ConditionDouble.m */; };
+		CB13E33D1977EF8100BA975C /* ConditionFloat.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E2F81977EF8100BA975C /* ConditionFloat.m */; };
+		CB13E33E1977EF8100BA975C /* ConditionInteger32.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E2FA1977EF8100BA975C /* ConditionInteger32.m */; };
+		CB13E33F1977EF8100BA975C /* ConditionInteger64.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E2FC1977EF8100BA975C /* ConditionInteger64.m */; };
+		CB13E3401977EF8100BA975C /* ConditionOr.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E2FE1977EF8100BA975C /* ConditionOr.m */; };
+		CB13E3411977EF8100BA975C /* ConditionString.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E3001977EF8100BA975C /* ConditionString.m */; };
+		CB13E3421977EF8100BA975C /* FieldBoolean.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E3021977EF8100BA975C /* FieldBoolean.m */; };
+		CB13E3431977EF8100BA975C /* FieldDate.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E3041977EF8100BA975C /* FieldDate.m */; };
+		CB13E3441977EF8100BA975C /* FieldDouble.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E3061977EF8100BA975C /* FieldDouble.m */; };
+		CB13E3451977EF8100BA975C /* FieldFloat.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E3081977EF8100BA975C /* FieldFloat.m */; };
+		CB13E3461977EF8100BA975C /* FieldInteger32.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E30A1977EF8100BA975C /* FieldInteger32.m */; };
+		CB13E3471977EF8100BA975C /* FieldInteger64.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E30C1977EF8100BA975C /* FieldInteger64.m */; };
+		CB13E3481977EF8100BA975C /* FieldString.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E30E1977EF8100BA975C /* FieldString.m */; };
+		CB13E3491977EF8100BA975C /* ModelContext.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E3101977EF8100BA975C /* ModelContext.m */; };
+		CB13E34A1977EF8100BA975C /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E3121977EF8100BA975C /* DataManager.m */; };
+		CB13E34B1977EF8100BA975C /* CategoryModelNutritionCategoryDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E3151977EF8100BA975C /* CategoryModelNutritionCategoryDTO.m */; };
+		CB13E34C1977EF8100BA975C /* CategoryModelNutritionCategoryMealsDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E3171977EF8100BA975C /* CategoryModelNutritionCategoryMealsDTO.m */; };
+		CB13E34D1977EF8100BA975C /* NutritionModelFoodDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E3191977EF8100BA975C /* NutritionModelFoodDTO.m */; };
+		CB13E34E1977EF8100BA975C /* NutritionModelMealCategoryDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E31B1977EF8100BA975C /* NutritionModelMealCategoryDTO.m */; };
+		CB13E34F1977EF8100BA975C /* NutritionModelMealCategoryMealsDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E31D1977EF8100BA975C /* NutritionModelMealCategoryMealsDTO.m */; };
+		CB13E3501977EF8100BA975C /* NutritionModelMealDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E31F1977EF8100BA975C /* NutritionModelMealDTO.m */; };
+		CB13E3511977EF8100BA975C /* NutritionModelMealFoodsDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E3211977EF8100BA975C /* NutritionModelMealFoodsDTO.m */; };
+		CB13E3521977EF8100BA975C /* Food.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E3241977EF8100BA975C /* Food.m */; };
+		CB13E3531977EF8100BA975C /* Meal.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E3261977EF8100BA975C /* Meal.m */; };
+		CB13E3541977EF8100BA975C /* MealCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E3281977EF8100BA975C /* MealCategory.m */; };
+		CB13E3551977EF8100BA975C /* NutritionCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E32A1977EF8100BA975C /* NutritionCategory.m */; };
+		CB13E3561977EF8100BA975C /* CategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E32D1977EF8100BA975C /* CategoryModel.m */; };
+		CB13E3571977EF8100BA975C /* CategoryModelNutritionCategoryComporatorContext.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E32F1977EF8100BA975C /* CategoryModelNutritionCategoryComporatorContext.m */; };
+		CB13E3581977EF8100BA975C /* NutritionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E3311977EF8100BA975C /* NutritionModel.m */; };
+		CB13E3591977EF8100BA975C /* NutritionModelFoodComporatorContext.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E3331977EF8100BA975C /* NutritionModelFoodComporatorContext.m */; };
+		CB13E35A1977EF8100BA975C /* NutritionModelMealCategoryComporatorContext.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E3351977EF8100BA975C /* NutritionModelMealCategoryComporatorContext.m */; };
+		CB13E35B1977EF8100BA975C /* NutritionModelMealComporatorContext.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E3371977EF8100BA975C /* NutritionModelMealComporatorContext.m */; };
+		CBBCDE511976886B00108712 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBBCDE501976886B00108712 /* Foundation.framework */; };
+		CBBCDE531976886B00108712 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBBCDE521976886B00108712 /* CoreGraphics.framework */; };
+		CBBCDE551976886B00108712 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBBCDE541976886B00108712 /* UIKit.framework */; };
+		CBBCDE5B1976886B00108712 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CBBCDE591976886B00108712 /* InfoPlist.strings */; };
+		CBBCDE5D1976886B00108712 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBCDE5C1976886B00108712 /* main.m */; };
+		CBBCDE611976886B00108712 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBCDE601976886B00108712 /* AppDelegate.m */; };
+		CBBCDE641976886B00108712 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBBCDE621976886B00108712 /* Main.storyboard */; };
+		CBBCDE671976886B00108712 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBCDE661976886B00108712 /* ViewController.m */; };
+		CBBCDE691976886B00108712 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBBCDE681976886B00108712 /* Images.xcassets */; };
+		CBBCDE701976886B00108712 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBBCDE6F1976886B00108712 /* XCTest.framework */; };
+		CBBCDE711976886B00108712 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBBCDE501976886B00108712 /* Foundation.framework */; };
+		CBBCDE721976886B00108712 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBBCDE541976886B00108712 /* UIKit.framework */; };
+		CBBCDE7A1976886B00108712 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CBBCDE781976886B00108712 /* InfoPlist.strings */; };
+		CBBCDE7C1976886B00108712 /* RecipesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBCDE7B1976886B00108712 /* RecipesTests.m */; };
+		CBBCDE861976889000108712 /* schema.xml in Resources */ = {isa = PBXBuildFile; fileRef = CBBCDE851976889000108712 /* schema.xml */; };
+		CBBCDF4919769F0600108712 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBBCDF4819769F0600108712 /* CoreData.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CBBCDE731976886B00108712 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CBBCDE451976886B00108712 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CBBCDE4C1976886B00108712;
+			remoteInfo = Recipes;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CB13E2ED1977EF8100BA975C /* Condition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Condition.h; sourceTree = "<group>"; };
+		CB13E2EE1977EF8100BA975C /* Condition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Condition.m; sourceTree = "<group>"; };
+		CB13E2EF1977EF8100BA975C /* ConditionAnd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConditionAnd.h; sourceTree = "<group>"; };
+		CB13E2F01977EF8100BA975C /* ConditionAnd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConditionAnd.m; sourceTree = "<group>"; };
+		CB13E2F11977EF8100BA975C /* ConditionBoolean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConditionBoolean.h; sourceTree = "<group>"; };
+		CB13E2F21977EF8100BA975C /* ConditionBoolean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConditionBoolean.m; sourceTree = "<group>"; };
+		CB13E2F31977EF8100BA975C /* ConditionDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConditionDate.h; sourceTree = "<group>"; };
+		CB13E2F41977EF8100BA975C /* ConditionDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConditionDate.m; sourceTree = "<group>"; };
+		CB13E2F51977EF8100BA975C /* ConditionDouble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConditionDouble.h; sourceTree = "<group>"; };
+		CB13E2F61977EF8100BA975C /* ConditionDouble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConditionDouble.m; sourceTree = "<group>"; };
+		CB13E2F71977EF8100BA975C /* ConditionFloat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConditionFloat.h; sourceTree = "<group>"; };
+		CB13E2F81977EF8100BA975C /* ConditionFloat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConditionFloat.m; sourceTree = "<group>"; };
+		CB13E2F91977EF8100BA975C /* ConditionInteger32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConditionInteger32.h; sourceTree = "<group>"; };
+		CB13E2FA1977EF8100BA975C /* ConditionInteger32.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConditionInteger32.m; sourceTree = "<group>"; };
+		CB13E2FB1977EF8100BA975C /* ConditionInteger64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConditionInteger64.h; sourceTree = "<group>"; };
+		CB13E2FC1977EF8100BA975C /* ConditionInteger64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConditionInteger64.m; sourceTree = "<group>"; };
+		CB13E2FD1977EF8100BA975C /* ConditionOr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConditionOr.h; sourceTree = "<group>"; };
+		CB13E2FE1977EF8100BA975C /* ConditionOr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConditionOr.m; sourceTree = "<group>"; };
+		CB13E2FF1977EF8100BA975C /* ConditionString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConditionString.h; sourceTree = "<group>"; };
+		CB13E3001977EF8100BA975C /* ConditionString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConditionString.m; sourceTree = "<group>"; };
+		CB13E3011977EF8100BA975C /* FieldBoolean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldBoolean.h; sourceTree = "<group>"; };
+		CB13E3021977EF8100BA975C /* FieldBoolean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FieldBoolean.m; sourceTree = "<group>"; };
+		CB13E3031977EF8100BA975C /* FieldDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldDate.h; sourceTree = "<group>"; };
+		CB13E3041977EF8100BA975C /* FieldDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FieldDate.m; sourceTree = "<group>"; };
+		CB13E3051977EF8100BA975C /* FieldDouble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldDouble.h; sourceTree = "<group>"; };
+		CB13E3061977EF8100BA975C /* FieldDouble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FieldDouble.m; sourceTree = "<group>"; };
+		CB13E3071977EF8100BA975C /* FieldFloat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldFloat.h; sourceTree = "<group>"; };
+		CB13E3081977EF8100BA975C /* FieldFloat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FieldFloat.m; sourceTree = "<group>"; };
+		CB13E3091977EF8100BA975C /* FieldInteger32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldInteger32.h; sourceTree = "<group>"; };
+		CB13E30A1977EF8100BA975C /* FieldInteger32.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FieldInteger32.m; sourceTree = "<group>"; };
+		CB13E30B1977EF8100BA975C /* FieldInteger64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldInteger64.h; sourceTree = "<group>"; };
+		CB13E30C1977EF8100BA975C /* FieldInteger64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FieldInteger64.m; sourceTree = "<group>"; };
+		CB13E30D1977EF8100BA975C /* FieldString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldString.h; sourceTree = "<group>"; };
+		CB13E30E1977EF8100BA975C /* FieldString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FieldString.m; sourceTree = "<group>"; };
+		CB13E30F1977EF8100BA975C /* ModelContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelContext.h; sourceTree = "<group>"; };
+		CB13E3101977EF8100BA975C /* ModelContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelContext.m; sourceTree = "<group>"; };
+		CB13E3111977EF8100BA975C /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
+		CB13E3121977EF8100BA975C /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
+		CB13E3141977EF8100BA975C /* CategoryModelNutritionCategoryDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryModelNutritionCategoryDTO.h; sourceTree = "<group>"; };
+		CB13E3151977EF8100BA975C /* CategoryModelNutritionCategoryDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryModelNutritionCategoryDTO.m; sourceTree = "<group>"; };
+		CB13E3161977EF8100BA975C /* CategoryModelNutritionCategoryMealsDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryModelNutritionCategoryMealsDTO.h; sourceTree = "<group>"; };
+		CB13E3171977EF8100BA975C /* CategoryModelNutritionCategoryMealsDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryModelNutritionCategoryMealsDTO.m; sourceTree = "<group>"; };
+		CB13E3181977EF8100BA975C /* NutritionModelFoodDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NutritionModelFoodDTO.h; sourceTree = "<group>"; };
+		CB13E3191977EF8100BA975C /* NutritionModelFoodDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NutritionModelFoodDTO.m; sourceTree = "<group>"; };
+		CB13E31A1977EF8100BA975C /* NutritionModelMealCategoryDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NutritionModelMealCategoryDTO.h; sourceTree = "<group>"; };
+		CB13E31B1977EF8100BA975C /* NutritionModelMealCategoryDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NutritionModelMealCategoryDTO.m; sourceTree = "<group>"; };
+		CB13E31C1977EF8100BA975C /* NutritionModelMealCategoryMealsDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NutritionModelMealCategoryMealsDTO.h; sourceTree = "<group>"; };
+		CB13E31D1977EF8100BA975C /* NutritionModelMealCategoryMealsDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NutritionModelMealCategoryMealsDTO.m; sourceTree = "<group>"; };
+		CB13E31E1977EF8100BA975C /* NutritionModelMealDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NutritionModelMealDTO.h; sourceTree = "<group>"; };
+		CB13E31F1977EF8100BA975C /* NutritionModelMealDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NutritionModelMealDTO.m; sourceTree = "<group>"; };
+		CB13E3201977EF8100BA975C /* NutritionModelMealFoodsDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NutritionModelMealFoodsDTO.h; sourceTree = "<group>"; };
+		CB13E3211977EF8100BA975C /* NutritionModelMealFoodsDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NutritionModelMealFoodsDTO.m; sourceTree = "<group>"; };
+		CB13E3231977EF8100BA975C /* Food.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Food.h; sourceTree = "<group>"; };
+		CB13E3241977EF8100BA975C /* Food.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Food.m; sourceTree = "<group>"; };
+		CB13E3251977EF8100BA975C /* Meal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Meal.h; sourceTree = "<group>"; };
+		CB13E3261977EF8100BA975C /* Meal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Meal.m; sourceTree = "<group>"; };
+		CB13E3271977EF8100BA975C /* MealCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MealCategory.h; sourceTree = "<group>"; };
+		CB13E3281977EF8100BA975C /* MealCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MealCategory.m; sourceTree = "<group>"; };
+		CB13E3291977EF8100BA975C /* NutritionCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NutritionCategory.h; sourceTree = "<group>"; };
+		CB13E32A1977EF8100BA975C /* NutritionCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NutritionCategory.m; sourceTree = "<group>"; };
+		CB13E32C1977EF8100BA975C /* CategoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryModel.h; sourceTree = "<group>"; };
+		CB13E32D1977EF8100BA975C /* CategoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryModel.m; sourceTree = "<group>"; };
+		CB13E32E1977EF8100BA975C /* CategoryModelNutritionCategoryComporatorContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryModelNutritionCategoryComporatorContext.h; sourceTree = "<group>"; };
+		CB13E32F1977EF8100BA975C /* CategoryModelNutritionCategoryComporatorContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryModelNutritionCategoryComporatorContext.m; sourceTree = "<group>"; };
+		CB13E3301977EF8100BA975C /* NutritionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NutritionModel.h; sourceTree = "<group>"; };
+		CB13E3311977EF8100BA975C /* NutritionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NutritionModel.m; sourceTree = "<group>"; };
+		CB13E3321977EF8100BA975C /* NutritionModelFoodComporatorContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NutritionModelFoodComporatorContext.h; sourceTree = "<group>"; };
+		CB13E3331977EF8100BA975C /* NutritionModelFoodComporatorContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NutritionModelFoodComporatorContext.m; sourceTree = "<group>"; };
+		CB13E3341977EF8100BA975C /* NutritionModelMealCategoryComporatorContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NutritionModelMealCategoryComporatorContext.h; sourceTree = "<group>"; };
+		CB13E3351977EF8100BA975C /* NutritionModelMealCategoryComporatorContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NutritionModelMealCategoryComporatorContext.m; sourceTree = "<group>"; };
+		CB13E3361977EF8100BA975C /* NutritionModelMealComporatorContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NutritionModelMealComporatorContext.h; sourceTree = "<group>"; };
+		CB13E3371977EF8100BA975C /* NutritionModelMealComporatorContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NutritionModelMealComporatorContext.m; sourceTree = "<group>"; };
+		CBBCDE4D1976886B00108712 /* Recipes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recipes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBBCDE501976886B00108712 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CBBCDE521976886B00108712 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CBBCDE541976886B00108712 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		CBBCDE581976886B00108712 /* Recipes-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Recipes-Info.plist"; sourceTree = "<group>"; };
+		CBBCDE5A1976886B00108712 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CBBCDE5C1976886B00108712 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CBBCDE5E1976886B00108712 /* Recipes-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Recipes-Prefix.pch"; sourceTree = "<group>"; };
+		CBBCDE5F1976886B00108712 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		CBBCDE601976886B00108712 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CBBCDE631976886B00108712 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CBBCDE651976886B00108712 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		CBBCDE661976886B00108712 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		CBBCDE681976886B00108712 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		CBBCDE6E1976886B00108712 /* RecipesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBBCDE6F1976886B00108712 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		CBBCDE771976886B00108712 /* RecipesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RecipesTests-Info.plist"; sourceTree = "<group>"; };
+		CBBCDE791976886B00108712 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CBBCDE7B1976886B00108712 /* RecipesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecipesTests.m; sourceTree = "<group>"; };
+		CBBCDE851976889000108712 /* schema.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = schema.xml; sourceTree = "<group>"; };
+		CBBCDF4819769F0600108712 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CBBCDE4A1976886B00108712 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBBCDF4919769F0600108712 /* CoreData.framework in Frameworks */,
+				CBBCDE531976886B00108712 /* CoreGraphics.framework in Frameworks */,
+				CBBCDE551976886B00108712 /* UIKit.framework in Frameworks */,
+				CBBCDE511976886B00108712 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBBCDE6B1976886B00108712 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBBCDE701976886B00108712 /* XCTest.framework in Frameworks */,
+				CBBCDE721976886B00108712 /* UIKit.framework in Frameworks */,
+				CBBCDE711976886B00108712 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CB13E2EC1977EF8100BA975C /* classes */ = {
+			isa = PBXGroup;
+			children = (
+				CB13E2ED1977EF8100BA975C /* Condition.h */,
+				CB13E2EE1977EF8100BA975C /* Condition.m */,
+				CB13E2EF1977EF8100BA975C /* ConditionAnd.h */,
+				CB13E2F01977EF8100BA975C /* ConditionAnd.m */,
+				CB13E2F11977EF8100BA975C /* ConditionBoolean.h */,
+				CB13E2F21977EF8100BA975C /* ConditionBoolean.m */,
+				CB13E2F31977EF8100BA975C /* ConditionDate.h */,
+				CB13E2F41977EF8100BA975C /* ConditionDate.m */,
+				CB13E2F51977EF8100BA975C /* ConditionDouble.h */,
+				CB13E2F61977EF8100BA975C /* ConditionDouble.m */,
+				CB13E2F71977EF8100BA975C /* ConditionFloat.h */,
+				CB13E2F81977EF8100BA975C /* ConditionFloat.m */,
+				CB13E2F91977EF8100BA975C /* ConditionInteger32.h */,
+				CB13E2FA1977EF8100BA975C /* ConditionInteger32.m */,
+				CB13E2FB1977EF8100BA975C /* ConditionInteger64.h */,
+				CB13E2FC1977EF8100BA975C /* ConditionInteger64.m */,
+				CB13E2FD1977EF8100BA975C /* ConditionOr.h */,
+				CB13E2FE1977EF8100BA975C /* ConditionOr.m */,
+				CB13E2FF1977EF8100BA975C /* ConditionString.h */,
+				CB13E3001977EF8100BA975C /* ConditionString.m */,
+				CB13E3011977EF8100BA975C /* FieldBoolean.h */,
+				CB13E3021977EF8100BA975C /* FieldBoolean.m */,
+				CB13E3031977EF8100BA975C /* FieldDate.h */,
+				CB13E3041977EF8100BA975C /* FieldDate.m */,
+				CB13E3051977EF8100BA975C /* FieldDouble.h */,
+				CB13E3061977EF8100BA975C /* FieldDouble.m */,
+				CB13E3071977EF8100BA975C /* FieldFloat.h */,
+				CB13E3081977EF8100BA975C /* FieldFloat.m */,
+				CB13E3091977EF8100BA975C /* FieldInteger32.h */,
+				CB13E30A1977EF8100BA975C /* FieldInteger32.m */,
+				CB13E30B1977EF8100BA975C /* FieldInteger64.h */,
+				CB13E30C1977EF8100BA975C /* FieldInteger64.m */,
+				CB13E30D1977EF8100BA975C /* FieldString.h */,
+				CB13E30E1977EF8100BA975C /* FieldString.m */,
+				CB13E30F1977EF8100BA975C /* ModelContext.h */,
+				CB13E3101977EF8100BA975C /* ModelContext.m */,
+			);
+			path = classes;
+			sourceTree = "<group>";
+		};
+		CB13E3131977EF8100BA975C /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				CB13E3141977EF8100BA975C /* CategoryModelNutritionCategoryDTO.h */,
+				CB13E3151977EF8100BA975C /* CategoryModelNutritionCategoryDTO.m */,
+				CB13E3161977EF8100BA975C /* CategoryModelNutritionCategoryMealsDTO.h */,
+				CB13E3171977EF8100BA975C /* CategoryModelNutritionCategoryMealsDTO.m */,
+				CB13E3181977EF8100BA975C /* NutritionModelFoodDTO.h */,
+				CB13E3191977EF8100BA975C /* NutritionModelFoodDTO.m */,
+				CB13E31A1977EF8100BA975C /* NutritionModelMealCategoryDTO.h */,
+				CB13E31B1977EF8100BA975C /* NutritionModelMealCategoryDTO.m */,
+				CB13E31C1977EF8100BA975C /* NutritionModelMealCategoryMealsDTO.h */,
+				CB13E31D1977EF8100BA975C /* NutritionModelMealCategoryMealsDTO.m */,
+				CB13E31E1977EF8100BA975C /* NutritionModelMealDTO.h */,
+				CB13E31F1977EF8100BA975C /* NutritionModelMealDTO.m */,
+				CB13E3201977EF8100BA975C /* NutritionModelMealFoodsDTO.h */,
+				CB13E3211977EF8100BA975C /* NutritionModelMealFoodsDTO.m */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		CB13E3221977EF8100BA975C /* entities */ = {
+			isa = PBXGroup;
+			children = (
+				CB13E3231977EF8100BA975C /* Food.h */,
+				CB13E3241977EF8100BA975C /* Food.m */,
+				CB13E3251977EF8100BA975C /* Meal.h */,
+				CB13E3261977EF8100BA975C /* Meal.m */,
+				CB13E3271977EF8100BA975C /* MealCategory.h */,
+				CB13E3281977EF8100BA975C /* MealCategory.m */,
+				CB13E3291977EF8100BA975C /* NutritionCategory.h */,
+				CB13E32A1977EF8100BA975C /* NutritionCategory.m */,
+			);
+			path = entities;
+			sourceTree = "<group>";
+		};
+		CB13E32B1977EF8100BA975C /* models */ = {
+			isa = PBXGroup;
+			children = (
+				CB13E32C1977EF8100BA975C /* CategoryModel.h */,
+				CB13E32D1977EF8100BA975C /* CategoryModel.m */,
+				CB13E32E1977EF8100BA975C /* CategoryModelNutritionCategoryComporatorContext.h */,
+				CB13E32F1977EF8100BA975C /* CategoryModelNutritionCategoryComporatorContext.m */,
+				CB13E3301977EF8100BA975C /* NutritionModel.h */,
+				CB13E3311977EF8100BA975C /* NutritionModel.m */,
+				CB13E3321977EF8100BA975C /* NutritionModelFoodComporatorContext.h */,
+				CB13E3331977EF8100BA975C /* NutritionModelFoodComporatorContext.m */,
+				CB13E3341977EF8100BA975C /* NutritionModelMealCategoryComporatorContext.h */,
+				CB13E3351977EF8100BA975C /* NutritionModelMealCategoryComporatorContext.m */,
+				CB13E3361977EF8100BA975C /* NutritionModelMealComporatorContext.h */,
+				CB13E3371977EF8100BA975C /* NutritionModelMealComporatorContext.m */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		CBBCDE441976886B00108712 = {
+			isa = PBXGroup;
+			children = (
+				CBBCDE561976886B00108712 /* Recipes */,
+				CBBCDE751976886B00108712 /* RecipesTests */,
+				CBBCDE4F1976886B00108712 /* Frameworks */,
+				CBBCDE4E1976886B00108712 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CBBCDE4E1976886B00108712 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CBBCDE4D1976886B00108712 /* Recipes.app */,
+				CBBCDE6E1976886B00108712 /* RecipesTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CBBCDE4F1976886B00108712 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CBBCDF4819769F0600108712 /* CoreData.framework */,
+				CBBCDE501976886B00108712 /* Foundation.framework */,
+				CBBCDE521976886B00108712 /* CoreGraphics.framework */,
+				CBBCDE541976886B00108712 /* UIKit.framework */,
+				CBBCDE6F1976886B00108712 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CBBCDE561976886B00108712 /* Recipes */ = {
+			isa = PBXGroup;
+			children = (
+				CBBCDEE619768EE000108712 /* ORM */,
+				CBBCDE5F1976886B00108712 /* AppDelegate.h */,
+				CBBCDE601976886B00108712 /* AppDelegate.m */,
+				CBBCDE621976886B00108712 /* Main.storyboard */,
+				CBBCDE651976886B00108712 /* ViewController.h */,
+				CBBCDE661976886B00108712 /* ViewController.m */,
+				CBBCDE681976886B00108712 /* Images.xcassets */,
+				CBBCDE571976886B00108712 /* Supporting Files */,
+				CBBCDE851976889000108712 /* schema.xml */,
+			);
+			path = Recipes;
+			sourceTree = "<group>";
+		};
+		CBBCDE571976886B00108712 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CBBCDE581976886B00108712 /* Recipes-Info.plist */,
+				CBBCDE591976886B00108712 /* InfoPlist.strings */,
+				CBBCDE5C1976886B00108712 /* main.m */,
+				CBBCDE5E1976886B00108712 /* Recipes-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CBBCDE751976886B00108712 /* RecipesTests */ = {
+			isa = PBXGroup;
+			children = (
+				CBBCDE7B1976886B00108712 /* RecipesTests.m */,
+				CBBCDE761976886B00108712 /* Supporting Files */,
+			);
+			path = RecipesTests;
+			sourceTree = "<group>";
+		};
+		CBBCDE761976886B00108712 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CBBCDE771976886B00108712 /* RecipesTests-Info.plist */,
+				CBBCDE781976886B00108712 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CBBCDEE619768EE000108712 /* ORM */ = {
+			isa = PBXGroup;
+			children = (
+				CB13E2EC1977EF8100BA975C /* classes */,
+				CB13E3111977EF8100BA975C /* DataManager.h */,
+				CB13E3121977EF8100BA975C /* DataManager.m */,
+				CB13E3131977EF8100BA975C /* DTO */,
+				CB13E3221977EF8100BA975C /* entities */,
+				CB13E32B1977EF8100BA975C /* models */,
+			);
+			path = ORM;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CBBCDE4C1976886B00108712 /* Recipes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CBBCDE7F1976886B00108712 /* Build configuration list for PBXNativeTarget "Recipes" */;
+			buildPhases = (
+				CBBCDE491976886B00108712 /* Sources */,
+				CBBCDE4A1976886B00108712 /* Frameworks */,
+				CBBCDE4B1976886B00108712 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Recipes;
+			productName = Recipes;
+			productReference = CBBCDE4D1976886B00108712 /* Recipes.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CBBCDE6D1976886B00108712 /* RecipesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CBBCDE821976886B00108712 /* Build configuration list for PBXNativeTarget "RecipesTests" */;
+			buildPhases = (
+				CBBCDE6A1976886B00108712 /* Sources */,
+				CBBCDE6B1976886B00108712 /* Frameworks */,
+				CBBCDE6C1976886B00108712 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CBBCDE741976886B00108712 /* PBXTargetDependency */,
+			);
+			name = RecipesTests;
+			productName = RecipesTests;
+			productReference = CBBCDE6E1976886B00108712 /* RecipesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CBBCDE451976886B00108712 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Technologika;
+				TargetAttributes = {
+					CBBCDE6D1976886B00108712 = {
+						TestTargetID = CBBCDE4C1976886B00108712;
+					};
+				};
+			};
+			buildConfigurationList = CBBCDE481976886B00108712 /* Build configuration list for PBXProject "Recipes" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CBBCDE441976886B00108712;
+			productRefGroup = CBBCDE4E1976886B00108712 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CBBCDE4C1976886B00108712 /* Recipes */,
+				CBBCDE6D1976886B00108712 /* RecipesTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CBBCDE4B1976886B00108712 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBBCDE691976886B00108712 /* Images.xcassets in Resources */,
+				CBBCDE5B1976886B00108712 /* InfoPlist.strings in Resources */,
+				CBBCDE861976889000108712 /* schema.xml in Resources */,
+				CBBCDE641976886B00108712 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBBCDE6C1976886B00108712 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBBCDE7A1976886B00108712 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CBBCDE491976886B00108712 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB13E33A1977EF8100BA975C /* ConditionBoolean.m in Sources */,
+				CB13E35A1977EF8100BA975C /* NutritionModelMealCategoryComporatorContext.m in Sources */,
+				CB13E33B1977EF8100BA975C /* ConditionDate.m in Sources */,
+				CB13E34F1977EF8100BA975C /* NutritionModelMealCategoryMealsDTO.m in Sources */,
+				CBBCDE671976886B00108712 /* ViewController.m in Sources */,
+				CB13E3481977EF8100BA975C /* FieldString.m in Sources */,
+				CB13E3421977EF8100BA975C /* FieldBoolean.m in Sources */,
+				CB13E3541977EF8100BA975C /* MealCategory.m in Sources */,
+				CB13E33E1977EF8100BA975C /* ConditionInteger32.m in Sources */,
+				CB13E3401977EF8100BA975C /* ConditionOr.m in Sources */,
+				CB13E3561977EF8100BA975C /* CategoryModel.m in Sources */,
+				CB13E3471977EF8100BA975C /* FieldInteger64.m in Sources */,
+				CB13E3391977EF8100BA975C /* ConditionAnd.m in Sources */,
+				CB13E34D1977EF8100BA975C /* NutritionModelFoodDTO.m in Sources */,
+				CB13E34A1977EF8100BA975C /* DataManager.m in Sources */,
+				CB13E3441977EF8100BA975C /* FieldDouble.m in Sources */,
+				CB13E3571977EF8100BA975C /* CategoryModelNutritionCategoryComporatorContext.m in Sources */,
+				CB13E3581977EF8100BA975C /* NutritionModel.m in Sources */,
+				CB13E3511977EF8100BA975C /* NutritionModelMealFoodsDTO.m in Sources */,
+				CB13E3501977EF8100BA975C /* NutritionModelMealDTO.m in Sources */,
+				CB13E3521977EF8100BA975C /* Food.m in Sources */,
+				CB13E3381977EF8100BA975C /* Condition.m in Sources */,
+				CB13E3591977EF8100BA975C /* NutritionModelFoodComporatorContext.m in Sources */,
+				CB13E3551977EF8100BA975C /* NutritionCategory.m in Sources */,
+				CB13E3451977EF8100BA975C /* FieldFloat.m in Sources */,
+				CB13E34C1977EF8100BA975C /* CategoryModelNutritionCategoryMealsDTO.m in Sources */,
+				CB13E3461977EF8100BA975C /* FieldInteger32.m in Sources */,
+				CB13E35B1977EF8100BA975C /* NutritionModelMealComporatorContext.m in Sources */,
+				CB13E3431977EF8100BA975C /* FieldDate.m in Sources */,
+				CB13E3531977EF8100BA975C /* Meal.m in Sources */,
+				CBBCDE611976886B00108712 /* AppDelegate.m in Sources */,
+				CB13E34B1977EF8100BA975C /* CategoryModelNutritionCategoryDTO.m in Sources */,
+				CB13E33C1977EF8100BA975C /* ConditionDouble.m in Sources */,
+				CBBCDE5D1976886B00108712 /* main.m in Sources */,
+				CB13E33D1977EF8100BA975C /* ConditionFloat.m in Sources */,
+				CB13E33F1977EF8100BA975C /* ConditionInteger64.m in Sources */,
+				CB13E3491977EF8100BA975C /* ModelContext.m in Sources */,
+				CB13E3411977EF8100BA975C /* ConditionString.m in Sources */,
+				CB13E34E1977EF8100BA975C /* NutritionModelMealCategoryDTO.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBBCDE6A1976886B00108712 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBBCDE7C1976886B00108712 /* RecipesTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CBBCDE741976886B00108712 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CBBCDE4C1976886B00108712 /* Recipes */;
+			targetProxy = CBBCDE731976886B00108712 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CBBCDE591976886B00108712 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CBBCDE5A1976886B00108712 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		CBBCDE621976886B00108712 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CBBCDE631976886B00108712 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CBBCDE781976886B00108712 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CBBCDE791976886B00108712 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CBBCDE7D1976886B00108712 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		CBBCDE7E1976886B00108712 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CBBCDE801976886B00108712 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Recipes/Recipes-Prefix.pch";
+				INFOPLIST_FILE = "Recipes/Recipes-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		CBBCDE811976886B00108712 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Recipes/Recipes-Prefix.pch";
+				INFOPLIST_FILE = "Recipes/Recipes-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		CBBCDE831976886B00108712 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Recipes.app/Recipes";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Recipes/Recipes-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "RecipesTests/RecipesTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		CBBCDE841976886B00108712 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Recipes.app/Recipes";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Recipes/Recipes-Prefix.pch";
+				INFOPLIST_FILE = "RecipesTests/RecipesTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CBBCDE481976886B00108712 /* Build configuration list for PBXProject "Recipes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CBBCDE7D1976886B00108712 /* Debug */,
+				CBBCDE7E1976886B00108712 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CBBCDE7F1976886B00108712 /* Build configuration list for PBXNativeTarget "Recipes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CBBCDE801976886B00108712 /* Debug */,
+				CBBCDE811976886B00108712 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CBBCDE821976886B00108712 /* Build configuration list for PBXNativeTarget "RecipesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CBBCDE831976886B00108712 /* Debug */,
+				CBBCDE841976886B00108712 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CBBCDE451976886B00108712 /* Project object */;
+}

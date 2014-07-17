@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<schema>
+	<entities>
+		<entity name="Meal">
+			<field name="name" type="string" />
+			<relationship name="foods" inverse="meals" entity="Food" type="toMany" />
+			<relationship name="category" inverse="meals" entity="NutritionCategory" type="toOne" />
+		</entity>
+		<entity name="Food">
+			<field name="name" type="string" />
+			<field name="amount" type="float" />
+			<relationship name="meals" inverse="foods" entity="Meal" type="toMany" />
+		</entity>
+		<entity name="NutritionCategory">
+			<field name="name" type="string" />
+			<relationship name="subcategories" inverse="parentcategory" entity="NutritionCategory" type="toMany" />
+			<relationship name="parentcategory" inverse="subcategories" entity="NutritionCategory" type="toOne" />
+			<relationship name="meals" inverse="category" entity="Meal" type="toMany" />
+		</entity>
+	</entities>
+	<models>
+		<model name="NutritionModel">
+			<struct entity="Meal">
+				<property name="name" />
+				<property name="foods">
+					<property name="name" />
+					<property name="amount" />
+				</property>
+			</struct>
+			<struct entity="Food">
+				<property name="name" />
+				<property name="amount" />
+			</struct>
+		</model>
+		<model name="CategoryModel">
+			<struct entity="NutritionCategory" id="NutritionModelCategoryID">
+				<property name="name" />
+				<property name="subcategories" id="NutritionModelCategoryID"/>
+				<property name="meals">
+					<property name="name" />
+				</property>
+			</struct>
+		</model>
+	</models>
+</schema>
