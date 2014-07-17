@@ -56,16 +56,33 @@
 
 - (BOOL)containsEntityObjectForDTO:(id)dto
 {
-	return YES;
+	for (NSDictionary *d in DTOs_MOs)
+	{
+		if (d[@"dto"] == dto)
+		{
+			return YES;
+		}
+	}
+	return NO;
 }
 
 - (NSManagedObject *)entityObjectForDTO:(id)dto
 {
+	for (NSDictionary *d in DTOs_MOs)
+	{
+		if (d[@"dto"] == dto)
+		{
+			return d[@"mo"];
+		}
+	}
 	return nil;
 }
 
 - (void)addEntityObject:(NSManagedObject *)object forDTO:(id)dto
 {
+	assert([self containsEntityObjectForDTO:dto] == NO);
+	
+	[DTOs_MOs addObject:@{@"dto" : dto, @"mo" : object}];
 }
 
 @end
