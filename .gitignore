@@ -2,3 +2,8 @@
 *~
 *.pyc
 .DS_Store
+*.orig
+.~*
+xcuserdata
+*.xcworkspacedata
+project.xcworkspace
