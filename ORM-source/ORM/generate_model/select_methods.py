@@ -20,7 +20,7 @@ def generateConvertToDTOMethod(model):
             for property in d.properties:
                 subDTOName = d.name + upperCaseForFirstSymbol(property.name)
                 subEntity = property.relationship.entity.name if property.relationship != None else None
-                subEntityVar = subEntity.lower() if subEntity != None else None
+                subEntityVar = 'sub' + subEntity.lower() if subEntity != None else None
                 propertyName = property.name
                 PropertyName = upperCaseForFirstSymbol(propertyName)
                 if property.id != None and len(property.properties) == 0:

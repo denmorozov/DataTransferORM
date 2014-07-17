@@ -13,7 +13,7 @@ def generateSaveMethod(model):
             lines.append('{')
             for property in d.properties:
                 subEntity = property.relationship.entity.name if property.relationship != None else None
-                subEntityVar = subEntity.lower() if subEntity != None else None
+                subEntityVar = 'sub' + subEntity.lower() if subEntity != None else None
                 subDTO = DTOName + upperCaseForFirstSymbol(property.name) + 'DTO'
                 propertyName = property.name
                 PropertyName = upperCaseForFirstSymbol(property.name)
@@ -100,7 +100,8 @@ def generateSaveDTOMethod(model):
         tryBlock.append('{')
         tryBlock.append('\t{v} = ({e} *)[NSEntityDescription insertNewObjectForEntityForName:@"{e}" inManagedObjectContext:context];'.format(e = entity, v = var))
         tryBlock.append('}')
-        tryBlock.append('\tModelContext *ctx = [ModelContext new];')
+        tryBlock.append('ModelContext *ctx = [ModelContext new];')
+        tryBlock.append('[ctx addEntityObject:{v} forDTO:{v}DTO];'.format(v = var));
         tryBlock.append('[self save{e}:{v} with{n}DTO:{v}DTO withContext:ctx];'.format(e = entity, v = var, n = model.name + entity))
         tryBlock.append('[context save:nil];')
         
