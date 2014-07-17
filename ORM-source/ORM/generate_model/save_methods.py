@@ -38,7 +38,7 @@ def generateSaveMethod(model):
                     lines.append('\t\t\t' + '{')
                     lines.append('\t\t\t\t' + 'if (item.objectID == nil)')
                     lines.append('\t\t\t\t' + '{')
-                    lines.append('\t\t\t\t\t' + '{sev} = ({se} *)[NSEntityDescription insertNewObjectForEntityForName:@"{se}" inManagedObjectContext:context];'.format(se = subEntity, sev = subEntityVar))
+                    lines.append('\t\t\t\t\t' + '{sev} = ({se} *)[NSEntityDescription insertNewObjectForEntityForName:@"{se}" inManagedObjectContext:{ev}.managedObjectContext];'.format(se = subEntity, sev = subEntityVar, ev = entityVar))
                     lines.append('\t\t\t\t' + '}')
                     lines.append('\t\t\t\t' + 'else')
                     lines.append('\t\t\t\t' + '{')
@@ -100,7 +100,8 @@ def generateSaveDTOMethod(model):
         tryBlock.append('{')
         tryBlock.append('\t{v} = ({e} *)[NSEntityDescription insertNewObjectForEntityForName:@"{e}" inManagedObjectContext:context];'.format(e = entity, v = var))
         tryBlock.append('}')
-        tryBlock.append('[self save{e}:{v} with{n}DTO:{v}DTO inContext:context];'.format(e = entity, v = var, n = model.name + entity))
+        tryBlock.append('\tModelContext *ctx = [ModelContext new];')
+        tryBlock.append('[self save{e}:{v} with{n}DTO:{v}DTO withContext:ctx];'.format(e = entity, v = var, n = model.name + entity))
         tryBlock.append('[context save:nil];')
         
         exceptionBlock = ['NSLog(@"%@", e);']
