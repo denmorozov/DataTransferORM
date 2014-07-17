@@ -1,7 +1,7 @@
 import os
 from helpers import upperCaseForFirstSymbol
 
-def createHeaderDTOEntity(classDef, directory):
+def createHeaderDTOEntity(struct, classDef, directory):
     fileName = classDef.name + 'DTO.h'
     file = open(os.path.join(directory, fileName), 'w+')
     file.write('#import <CoreData/CoreData.h>')
@@ -9,7 +9,11 @@ def createHeaderDTOEntity(classDef, directory):
     for property in classDef.properties:
         if property.relationship == None:
             continue
-        subDTOName = classDef.name + upperCaseForFirstSymbol(property.name)
+        if property.id != None and len(property.properties) == 0:
+            dd = struct.classDefById(property.id)
+            subDTOName = dd.name
+        else:
+            subDTOName = classDef.name + upperCaseForFirstSymbol(property.name)
         file.write('@class {sn}DTO;'.format(sn = subDTOName))
         file.write('\n')
     file.write('\n')
@@ -56,7 +60,11 @@ def createHeaderDTOEntity(classDef, directory):
     
     for property in classDef.properties:
         if property.relationship != None and property.relationship.type == 'toMany':
-            subDTOName = classDef.name + upperCaseForFirstSymbol(property.name)
+            if property.id != None and len(property.properties) == 0:
+                dd = struct.classDefById(property.id)
+                subDTOName = dd.name
+            else:
+                subDTOName = classDef.name + upperCaseForFirstSymbol(property.name)
             propertyName = property.name
             PropertyName = upperCaseForFirstSymbol(propertyName)
             file.write('@property (nonatomic, strong) NSArray *{name};'.format(name = propertyName))
@@ -75,7 +83,7 @@ def createHeaderDTOEntity(classDef, directory):
     file.write('\n')
     file.close()
 
-def createSourceFileDTOEntity(classDef, directory):
+def createSourceFileDTOEntity(struct, classDef, directory):
     fileName = classDef.name + 'DTO.m'
     file = open(os.path.join(directory, fileName), 'w+')
     
@@ -125,7 +133,11 @@ def createSourceFileDTOEntity(classDef, directory):
 
     for property in classDef.properties:
         if property.relationship != None and property.relationship.type == 'toMany':
-            subDTOName = classDef.name + upperCaseForFirstSymbol(property.name)
+            if property.id != None and len(property.properties) == 0:
+                dd = struct.classDefById(property.id)
+                subDTOName = dd.name
+            else:
+                subDTOName = classDef.name + upperCaseForFirstSymbol(property.name)
             propertyName = property.name
             PropertyName = upperCaseForFirstSymbol(propertyName)
             lines = []
@@ -160,6 +172,6 @@ def createDTOClasses(models, directory):
         for struct in model.structs:
             classesDefs = struct.classesDefs()
             for d in classesDefs:
-                createHeaderDTOEntity(d, directory)
-                createSourceFileDTOEntity(d, directory)
+                createHeaderDTOEntity(struct, d, directory)
+                createSourceFileDTOEntity(struct, d, directory)
 
