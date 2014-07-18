@@ -20,6 +20,7 @@
 	}
 	CategoryModelNutritionCategoryDTO *dto = [CategoryModelNutritionCategoryDTO new];
 	[ctx addObject:dto withObjectID:nutritioncategory.objectID];
+	dto.objectID = nutritioncategory.objectID;
 	dto.name = nutritioncategory.name;
 	for (NutritionCategory *subnutritioncategory in nutritioncategory.subcategories)
 	{
@@ -41,6 +42,7 @@
 	}
 	CategoryModelNutritionCategoryMealsDTO *dto = [CategoryModelNutritionCategoryMealsDTO new];
 	[ctx addObject:dto withObjectID:meal.objectID];
+	dto.objectID = meal.objectID;
 	dto.name = meal.name;
 	return dto;
 }

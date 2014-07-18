@@ -20,6 +20,7 @@
 	}
 	NutritionModelMealDTO *dto = [NutritionModelMealDTO new];
 	[ctx addObject:dto withObjectID:meal.objectID];
+	dto.objectID = meal.objectID;
 	dto.name = meal.name;
 	for (Food *subfood in meal.foods)
 	{
@@ -36,6 +37,7 @@
 	}
 	NutritionModelMealFoodsDTO *dto = [NutritionModelMealFoodsDTO new];
 	[ctx addObject:dto withObjectID:food.objectID];
+	dto.objectID = food.objectID;
 	dto.name = food.name;
 	dto.amount = food.amount;
 	return dto;
@@ -48,6 +50,7 @@
 	}
 	NutritionModelFoodDTO *dto = [NutritionModelFoodDTO new];
 	[ctx addObject:dto withObjectID:food.objectID];
+	dto.objectID = food.objectID;
 	dto.name = food.name;
 	dto.amount = food.amount;
 	return dto;

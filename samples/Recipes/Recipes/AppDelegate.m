@@ -32,10 +32,19 @@
 //	NutritionModel *model = [NutritionModel new];
 //	
 //	NSArray * foods = [model foodObjectsWithComporator:^Condition *(NutritionModelFoodComporatorContext *ctx) {
-//		return [ctx.name equal:@""];
+//		return [ctx.name equal:@"111"];
 //	}];
 //	
 //	NSLog(@"%@", foods);
+//	
+//	NutritionModelFoodDTO *food = foods.lastObject;
+//
+//	if (food)
+//	{
+//		food.name = @"111";
+//		
+//		[model saveNutritionModelFoodDTO:food];
+//	}
 	
 	
 	//save categories
