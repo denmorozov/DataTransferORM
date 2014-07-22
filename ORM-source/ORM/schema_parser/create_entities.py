@@ -7,8 +7,8 @@ def createHeaderEntity(entity, directory):
     file.write('\n')
     forwardDecEntities = set(map(lambda r: r.entity.name, entity.relationships))
     for name in forwardDecEntities:
-    	if name == entity.name:
-    	    continue
+        if name == entity.name:
+            continue
         file.write('@class {en};'.format(en = name))
         file.write('\n')
     file.write('\n')
