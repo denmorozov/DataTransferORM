@@ -28,7 +28,7 @@ def methodTemplate(beforeBlock, tryBlock, exceptionBlock, finallyBlock, afterBlo
     
     return '\n'.join(lines)
 
-def headerFileTemplate(importBlock, typedefBlock, className, methodsBlock):
+def headerFileTemplate(importBlock, typedefBlock, className, methodsBlock, parentClass = 'NSObject'):
     lines = []
     lines.append('')
     for importFile in importBlock:
@@ -37,7 +37,7 @@ def headerFileTemplate(importBlock, typedefBlock, className, methodsBlock):
     for typedef in typedefBlock:
         lines.append(typedef)
     lines.append('')
-    lines.append('@interface {cn} : NSObject'.format(cn = className))
+    lines.append('@interface {cn} : {pc}'.format(cn = className, pc = parentClass))
     lines.append('')
     for line in methodsBlock:
         lines.append(line)

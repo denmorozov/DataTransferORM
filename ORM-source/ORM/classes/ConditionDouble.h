@@ -2,10 +2,7 @@
 
 @interface ConditionDouble : Condition
 
-- (instancetype)initWithFieldName:(NSString *)fieldName equalToDouble:(double)value;
-- (instancetype)initWithFieldName:(NSString *)fieldName moreToDouble:(double)value;
-- (instancetype)initWithFieldName:(NSString *)fieldName moreOrEqualToDouble:(double)value;
-- (instancetype)initWithFieldName:(NSString *)fieldName lessToDouble:(double)value;
-- (instancetype)initWithFieldName:(NSString *)fieldName lessOrEqualToDouble:(double)value;
+- (instancetype)initWithFieldName:(NSString *)fieldName withOperator:(ConditionOperator)operator toDouble:(double)value;
+- (instancetype)initWithFieldName:(NSString *)fieldName withOperator:(ConditionOperator)operator toDouble:(double)value withOperation:(ConditionAggregateOperation)operation;
 
 @end

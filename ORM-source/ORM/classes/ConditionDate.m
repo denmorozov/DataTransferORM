@@ -8,73 +8,43 @@
 
 @implementation ConditionDate
 
-- (instancetype)initWithFieldName:(NSString *)fieldName equalToDate:(NSDate *)value;
+- (instancetype)initWithFieldName:(NSString *)fieldName
+					 withOperator:(ConditionOperator)operator
+						withValue:(NSDate *)value
 {
-	self = [super init];
-	
-	if (self)
-	{
-		self.condition = [NSString stringWithFormat:@"(%@ == '%@')", fieldName, value];
-	}
-	
-	return self;
+	return [self initWithFieldName:fieldName withOperator:operator withValue:value withOperation:ConditionAggregateOperationNo];
 }
 
-- (instancetype)initWithFieldName:(NSString *)fieldName moreToDate:(NSDate *)value
+- (instancetype)initIsNULLWithFieldName:(NSString *)fieldName
 {
-	self = [super init];
-	
-	if (self)
-	{
-		self.condition = [NSString stringWithFormat:@"(%@ > '%@')", fieldName, value];
-	}
-	
-	return self;
+	return [self initIsNULLWithFieldName:fieldName withOperation:ConditionAggregateOperationNo];
 }
 
-- (instancetype)initWithFieldName:(NSString *)fieldName moreOrEqualToDate:(NSDate *)value
-{
-	self = [super init];
-	
-	if (self)
-	{
-		self.condition = [NSString stringWithFormat:@"(%@ >= '%@')", fieldName, value];
-	}
-	
-	return self;
-}
+- (instancetype)initIsNULLWithFieldName:(NSString *)fieldName;
 
-- (instancetype)initWithFieldName:(NSString *)fieldName lessToDate:(NSDate *)value
+- (instancetype)initWithFieldName:(NSString *)fieldName
+					 withOperator:(ConditionOperator)operator
+						withValue:(NSDate *)value
+					withOperation:(ConditionAggregateOperation)operation
 {
 	self = [super init];
 	
 	if (self)
 	{
-		self.condition = [NSString stringWithFormat:@"(%@ < '%@')", fieldName, value];
-	}
-	
-	return self;
-}
-
-- (instancetype)initWithFieldName:(NSString *)fieldName lessOrEqualToDate:(NSDate *)value
-{
-	self = [super init];
-	
-	if (self)
-	{
-		self.condition = [NSString stringWithFormat:@"(%@ <= '%@')", fieldName, value];
+		self.condition = [NSString stringWithFormat:@"(%@ %@ %@ '%@')", [self stringOperation:operation], fieldName, [self stringOperator:operator], value];
 	}
 	
 	return self;
 }
 
 - (instancetype)initIsNULLWithFieldName:(NSString *)fieldName
+						  withOperation:(ConditionAggregateOperation)operation
 {
 	self = [super init];
 	
 	if (self)
 	{
-		self.condition = [NSString stringWithFormat:@"(%@ == nil)", fieldName];
+		self.condition = [NSString stringWithFormat:@"(%@ %@ == nil)", [self stringOperation:operation], fieldName];
 	}
 	
 	return self;

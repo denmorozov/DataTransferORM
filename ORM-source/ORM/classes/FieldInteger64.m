@@ -20,27 +20,27 @@
 
 - (ConditionInteger64 *)equal:(int64_t)value
 {
-	return [[ConditionInteger64 alloc] initWithFieldName:self.name equalToInteger64:value];
+	return [[ConditionInteger64 alloc] initWithFieldName:self.name withOperator:ConditionOperatorEqual toInt64:value];
 }
 
 - (ConditionInteger64 *)more:(int64_t)value
 {
-	return [[ConditionInteger64 alloc] initWithFieldName:self.name moreToInteger64:value];
+	return [[ConditionInteger64 alloc] initWithFieldName:self.name withOperator:ConditionOperatorMore toInt64:value];
 }
 
 - (ConditionInteger64 *)moreOrEqual:(int64_t)value
 {
-	return [[ConditionInteger64 alloc] initWithFieldName:self.name moreOrEqualToInteger64:value];
+	return [[ConditionInteger64 alloc] initWithFieldName:self.name withOperator:ConditionOperatorMoreOrEqual toInt64:value];
 }
 
 - (ConditionInteger64 *)less:(int64_t)value
 {
-	return [[ConditionInteger64 alloc] initWithFieldName:self.name lessToInteger64:value];
+	return [[ConditionInteger64 alloc] initWithFieldName:self.name withOperator:ConditionOperatorLess toInt64:value];
 }
 
 - (ConditionInteger64 *)lessOrEqual:(int64_t)value
 {
-	return [[ConditionInteger64 alloc] initWithFieldName:self.name lessOrEqualToInteger64:value];
+	return [[ConditionInteger64 alloc] initWithFieldName:self.name withOperator:ConditionOperatorLessOrEqual toInt64:value];
 }
 
 

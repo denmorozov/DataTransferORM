@@ -46,6 +46,7 @@ class StructClassDef:
         self.id = id
 
 class ModelStructProperty:
+    # 'name' is equal 'relationship.name'
     def __init__(self, name, relationship, properties, id):
         self.name = name
         self.relationship = relationship
@@ -70,8 +71,19 @@ class ModelStruct:
         for structProperty in self.properties:
             result += structProperty.entities()
         return result
+    def relationshipProperties(self):
+        result = []
+        for property in self.properties:
+            if property.relationship != None:
+                result.append(property)
+        return result
+    def inverseProperties(self):
+        if self.id == None:
+            return []
+        else:
+            return self.p_inverseProperties(self.properties, self.id)
     def classesDefs(self):
-        return self.makeClassesDefs(self.model.name + self.entity.name, self.entity, self.properties, self.id)
+        return self.p_classesDefs(self.model.name + self.entity.name, self.entity, self.properties, self.id)
     def classDefById(self, id):
         defs = self.classesDefs()
         for d in defs:
@@ -79,14 +91,22 @@ class ModelStruct:
                 return d
         return None
     #private
-    def makeClassesDefs(self, name, entity, properties, id):
+    def p_inverseProperties(self, properties, id):
+        result = []
+        for property in properties:
+            if property.id == id:
+                result.append(property)
+            if property.properties != None:
+                result += self.p_inverseProperties(property.properties, id)
+        return result;
+    def p_classesDefs(self, name, entity, properties, id):
         result = []
         if name != None:
             result.append(StructClassDef(name, entity, properties, id))
         for property in properties:
             if property.relationship != None:
                 subname = None if property.id != None and len(property.properties) == 0 else name + upperCaseForFirstSymbol(property.relationship.name)
-                result += self.makeClassesDefs(subname, property.relationship.entity, property.properties, property.id)
+                result += self.p_classesDefs(subname, property.relationship.entity, property.properties, property.id)
         return result;
 
 class Model:

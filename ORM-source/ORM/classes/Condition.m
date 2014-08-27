@@ -32,10 +32,21 @@ Condition * AND(Condition *firstArg, ...)
 }
 
 @interface Condition ()
+{
+	NSString *_condition;
+}
 
 @end
 
 @implementation Condition
+
+- (id)initWithCondition:(NSString *)condition
+{
+	if ( (self = [super init]) )
+	{
+		_condition = condition;
+	}
+}
 
 - (NSPredicate *)predicate
 {
@@ -44,8 +55,30 @@ Condition * AND(Condition *firstArg, ...)
 
 - (NSString *)condition
 {
-	assert(false);
-	return @"";
+	return _condition;
+}
+
+- (NSString *)stringOperation:(ConditionAggregateOperation)op
+{
+	switch (op)
+	{
+		case ConditionAggregateOperationNo: return @"";
+		case ConditionAggregateOperationAny: return @"ANY";
+		case ConditionAggregateOperationAll: return @"ALL";
+		case ConditionAggregateOperationNone: return @"NONE";
+	}
+}
+
+- (NSString *)stringOperator:(ConditionOperator)op
+{
+	switch (op)
+	{
+		case ConditionOperatorLess: return @"<";
+		case ConditionOperatorLessOrEqual: return @"<=";
+		case ConditionOperatorEqual: return @"==";
+		case ConditionOperatorMoreOrEqual: return @">=";
+		case ConditionOperatorMore: return @">";
+	}
 }
 
 @end

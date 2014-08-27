@@ -20,27 +20,27 @@
 
 - (ConditionInteger32 *)equal:(int32_t)value
 {
-	return [[ConditionInteger32 alloc] initWithFieldName:self.name equalToInteger32:value];
+	return [[ConditionInteger32 alloc] initWithFieldName:self.name withOperator:ConditionOperatorEqual toInt32:value];
 }
 
 - (ConditionInteger32 *)more:(int32_t)value
 {
-	return [[ConditionInteger32 alloc] initWithFieldName:self.name moreToInteger32:value];
+	return [[ConditionInteger32 alloc] initWithFieldName:self.name withOperator:ConditionOperatorMore toInt32:value];
 }
 
 - (ConditionInteger32 *)moreOrEqual:(int32_t)value
 {
-	return [[ConditionInteger32 alloc] initWithFieldName:self.name moreOrEqualToInteger32:value];
+	return [[ConditionInteger32 alloc] initWithFieldName:self.name withOperator:ConditionOperatorMoreOrEqual toInt32:value];
 }
 
 - (ConditionInteger32 *)less:(int32_t)value
 {
-	return [[ConditionInteger32 alloc] initWithFieldName:self.name lessToInteger32:value];
+	return [[ConditionInteger32 alloc] initWithFieldName:self.name withOperator:ConditionOperatorLess toInt32:value];
 }
 
 - (ConditionInteger32 *)lessOrEqual:(int32_t)value
 {
-	return [[ConditionInteger32 alloc] initWithFieldName:self.name lessOrEqualToInteger32:value];
+	return [[ConditionInteger32 alloc] initWithFieldName:self.name withOperator:ConditionOperatorLessOrEqual toInt32:value];
 }
 
 

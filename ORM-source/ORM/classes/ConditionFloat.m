@@ -8,65 +8,20 @@
 
 @implementation ConditionFloat
 
-- (instancetype)initWithFieldName:(NSString *)fieldName equalToFloat:(CGFloat)value;
+- (instancetype)initWithFieldName:(NSString *)fieldName withOperator:(ConditionOperator)operator toFloat:(CGFloat)value
+{
+	return [self initWithFieldName:fieldName withOperator:operator toFloat:value withOperation:ConditionAggregateOperationNo];
+}
+- (instancetype)initWithFieldName:(NSString *)fieldName withOperator:(ConditionOperator)operator toFloat:(CGFloat)value withOperation:(ConditionAggregateOperation)operation
 {
 	self = [super init];
 	
 	if (self)
 	{
-		self.condition = [NSString stringWithFormat:@"(%@ == %f)", fieldName, value];
+		self.condition = [NSString stringWithFormat:@"(%@ %@ %@ %f)", [self stringOperation:operation], fieldName, [self stringOperator:operator], value];
 	}
 	
 	return self;
 }
-
-- (instancetype)initWithFieldName:(NSString *)fieldName moreToFloat:(CGFloat)value
-{
-	self = [super init];
-	
-	if (self)
-	{
-		self.condition = [NSString stringWithFormat:@"(%@ > %f)", fieldName, value];
-	}
-	
-	return self;
-}
-
-- (instancetype)initWithFieldName:(NSString *)fieldName moreOrEqualToFloat:(CGFloat)value
-{
-	self = [super init];
-	
-	if (self)
-	{
-		self.condition = [NSString stringWithFormat:@"(%@ >= %f)", fieldName, value];
-	}
-	
-	return self;
-}
-
-- (instancetype)initWithFieldName:(NSString *)fieldName lessToFloat:(CGFloat)value
-{
-	self = [super init];
-	
-	if (self)
-	{
-		self.condition = [NSString stringWithFormat:@"(%@ < %f)", fieldName, value];
-	}
-	
-	return self;
-}
-
-- (instancetype)initWithFieldName:(NSString *)fieldName lessOrEqualToFloat:(CGFloat)value
-{
-	self = [super init];
-	
-	if (self)
-	{
-		self.condition = [NSString stringWithFormat:@"(%@ <= %f)", fieldName, value];
-	}
-	
-	return self;
-}
-
 
 @end

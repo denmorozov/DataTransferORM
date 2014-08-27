@@ -10,6 +10,19 @@
 
 - (instancetype)initWithFieldName:(NSString *)fieldName equalToString:(NSString *)string
 {
+	return [self initWithFieldName:fieldName equalToString:string withOperation:ConditionAggregateOperationNo];
+}
+- (instancetype)initWithFieldName:(NSString *)fieldName likeToPattern:(NSString *)pattern
+{
+	return [self initWithFieldName:fieldName likeToPattern:pattern withOperation:ConditionAggregateOperationNo];
+}
+- (instancetype)initIsNULLWithFieldName:(NSString *)fieldName
+{
+	return [self initIsNULLWithFieldName:fieldName withOperation:ConditionAggregateOperationNo];
+}
+
+- (instancetype)initWithFieldName:(NSString *)fieldName equalToString:(NSString *)string withOperation:(ConditionAggregateOperation)operation
+{
 	self = [super init];
 	
 	if (self)
@@ -20,7 +33,7 @@
 	return self;
 }
 
-- (instancetype)initWithFieldName:(NSString *)fieldName likeToPattern:(NSString *)pattern
+- (instancetype)initWithFieldName:(NSString *)fieldName likeToPattern:(NSString *)pattern withOperation:(ConditionAggregateOperation)operation
 {
 	self = [super init];
 	
@@ -32,7 +45,7 @@
 	return self;
 }
 
-- (instancetype)initIsNULLWithFieldName:(NSString *)fieldName
+- (instancetype)initIsNULLWithFieldName:(NSString *)fieldName withOperation:(ConditionAggregateOperation)operation
 {
 	self = [super init];
 	

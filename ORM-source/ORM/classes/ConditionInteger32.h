@@ -2,10 +2,7 @@
 
 @interface ConditionInteger32 : Condition
 
-- (instancetype)initWithFieldName:(NSString *)fieldName equalToInteger32:(int32_t)value;
-- (instancetype)initWithFieldName:(NSString *)fieldName moreToInteger32:(int32_t)value;
-- (instancetype)initWithFieldName:(NSString *)fieldName moreOrEqualToInteger32:(int32_t)value;
-- (instancetype)initWithFieldName:(NSString *)fieldName lessToInteger32:(int32_t)value;
-- (instancetype)initWithFieldName:(NSString *)fieldName lessOrEqualToInteger32:(int32_t)value;
+- (instancetype)initWithFieldName:(NSString *)fieldName withOperator:(ConditionOperator)operator toInt32:(int32_t)value;
+- (instancetype)initWithFieldName:(NSString *)fieldName withOperator:(ConditionOperator)operator toInt32:(int32_t)value withOperation:(ConditionAggregateOperation)operation;
 
 @end
