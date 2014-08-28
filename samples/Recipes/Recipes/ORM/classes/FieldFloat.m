@@ -20,27 +20,27 @@
 
 - (ConditionFloat *)equal:(CGFloat)value
 {
-	return [[ConditionFloat alloc] initWithFieldName:self.name equalToFloat:value];
+	return [[ConditionFloat alloc] initWithFieldName:self.name withOperator:ConditionOperatorEqual toFloat:value];
 }
 
 - (ConditionFloat *)more:(CGFloat)value
 {
-	return [[ConditionFloat alloc] initWithFieldName:self.name moreToFloat:value];
+	return [[ConditionFloat alloc] initWithFieldName:self.name withOperator:ConditionOperatorMore toFloat:value];
 }
 
 - (ConditionFloat *)moreOrEqual:(CGFloat)value
 {
-	return [[ConditionFloat alloc] initWithFieldName:self.name moreOrEqualToFloat:value];
+	return [[ConditionFloat alloc] initWithFieldName:self.name withOperator:ConditionOperatorMoreOrEqual toFloat:value];
 }
 
 - (ConditionFloat *)less:(CGFloat)value
 {
-	return [[ConditionFloat alloc] initWithFieldName:self.name lessToFloat:value];
+	return [[ConditionFloat alloc] initWithFieldName:self.name withOperator:ConditionOperatorLess toFloat:value];
 }
 
 - (ConditionFloat *)lessOrEqual:(CGFloat)value
 {
-	return [[ConditionFloat alloc] initWithFieldName:self.name lessOrEqualToFloat:value];
+	return [[ConditionFloat alloc] initWithFieldName:self.name withOperator:ConditionOperatorLessOrEqual toFloat:value];
 }
 
 

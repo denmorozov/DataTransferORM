@@ -8,65 +8,21 @@
 
 @implementation ConditionInteger64
 
-- (instancetype)initWithFieldName:(NSString *)fieldName equalToInteger64:(int64_t)value;
+- (instancetype)initWithFieldName:(NSString *)fieldName withOperator:(ConditionOperator)operator toInt64:(int64_t)value
+{
+	return [self initWithFieldName:fieldName withOperator:operator toInt64:value withOperation:ConditionAggregateOperationNo];
+}
+
+- (instancetype)initWithFieldName:(NSString *)fieldName withOperator:(ConditionOperator)operator toInt64:(int64_t)value withOperation:(ConditionAggregateOperation)operation;
 {
 	self = [super init];
 	
 	if (self)
 	{
-		self.condition = [NSString stringWithFormat:@"(%@ == %lli)", fieldName, value];
+		self.condition = [NSString stringWithFormat:@"(%@ %@ %@ %lli)", [self stringOperation:operation], fieldName, [self stringOperator:operator], value];
 	}
 	
 	return self;
 }
-
-- (instancetype)initWithFieldName:(NSString *)fieldName moreToInteger64:(int64_t)value
-{
-	self = [super init];
-	
-	if (self)
-	{
-		self.condition = [NSString stringWithFormat:@"(%@ > %lli)", fieldName, value];
-	}
-	
-	return self;
-}
-
-- (instancetype)initWithFieldName:(NSString *)fieldName moreOrEqualToInteger64:(int64_t)value
-{
-	self = [super init];
-	
-	if (self)
-	{
-		self.condition = [NSString stringWithFormat:@"(%@ >= %lli)", fieldName, value];
-	}
-	
-	return self;
-}
-
-- (instancetype)initWithFieldName:(NSString *)fieldName lessToInteger64:(int64_t)value
-{
-	self = [super init];
-	
-	if (self)
-	{
-		self.condition = [NSString stringWithFormat:@"(%@ < %lli)", fieldName, value];
-	}
-	
-	return self;
-}
-
-- (instancetype)initWithFieldName:(NSString *)fieldName lessOrEqualToInteger64:(int64_t)value
-{
-	self = [super init];
-	
-	if (self)
-	{
-		self.condition = [NSString stringWithFormat:@"(%@ <= %lli)", fieldName, value];
-	}
-	
-	return self;
-}
-
 
 @end

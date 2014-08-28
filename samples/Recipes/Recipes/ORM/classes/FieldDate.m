@@ -20,27 +20,27 @@
 
 - (ConditionDate *)equal:(NSDate *)value
 {
-	return [[ConditionDate alloc] initWithFieldName:self.name equalToDate:value];
+	return [[ConditionDate alloc] initWithFieldName:self.name withOperator:ConditionOperatorEqual withValue:value];
 }
 
 - (ConditionDate *)more:(NSDate *)value
 {
-	return [[ConditionDate alloc] initWithFieldName:self.name moreToDate:value];
+	return [[ConditionDate alloc] initWithFieldName:self.name withOperator:ConditionOperatorMore withValue:value];
 }
 
 - (ConditionDate *)moreOrEqual:(NSDate *)value
 {
-	return [[ConditionDate alloc] initWithFieldName:self.name moreOrEqualToDate:value];
+	return [[ConditionDate alloc] initWithFieldName:self.name withOperator:ConditionOperatorMoreOrEqual withValue:value];
 }
 
 - (ConditionDate *)less:(NSDate *)value
 {
-	return [[ConditionDate alloc] initWithFieldName:self.name lessToDate:value];
+	return [[ConditionDate alloc] initWithFieldName:self.name withOperator:ConditionOperatorLess withValue:value];
 }
 
 - (ConditionDate *)lessOrEqual:(NSDate *)value
 {
-	return [[ConditionDate alloc] initWithFieldName:self.name lessOrEqualToDate:value];
+	return [[ConditionDate alloc] initWithFieldName:self.name withOperator:ConditionOperatorLessOrEqual withValue:value];
 }
 
 - (ConditionDate *)null

@@ -28,4 +28,7 @@ Condition * AND(Condition *firstArg, ...);
 
 - (NSPredicate *)predicate;
 
+- (NSString *)stringOperation:(ConditionAggregateOperation)op;
+- (NSString *)stringOperator:(ConditionOperator)op;
+
 @end

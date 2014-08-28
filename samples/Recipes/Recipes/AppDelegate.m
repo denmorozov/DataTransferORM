@@ -69,13 +69,17 @@
 	
 	
 	//select categories
-//	CategoryModel *model = [CategoryModel new];
-//	
-//	NSArray *categories = [model nutritioncategoryObjectsWithComporator:^Condition *(CategoryModelNutritionCategoryComporatorContext *ctx) {
-//		return [ctx.name equal:@"Meat"];
-//	}];
-//	
-//	NSLog(@"%@", categories);
+	CategoryModel *model = [CategoryModel new];
+	
+	NSArray *categories = [model nutritioncategoryObjectsWithComporator:^Condition *(CategoryModelNutritionCategoryComporatorContext *ctx) {
+		Condition *c =  AND([ctx.name equal:@"Meat"], ctx.parentcategory.null, nil);
+		
+		NSLog(@"%@", c.predicate);
+		
+		return c;
+	}];
+	
+	NSLog(@"%@", categories);
 	
 	return YES;
 }

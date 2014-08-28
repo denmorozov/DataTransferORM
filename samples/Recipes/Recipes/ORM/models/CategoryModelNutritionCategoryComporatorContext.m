@@ -4,6 +4,9 @@
 @interface CategoryModelNutritionCategoryComporatorContext ()
 
 @property (nonatomic, readwrite) FieldString *name;
+@property (nonatomic, readwrite) CategoryModelNutritionCategorySubcategoriesComporatorContext *subcategories;
+@property (nonatomic, readwrite) CategoryModelNutritionCategoryMealsComporatorContext *meals;
+@property (nonatomic, readwrite) CategoryModelNutritionCategoryParentcategoryComporatorContext *parentcategory;
 
 @end
 
@@ -14,9 +17,12 @@
 	self = [super init];
 	if (self)
 	{
-		self.name = [[FieldString alloc] initWithName:@"name"];
+		self.name = [[FieldString alloc] initWithName:@"self.name"];
+		self.subcategories = [[CategoryModelNutritionCategorySubcategoriesComporatorContext alloc] init];
+		self.meals = [[CategoryModelNutritionCategoryMealsComporatorContext alloc] init];
+		self.parentcategory = [[CategoryModelNutritionCategoryParentcategoryComporatorContext alloc] init];
 	}
-return self;
+	return self;
 }
 
 

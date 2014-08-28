@@ -20,27 +20,27 @@
 
 - (ConditionDouble *)equal:(double)value
 {
-	return [[ConditionDouble alloc] initWithFieldName:self.name equalToDouble:value];
+	return [[ConditionDouble alloc] initWithFieldName:self.name withOperator:ConditionOperatorEqual toDouble:value];
 }
 
 - (ConditionDouble *)more:(double)value
 {
-	return [[ConditionDouble alloc] initWithFieldName:self.name moreToDouble:value];
+	return [[ConditionDouble alloc] initWithFieldName:self.name withOperator:ConditionOperatorMore toDouble:value];
 }
 
 - (ConditionDouble *)moreOrEqual:(double)value
 {
-	return [[ConditionDouble alloc] initWithFieldName:self.name moreOrEqualToDouble:value];
+	return [[ConditionDouble alloc] initWithFieldName:self.name withOperator:ConditionOperatorMoreOrEqual toDouble:value];
 }
 
 - (ConditionDouble *)less:(double)value
 {
-	return [[ConditionDouble alloc] initWithFieldName:self.name lessToDouble:value];
+	return [[ConditionDouble alloc] initWithFieldName:self.name withOperator:ConditionOperatorLess toDouble:value];
 }
 
 - (ConditionDouble *)lessOrEqual:(double)value
 {
-	return [[ConditionDouble alloc] initWithFieldName:self.name lessOrEqualToDouble:value];
+	return [[ConditionDouble alloc] initWithFieldName:self.name withOperator:ConditionOperatorLessOrEqual toDouble:value];
 }
 
 

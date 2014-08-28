@@ -15,10 +15,10 @@
 	self = [super init];
 	if (self)
 	{
-		self.name = [[FieldString alloc] initWithName:@"name"];
-		self.amount = [[FieldFloat alloc] initWithName:@"amount"];
+		self.name = [[FieldString alloc] initWithName:@"self.name"];
+		self.amount = [[FieldFloat alloc] initWithName:@"self.amount"];
 	}
-return self;
+	return self;
 }
 
 

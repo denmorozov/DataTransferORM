@@ -46,6 +46,8 @@ Condition * AND(Condition *firstArg, ...)
 	{
 		_condition = condition;
 	}
+	
+	return self;
 }
 
 - (NSPredicate *)predicate

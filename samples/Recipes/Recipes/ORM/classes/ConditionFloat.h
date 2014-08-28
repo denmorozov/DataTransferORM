@@ -2,10 +2,7 @@
 
 @interface ConditionFloat : Condition
 
-- (instancetype)initWithFieldName:(NSString *)fieldName equalToFloat:(CGFloat)value;
-- (instancetype)initWithFieldName:(NSString *)fieldName moreToFloat:(CGFloat)value;
-- (instancetype)initWithFieldName:(NSString *)fieldName moreOrEqualToFloat:(CGFloat)value;
-- (instancetype)initWithFieldName:(NSString *)fieldName lessToFloat:(CGFloat)value;
-- (instancetype)initWithFieldName:(NSString *)fieldName lessOrEqualToFloat:(CGFloat)value;
+- (instancetype)initWithFieldName:(NSString *)fieldName withOperator:(ConditionOperator)operator toFloat:(CGFloat)value;
+- (instancetype)initWithFieldName:(NSString *)fieldName withOperator:(ConditionOperator)operator toFloat:(CGFloat)value withOperation:(ConditionAggregateOperation)operation;
 
 @end

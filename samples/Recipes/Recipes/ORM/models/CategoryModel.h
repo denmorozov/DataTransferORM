@@ -4,7 +4,7 @@
 #import "CategoryModelNutritionCategoryDTO.h"
 #import "CategoryModelNutritionCategoryMealsDTO.h"
 
-typedef Condition* (^CategoryModelNutritionCategoryComporator)(CategoryModelNutritionCategoryComporatorContext *ctx);
+typedef Condition* (^CategoryModelNutritionCategoryComporator)(CategoryModelNutritionCategoryComporatorContext *nutritioncategory);
 
 @interface CategoryModel : NSObject
 

@@ -7,42 +7,51 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CB13E3381977EF8100BA975C /* Condition.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E2EE1977EF8100BA975C /* Condition.m */; };
-		CB13E3391977EF8100BA975C /* ConditionAnd.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E2F01977EF8100BA975C /* ConditionAnd.m */; };
-		CB13E33A1977EF8100BA975C /* ConditionBoolean.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E2F21977EF8100BA975C /* ConditionBoolean.m */; };
-		CB13E33B1977EF8100BA975C /* ConditionDate.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E2F41977EF8100BA975C /* ConditionDate.m */; };
-		CB13E33C1977EF8100BA975C /* ConditionDouble.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E2F61977EF8100BA975C /* ConditionDouble.m */; };
-		CB13E33D1977EF8100BA975C /* ConditionFloat.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E2F81977EF8100BA975C /* ConditionFloat.m */; };
-		CB13E33E1977EF8100BA975C /* ConditionInteger32.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E2FA1977EF8100BA975C /* ConditionInteger32.m */; };
-		CB13E33F1977EF8100BA975C /* ConditionInteger64.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E2FC1977EF8100BA975C /* ConditionInteger64.m */; };
-		CB13E3401977EF8100BA975C /* ConditionOr.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E2FE1977EF8100BA975C /* ConditionOr.m */; };
-		CB13E3411977EF8100BA975C /* ConditionString.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E3001977EF8100BA975C /* ConditionString.m */; };
-		CB13E3421977EF8100BA975C /* FieldBoolean.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E3021977EF8100BA975C /* FieldBoolean.m */; };
-		CB13E3431977EF8100BA975C /* FieldDate.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E3041977EF8100BA975C /* FieldDate.m */; };
-		CB13E3441977EF8100BA975C /* FieldDouble.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E3061977EF8100BA975C /* FieldDouble.m */; };
-		CB13E3451977EF8100BA975C /* FieldFloat.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E3081977EF8100BA975C /* FieldFloat.m */; };
-		CB13E3461977EF8100BA975C /* FieldInteger32.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E30A1977EF8100BA975C /* FieldInteger32.m */; };
-		CB13E3471977EF8100BA975C /* FieldInteger64.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E30C1977EF8100BA975C /* FieldInteger64.m */; };
-		CB13E3481977EF8100BA975C /* FieldString.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E30E1977EF8100BA975C /* FieldString.m */; };
-		CB13E3491977EF8100BA975C /* ModelContext.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E3101977EF8100BA975C /* ModelContext.m */; };
-		CB13E34A1977EF8100BA975C /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E3121977EF8100BA975C /* DataManager.m */; };
-		CB13E34B1977EF8100BA975C /* CategoryModelNutritionCategoryDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E3151977EF8100BA975C /* CategoryModelNutritionCategoryDTO.m */; };
-		CB13E34C1977EF8100BA975C /* CategoryModelNutritionCategoryMealsDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E3171977EF8100BA975C /* CategoryModelNutritionCategoryMealsDTO.m */; };
-		CB13E34D1977EF8100BA975C /* NutritionModelFoodDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E3191977EF8100BA975C /* NutritionModelFoodDTO.m */; };
-		CB13E34E1977EF8100BA975C /* NutritionModelMealCategoryDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E31B1977EF8100BA975C /* NutritionModelMealCategoryDTO.m */; };
-		CB13E34F1977EF8100BA975C /* NutritionModelMealCategoryMealsDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E31D1977EF8100BA975C /* NutritionModelMealCategoryMealsDTO.m */; };
-		CB13E3501977EF8100BA975C /* NutritionModelMealDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E31F1977EF8100BA975C /* NutritionModelMealDTO.m */; };
-		CB13E3511977EF8100BA975C /* NutritionModelMealFoodsDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E3211977EF8100BA975C /* NutritionModelMealFoodsDTO.m */; };
-		CB13E3521977EF8100BA975C /* Food.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E3241977EF8100BA975C /* Food.m */; };
-		CB13E3531977EF8100BA975C /* Meal.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E3261977EF8100BA975C /* Meal.m */; };
-		CB13E3541977EF8100BA975C /* MealCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E3281977EF8100BA975C /* MealCategory.m */; };
-		CB13E3551977EF8100BA975C /* NutritionCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E32A1977EF8100BA975C /* NutritionCategory.m */; };
-		CB13E3561977EF8100BA975C /* CategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E32D1977EF8100BA975C /* CategoryModel.m */; };
-		CB13E3571977EF8100BA975C /* CategoryModelNutritionCategoryComporatorContext.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E32F1977EF8100BA975C /* CategoryModelNutritionCategoryComporatorContext.m */; };
-		CB13E3581977EF8100BA975C /* NutritionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E3311977EF8100BA975C /* NutritionModel.m */; };
-		CB13E3591977EF8100BA975C /* NutritionModelFoodComporatorContext.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E3331977EF8100BA975C /* NutritionModelFoodComporatorContext.m */; };
-		CB13E35A1977EF8100BA975C /* NutritionModelMealCategoryComporatorContext.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E3351977EF8100BA975C /* NutritionModelMealCategoryComporatorContext.m */; };
-		CB13E35B1977EF8100BA975C /* NutritionModelMealComporatorContext.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13E3371977EF8100BA975C /* NutritionModelMealComporatorContext.m */; };
+		CBB872A719AF6AFB00344E84 /* CategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB8724B19AF6AFB00344E84 /* CategoryModel.m */; };
+		CBB872A819AF6AFB00344E84 /* CategoryModelNutritionCategoryComporatorContext.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB8724D19AF6AFB00344E84 /* CategoryModelNutritionCategoryComporatorContext.m */; };
+		CBB872A919AF6AFB00344E84 /* CategoryModelNutritionCategoryMealsComporatorContext.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB8724F19AF6AFB00344E84 /* CategoryModelNutritionCategoryMealsComporatorContext.m */; };
+		CBB872AA19AF6AFB00344E84 /* CategoryModelNutritionCategoryParentcategoryComporatorContext.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB8725119AF6AFB00344E84 /* CategoryModelNutritionCategoryParentcategoryComporatorContext.m */; };
+		CBB872AB19AF6AFB00344E84 /* CategoryModelNutritionCategorySubcategoriesComporatorContext.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB8725319AF6AFB00344E84 /* CategoryModelNutritionCategorySubcategoriesComporatorContext.m */; };
+		CBB872AC19AF6AFB00344E84 /* NutritionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB8725519AF6AFB00344E84 /* NutritionModel.m */; };
+		CBB872AD19AF6AFB00344E84 /* NutritionModelFoodComporatorContext.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB8725719AF6AFB00344E84 /* NutritionModelFoodComporatorContext.m */; };
+		CBB872AE19AF6AFB00344E84 /* NutritionModelMealComporatorContext.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB8725919AF6AFB00344E84 /* NutritionModelMealComporatorContext.m */; };
+		CBB872AF19AF6AFB00344E84 /* NutritionModelMealFoodsComporatorContext.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB8725B19AF6AFB00344E84 /* NutritionModelMealFoodsComporatorContext.m */; };
+		CBB872B019AF6AFB00344E84 /* Condition.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB8725E19AF6AFB00344E84 /* Condition.m */; };
+		CBB872B119AF6AFB00344E84 /* ConditionAnd.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB8726019AF6AFB00344E84 /* ConditionAnd.m */; };
+		CBB872B219AF6AFB00344E84 /* ConditionBoolean.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB8726219AF6AFB00344E84 /* ConditionBoolean.m */; };
+		CBB872B319AF6AFB00344E84 /* ConditionDate.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB8726419AF6AFB00344E84 /* ConditionDate.m */; };
+		CBB872B419AF6AFB00344E84 /* ConditionDouble.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB8726619AF6AFB00344E84 /* ConditionDouble.m */; };
+		CBB872B519AF6AFB00344E84 /* ConditionFloat.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB8726819AF6AFB00344E84 /* ConditionFloat.m */; };
+		CBB872B619AF6AFB00344E84 /* ConditionInteger32.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB8726A19AF6AFB00344E84 /* ConditionInteger32.m */; };
+		CBB872B719AF6AFB00344E84 /* ConditionInteger64.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB8726C19AF6AFB00344E84 /* ConditionInteger64.m */; };
+		CBB872B819AF6AFB00344E84 /* ConditionOr.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB8726E19AF6AFB00344E84 /* ConditionOr.m */; };
+		CBB872B919AF6AFB00344E84 /* ConditionString.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB8727019AF6AFB00344E84 /* ConditionString.m */; };
+		CBB872BA19AF6AFB00344E84 /* ContextToMany.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB8727219AF6AFB00344E84 /* ContextToMany.m */; };
+		CBB872BB19AF6AFB00344E84 /* ContextToOne.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB8727419AF6AFB00344E84 /* ContextToOne.m */; };
+		CBB872BC19AF6AFB00344E84 /* FieldBoolean.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB8727619AF6AFB00344E84 /* FieldBoolean.m */; };
+		CBB872BD19AF6AFB00344E84 /* FieldBooleanToMany.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB8727819AF6AFB00344E84 /* FieldBooleanToMany.m */; };
+		CBB872BE19AF6AFB00344E84 /* FieldDate.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB8727A19AF6AFB00344E84 /* FieldDate.m */; };
+		CBB872BF19AF6AFB00344E84 /* FieldDateToMany.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB8727C19AF6AFB00344E84 /* FieldDateToMany.m */; };
+		CBB872C019AF6AFB00344E84 /* FieldDouble.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB8727E19AF6AFB00344E84 /* FieldDouble.m */; };
+		CBB872C119AF6AFB00344E84 /* FieldDoubleToMany.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB8728019AF6AFB00344E84 /* FieldDoubleToMany.m */; };
+		CBB872C219AF6AFB00344E84 /* FieldFloat.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB8728219AF6AFB00344E84 /* FieldFloat.m */; };
+		CBB872C319AF6AFB00344E84 /* FieldFloatToMany.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB8728419AF6AFB00344E84 /* FieldFloatToMany.m */; };
+		CBB872C419AF6AFB00344E84 /* FieldInteger32.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB8728619AF6AFB00344E84 /* FieldInteger32.m */; };
+		CBB872C519AF6AFB00344E84 /* FieldInteger32ToMany.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB8728819AF6AFB00344E84 /* FieldInteger32ToMany.m */; };
+		CBB872C619AF6AFB00344E84 /* FieldInteger64.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB8728A19AF6AFB00344E84 /* FieldInteger64.m */; };
+		CBB872C719AF6AFB00344E84 /* FieldInteger64ToMany.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB8728C19AF6AFB00344E84 /* FieldInteger64ToMany.m */; };
+		CBB872C819AF6AFB00344E84 /* FieldString.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB8728E19AF6AFB00344E84 /* FieldString.m */; };
+		CBB872C919AF6AFB00344E84 /* FieldStringToMany.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB8729019AF6AFB00344E84 /* FieldStringToMany.m */; };
+		CBB872CA19AF6AFB00344E84 /* ModelContext.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB8729219AF6AFB00344E84 /* ModelContext.m */; };
+		CBB872CB19AF6AFB00344E84 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB8729419AF6AFB00344E84 /* DataManager.m */; };
+		CBB872CC19AF6AFB00344E84 /* CategoryModelNutritionCategoryDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB8729719AF6AFB00344E84 /* CategoryModelNutritionCategoryDTO.m */; };
+		CBB872CD19AF6AFB00344E84 /* CategoryModelNutritionCategoryMealsDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB8729919AF6AFB00344E84 /* CategoryModelNutritionCategoryMealsDTO.m */; };
+		CBB872CE19AF6AFB00344E84 /* NutritionModelFoodDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB8729B19AF6AFB00344E84 /* NutritionModelFoodDTO.m */; };
+		CBB872CF19AF6AFB00344E84 /* NutritionModelMealDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB8729D19AF6AFB00344E84 /* NutritionModelMealDTO.m */; };
+		CBB872D019AF6AFB00344E84 /* NutritionModelMealFoodsDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB8729F19AF6AFB00344E84 /* NutritionModelMealFoodsDTO.m */; };
+		CBB872D119AF6AFB00344E84 /* Food.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB872A219AF6AFB00344E84 /* Food.m */; };
+		CBB872D219AF6AFB00344E84 /* Meal.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB872A419AF6AFB00344E84 /* Meal.m */; };
+		CBB872D319AF6AFB00344E84 /* NutritionCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB872A619AF6AFB00344E84 /* NutritionCategory.m */; };
 		CBBCDE511976886B00108712 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBBCDE501976886B00108712 /* Foundation.framework */; };
 		CBBCDE531976886B00108712 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBBCDE521976886B00108712 /* CoreGraphics.framework */; };
 		CBBCDE551976886B00108712 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBBCDE541976886B00108712 /* UIKit.framework */; };
@@ -72,78 +81,96 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		CB13E2ED1977EF8100BA975C /* Condition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Condition.h; sourceTree = "<group>"; };
-		CB13E2EE1977EF8100BA975C /* Condition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Condition.m; sourceTree = "<group>"; };
-		CB13E2EF1977EF8100BA975C /* ConditionAnd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConditionAnd.h; sourceTree = "<group>"; };
-		CB13E2F01977EF8100BA975C /* ConditionAnd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConditionAnd.m; sourceTree = "<group>"; };
-		CB13E2F11977EF8100BA975C /* ConditionBoolean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConditionBoolean.h; sourceTree = "<group>"; };
-		CB13E2F21977EF8100BA975C /* ConditionBoolean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConditionBoolean.m; sourceTree = "<group>"; };
-		CB13E2F31977EF8100BA975C /* ConditionDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConditionDate.h; sourceTree = "<group>"; };
-		CB13E2F41977EF8100BA975C /* ConditionDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConditionDate.m; sourceTree = "<group>"; };
-		CB13E2F51977EF8100BA975C /* ConditionDouble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConditionDouble.h; sourceTree = "<group>"; };
-		CB13E2F61977EF8100BA975C /* ConditionDouble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConditionDouble.m; sourceTree = "<group>"; };
-		CB13E2F71977EF8100BA975C /* ConditionFloat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConditionFloat.h; sourceTree = "<group>"; };
-		CB13E2F81977EF8100BA975C /* ConditionFloat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConditionFloat.m; sourceTree = "<group>"; };
-		CB13E2F91977EF8100BA975C /* ConditionInteger32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConditionInteger32.h; sourceTree = "<group>"; };
-		CB13E2FA1977EF8100BA975C /* ConditionInteger32.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConditionInteger32.m; sourceTree = "<group>"; };
-		CB13E2FB1977EF8100BA975C /* ConditionInteger64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConditionInteger64.h; sourceTree = "<group>"; };
-		CB13E2FC1977EF8100BA975C /* ConditionInteger64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConditionInteger64.m; sourceTree = "<group>"; };
-		CB13E2FD1977EF8100BA975C /* ConditionOr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConditionOr.h; sourceTree = "<group>"; };
-		CB13E2FE1977EF8100BA975C /* ConditionOr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConditionOr.m; sourceTree = "<group>"; };
-		CB13E2FF1977EF8100BA975C /* ConditionString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConditionString.h; sourceTree = "<group>"; };
-		CB13E3001977EF8100BA975C /* ConditionString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConditionString.m; sourceTree = "<group>"; };
-		CB13E3011977EF8100BA975C /* FieldBoolean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldBoolean.h; sourceTree = "<group>"; };
-		CB13E3021977EF8100BA975C /* FieldBoolean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FieldBoolean.m; sourceTree = "<group>"; };
-		CB13E3031977EF8100BA975C /* FieldDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldDate.h; sourceTree = "<group>"; };
-		CB13E3041977EF8100BA975C /* FieldDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FieldDate.m; sourceTree = "<group>"; };
-		CB13E3051977EF8100BA975C /* FieldDouble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldDouble.h; sourceTree = "<group>"; };
-		CB13E3061977EF8100BA975C /* FieldDouble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FieldDouble.m; sourceTree = "<group>"; };
-		CB13E3071977EF8100BA975C /* FieldFloat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldFloat.h; sourceTree = "<group>"; };
-		CB13E3081977EF8100BA975C /* FieldFloat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FieldFloat.m; sourceTree = "<group>"; };
-		CB13E3091977EF8100BA975C /* FieldInteger32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldInteger32.h; sourceTree = "<group>"; };
-		CB13E30A1977EF8100BA975C /* FieldInteger32.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FieldInteger32.m; sourceTree = "<group>"; };
-		CB13E30B1977EF8100BA975C /* FieldInteger64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldInteger64.h; sourceTree = "<group>"; };
-		CB13E30C1977EF8100BA975C /* FieldInteger64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FieldInteger64.m; sourceTree = "<group>"; };
-		CB13E30D1977EF8100BA975C /* FieldString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldString.h; sourceTree = "<group>"; };
-		CB13E30E1977EF8100BA975C /* FieldString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FieldString.m; sourceTree = "<group>"; };
-		CB13E30F1977EF8100BA975C /* ModelContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelContext.h; sourceTree = "<group>"; };
-		CB13E3101977EF8100BA975C /* ModelContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelContext.m; sourceTree = "<group>"; };
-		CB13E3111977EF8100BA975C /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
-		CB13E3121977EF8100BA975C /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
-		CB13E3141977EF8100BA975C /* CategoryModelNutritionCategoryDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryModelNutritionCategoryDTO.h; sourceTree = "<group>"; };
-		CB13E3151977EF8100BA975C /* CategoryModelNutritionCategoryDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryModelNutritionCategoryDTO.m; sourceTree = "<group>"; };
-		CB13E3161977EF8100BA975C /* CategoryModelNutritionCategoryMealsDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryModelNutritionCategoryMealsDTO.h; sourceTree = "<group>"; };
-		CB13E3171977EF8100BA975C /* CategoryModelNutritionCategoryMealsDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryModelNutritionCategoryMealsDTO.m; sourceTree = "<group>"; };
-		CB13E3181977EF8100BA975C /* NutritionModelFoodDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NutritionModelFoodDTO.h; sourceTree = "<group>"; };
-		CB13E3191977EF8100BA975C /* NutritionModelFoodDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NutritionModelFoodDTO.m; sourceTree = "<group>"; };
-		CB13E31A1977EF8100BA975C /* NutritionModelMealCategoryDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NutritionModelMealCategoryDTO.h; sourceTree = "<group>"; };
-		CB13E31B1977EF8100BA975C /* NutritionModelMealCategoryDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NutritionModelMealCategoryDTO.m; sourceTree = "<group>"; };
-		CB13E31C1977EF8100BA975C /* NutritionModelMealCategoryMealsDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NutritionModelMealCategoryMealsDTO.h; sourceTree = "<group>"; };
-		CB13E31D1977EF8100BA975C /* NutritionModelMealCategoryMealsDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NutritionModelMealCategoryMealsDTO.m; sourceTree = "<group>"; };
-		CB13E31E1977EF8100BA975C /* NutritionModelMealDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NutritionModelMealDTO.h; sourceTree = "<group>"; };
-		CB13E31F1977EF8100BA975C /* NutritionModelMealDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NutritionModelMealDTO.m; sourceTree = "<group>"; };
-		CB13E3201977EF8100BA975C /* NutritionModelMealFoodsDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NutritionModelMealFoodsDTO.h; sourceTree = "<group>"; };
-		CB13E3211977EF8100BA975C /* NutritionModelMealFoodsDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NutritionModelMealFoodsDTO.m; sourceTree = "<group>"; };
-		CB13E3231977EF8100BA975C /* Food.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Food.h; sourceTree = "<group>"; };
-		CB13E3241977EF8100BA975C /* Food.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Food.m; sourceTree = "<group>"; };
-		CB13E3251977EF8100BA975C /* Meal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Meal.h; sourceTree = "<group>"; };
-		CB13E3261977EF8100BA975C /* Meal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Meal.m; sourceTree = "<group>"; };
-		CB13E3271977EF8100BA975C /* MealCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MealCategory.h; sourceTree = "<group>"; };
-		CB13E3281977EF8100BA975C /* MealCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MealCategory.m; sourceTree = "<group>"; };
-		CB13E3291977EF8100BA975C /* NutritionCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NutritionCategory.h; sourceTree = "<group>"; };
-		CB13E32A1977EF8100BA975C /* NutritionCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NutritionCategory.m; sourceTree = "<group>"; };
-		CB13E32C1977EF8100BA975C /* CategoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryModel.h; sourceTree = "<group>"; };
-		CB13E32D1977EF8100BA975C /* CategoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryModel.m; sourceTree = "<group>"; };
-		CB13E32E1977EF8100BA975C /* CategoryModelNutritionCategoryComporatorContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryModelNutritionCategoryComporatorContext.h; sourceTree = "<group>"; };
-		CB13E32F1977EF8100BA975C /* CategoryModelNutritionCategoryComporatorContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryModelNutritionCategoryComporatorContext.m; sourceTree = "<group>"; };
-		CB13E3301977EF8100BA975C /* NutritionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NutritionModel.h; sourceTree = "<group>"; };
-		CB13E3311977EF8100BA975C /* NutritionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NutritionModel.m; sourceTree = "<group>"; };
-		CB13E3321977EF8100BA975C /* NutritionModelFoodComporatorContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NutritionModelFoodComporatorContext.h; sourceTree = "<group>"; };
-		CB13E3331977EF8100BA975C /* NutritionModelFoodComporatorContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NutritionModelFoodComporatorContext.m; sourceTree = "<group>"; };
-		CB13E3341977EF8100BA975C /* NutritionModelMealCategoryComporatorContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NutritionModelMealCategoryComporatorContext.h; sourceTree = "<group>"; };
-		CB13E3351977EF8100BA975C /* NutritionModelMealCategoryComporatorContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NutritionModelMealCategoryComporatorContext.m; sourceTree = "<group>"; };
-		CB13E3361977EF8100BA975C /* NutritionModelMealComporatorContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NutritionModelMealComporatorContext.h; sourceTree = "<group>"; };
-		CB13E3371977EF8100BA975C /* NutritionModelMealComporatorContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NutritionModelMealComporatorContext.m; sourceTree = "<group>"; };
+		CBB8724A19AF6AFB00344E84 /* CategoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryModel.h; sourceTree = "<group>"; };
+		CBB8724B19AF6AFB00344E84 /* CategoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryModel.m; sourceTree = "<group>"; };
+		CBB8724C19AF6AFB00344E84 /* CategoryModelNutritionCategoryComporatorContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryModelNutritionCategoryComporatorContext.h; sourceTree = "<group>"; };
+		CBB8724D19AF6AFB00344E84 /* CategoryModelNutritionCategoryComporatorContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryModelNutritionCategoryComporatorContext.m; sourceTree = "<group>"; };
+		CBB8724E19AF6AFB00344E84 /* CategoryModelNutritionCategoryMealsComporatorContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryModelNutritionCategoryMealsComporatorContext.h; sourceTree = "<group>"; };
+		CBB8724F19AF6AFB00344E84 /* CategoryModelNutritionCategoryMealsComporatorContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryModelNutritionCategoryMealsComporatorContext.m; sourceTree = "<group>"; };
+		CBB8725019AF6AFB00344E84 /* CategoryModelNutritionCategoryParentcategoryComporatorContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryModelNutritionCategoryParentcategoryComporatorContext.h; sourceTree = "<group>"; };
+		CBB8725119AF6AFB00344E84 /* CategoryModelNutritionCategoryParentcategoryComporatorContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryModelNutritionCategoryParentcategoryComporatorContext.m; sourceTree = "<group>"; };
+		CBB8725219AF6AFB00344E84 /* CategoryModelNutritionCategorySubcategoriesComporatorContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryModelNutritionCategorySubcategoriesComporatorContext.h; sourceTree = "<group>"; };
+		CBB8725319AF6AFB00344E84 /* CategoryModelNutritionCategorySubcategoriesComporatorContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryModelNutritionCategorySubcategoriesComporatorContext.m; sourceTree = "<group>"; };
+		CBB8725419AF6AFB00344E84 /* NutritionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NutritionModel.h; sourceTree = "<group>"; };
+		CBB8725519AF6AFB00344E84 /* NutritionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NutritionModel.m; sourceTree = "<group>"; };
+		CBB8725619AF6AFB00344E84 /* NutritionModelFoodComporatorContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NutritionModelFoodComporatorContext.h; sourceTree = "<group>"; };
+		CBB8725719AF6AFB00344E84 /* NutritionModelFoodComporatorContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NutritionModelFoodComporatorContext.m; sourceTree = "<group>"; };
+		CBB8725819AF6AFB00344E84 /* NutritionModelMealComporatorContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NutritionModelMealComporatorContext.h; sourceTree = "<group>"; };
+		CBB8725919AF6AFB00344E84 /* NutritionModelMealComporatorContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NutritionModelMealComporatorContext.m; sourceTree = "<group>"; };
+		CBB8725A19AF6AFB00344E84 /* NutritionModelMealFoodsComporatorContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NutritionModelMealFoodsComporatorContext.h; sourceTree = "<group>"; };
+		CBB8725B19AF6AFB00344E84 /* NutritionModelMealFoodsComporatorContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NutritionModelMealFoodsComporatorContext.m; sourceTree = "<group>"; };
+		CBB8725D19AF6AFB00344E84 /* Condition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Condition.h; sourceTree = "<group>"; };
+		CBB8725E19AF6AFB00344E84 /* Condition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Condition.m; sourceTree = "<group>"; };
+		CBB8725F19AF6AFB00344E84 /* ConditionAnd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConditionAnd.h; sourceTree = "<group>"; };
+		CBB8726019AF6AFB00344E84 /* ConditionAnd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConditionAnd.m; sourceTree = "<group>"; };
+		CBB8726119AF6AFB00344E84 /* ConditionBoolean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConditionBoolean.h; sourceTree = "<group>"; };
+		CBB8726219AF6AFB00344E84 /* ConditionBoolean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConditionBoolean.m; sourceTree = "<group>"; };
+		CBB8726319AF6AFB00344E84 /* ConditionDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConditionDate.h; sourceTree = "<group>"; };
+		CBB8726419AF6AFB00344E84 /* ConditionDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConditionDate.m; sourceTree = "<group>"; };
+		CBB8726519AF6AFB00344E84 /* ConditionDouble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConditionDouble.h; sourceTree = "<group>"; };
+		CBB8726619AF6AFB00344E84 /* ConditionDouble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConditionDouble.m; sourceTree = "<group>"; };
+		CBB8726719AF6AFB00344E84 /* ConditionFloat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConditionFloat.h; sourceTree = "<group>"; };
+		CBB8726819AF6AFB00344E84 /* ConditionFloat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConditionFloat.m; sourceTree = "<group>"; };
+		CBB8726919AF6AFB00344E84 /* ConditionInteger32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConditionInteger32.h; sourceTree = "<group>"; };
+		CBB8726A19AF6AFB00344E84 /* ConditionInteger32.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConditionInteger32.m; sourceTree = "<group>"; };
+		CBB8726B19AF6AFB00344E84 /* ConditionInteger64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConditionInteger64.h; sourceTree = "<group>"; };
+		CBB8726C19AF6AFB00344E84 /* ConditionInteger64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConditionInteger64.m; sourceTree = "<group>"; };
+		CBB8726D19AF6AFB00344E84 /* ConditionOr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConditionOr.h; sourceTree = "<group>"; };
+		CBB8726E19AF6AFB00344E84 /* ConditionOr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConditionOr.m; sourceTree = "<group>"; };
+		CBB8726F19AF6AFB00344E84 /* ConditionString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConditionString.h; sourceTree = "<group>"; };
+		CBB8727019AF6AFB00344E84 /* ConditionString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConditionString.m; sourceTree = "<group>"; };
+		CBB8727119AF6AFB00344E84 /* ContextToMany.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContextToMany.h; sourceTree = "<group>"; };
+		CBB8727219AF6AFB00344E84 /* ContextToMany.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContextToMany.m; sourceTree = "<group>"; };
+		CBB8727319AF6AFB00344E84 /* ContextToOne.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContextToOne.h; sourceTree = "<group>"; };
+		CBB8727419AF6AFB00344E84 /* ContextToOne.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContextToOne.m; sourceTree = "<group>"; };
+		CBB8727519AF6AFB00344E84 /* FieldBoolean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldBoolean.h; sourceTree = "<group>"; };
+		CBB8727619AF6AFB00344E84 /* FieldBoolean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FieldBoolean.m; sourceTree = "<group>"; };
+		CBB8727719AF6AFB00344E84 /* FieldBooleanToMany.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldBooleanToMany.h; sourceTree = "<group>"; };
+		CBB8727819AF6AFB00344E84 /* FieldBooleanToMany.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FieldBooleanToMany.m; sourceTree = "<group>"; };
+		CBB8727919AF6AFB00344E84 /* FieldDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldDate.h; sourceTree = "<group>"; };
+		CBB8727A19AF6AFB00344E84 /* FieldDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FieldDate.m; sourceTree = "<group>"; };
+		CBB8727B19AF6AFB00344E84 /* FieldDateToMany.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldDateToMany.h; sourceTree = "<group>"; };
+		CBB8727C19AF6AFB00344E84 /* FieldDateToMany.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FieldDateToMany.m; sourceTree = "<group>"; };
+		CBB8727D19AF6AFB00344E84 /* FieldDouble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldDouble.h; sourceTree = "<group>"; };
+		CBB8727E19AF6AFB00344E84 /* FieldDouble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FieldDouble.m; sourceTree = "<group>"; };
+		CBB8727F19AF6AFB00344E84 /* FieldDoubleToMany.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldDoubleToMany.h; sourceTree = "<group>"; };
+		CBB8728019AF6AFB00344E84 /* FieldDoubleToMany.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FieldDoubleToMany.m; sourceTree = "<group>"; };
+		CBB8728119AF6AFB00344E84 /* FieldFloat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldFloat.h; sourceTree = "<group>"; };
+		CBB8728219AF6AFB00344E84 /* FieldFloat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FieldFloat.m; sourceTree = "<group>"; };
+		CBB8728319AF6AFB00344E84 /* FieldFloatToMany.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldFloatToMany.h; sourceTree = "<group>"; };
+		CBB8728419AF6AFB00344E84 /* FieldFloatToMany.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FieldFloatToMany.m; sourceTree = "<group>"; };
+		CBB8728519AF6AFB00344E84 /* FieldInteger32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldInteger32.h; sourceTree = "<group>"; };
+		CBB8728619AF6AFB00344E84 /* FieldInteger32.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FieldInteger32.m; sourceTree = "<group>"; };
+		CBB8728719AF6AFB00344E84 /* FieldInteger32ToMany.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldInteger32ToMany.h; sourceTree = "<group>"; };
+		CBB8728819AF6AFB00344E84 /* FieldInteger32ToMany.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FieldInteger32ToMany.m; sourceTree = "<group>"; };
+		CBB8728919AF6AFB00344E84 /* FieldInteger64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldInteger64.h; sourceTree = "<group>"; };
+		CBB8728A19AF6AFB00344E84 /* FieldInteger64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FieldInteger64.m; sourceTree = "<group>"; };
+		CBB8728B19AF6AFB00344E84 /* FieldInteger64ToMany.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldInteger64ToMany.h; sourceTree = "<group>"; };
+		CBB8728C19AF6AFB00344E84 /* FieldInteger64ToMany.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FieldInteger64ToMany.m; sourceTree = "<group>"; };
+		CBB8728D19AF6AFB00344E84 /* FieldString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldString.h; sourceTree = "<group>"; };
+		CBB8728E19AF6AFB00344E84 /* FieldString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FieldString.m; sourceTree = "<group>"; };
+		CBB8728F19AF6AFB00344E84 /* FieldStringToMany.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldStringToMany.h; sourceTree = "<group>"; };
+		CBB8729019AF6AFB00344E84 /* FieldStringToMany.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FieldStringToMany.m; sourceTree = "<group>"; };
+		CBB8729119AF6AFB00344E84 /* ModelContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelContext.h; sourceTree = "<group>"; };
+		CBB8729219AF6AFB00344E84 /* ModelContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelContext.m; sourceTree = "<group>"; };
+		CBB8729319AF6AFB00344E84 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
+		CBB8729419AF6AFB00344E84 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
+		CBB8729619AF6AFB00344E84 /* CategoryModelNutritionCategoryDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryModelNutritionCategoryDTO.h; sourceTree = "<group>"; };
+		CBB8729719AF6AFB00344E84 /* CategoryModelNutritionCategoryDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryModelNutritionCategoryDTO.m; sourceTree = "<group>"; };
+		CBB8729819AF6AFB00344E84 /* CategoryModelNutritionCategoryMealsDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryModelNutritionCategoryMealsDTO.h; sourceTree = "<group>"; };
+		CBB8729919AF6AFB00344E84 /* CategoryModelNutritionCategoryMealsDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryModelNutritionCategoryMealsDTO.m; sourceTree = "<group>"; };
+		CBB8729A19AF6AFB00344E84 /* NutritionModelFoodDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NutritionModelFoodDTO.h; sourceTree = "<group>"; };
+		CBB8729B19AF6AFB00344E84 /* NutritionModelFoodDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NutritionModelFoodDTO.m; sourceTree = "<group>"; };
+		CBB8729C19AF6AFB00344E84 /* NutritionModelMealDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NutritionModelMealDTO.h; sourceTree = "<group>"; };
+		CBB8729D19AF6AFB00344E84 /* NutritionModelMealDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NutritionModelMealDTO.m; sourceTree = "<group>"; };
+		CBB8729E19AF6AFB00344E84 /* NutritionModelMealFoodsDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NutritionModelMealFoodsDTO.h; sourceTree = "<group>"; };
+		CBB8729F19AF6AFB00344E84 /* NutritionModelMealFoodsDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NutritionModelMealFoodsDTO.m; sourceTree = "<group>"; };
+		CBB872A119AF6AFB00344E84 /* Food.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Food.h; sourceTree = "<group>"; };
+		CBB872A219AF6AFB00344E84 /* Food.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Food.m; sourceTree = "<group>"; };
+		CBB872A319AF6AFB00344E84 /* Meal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Meal.h; sourceTree = "<group>"; };
+		CBB872A419AF6AFB00344E84 /* Meal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Meal.m; sourceTree = "<group>"; };
+		CBB872A519AF6AFB00344E84 /* NutritionCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NutritionCategory.h; sourceTree = "<group>"; };
+		CBB872A619AF6AFB00344E84 /* NutritionCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NutritionCategory.m; sourceTree = "<group>"; };
 		CBBCDE4D1976886B00108712 /* Recipes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recipes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBBCDE501976886B00108712 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CBBCDE521976886B00108712 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -192,102 +219,120 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CB13E2EC1977EF8100BA975C /* classes */ = {
+		CBB8724919AF6AFB00344E84 /* models */ = {
 			isa = PBXGroup;
 			children = (
-				CB13E2ED1977EF8100BA975C /* Condition.h */,
-				CB13E2EE1977EF8100BA975C /* Condition.m */,
-				CB13E2EF1977EF8100BA975C /* ConditionAnd.h */,
-				CB13E2F01977EF8100BA975C /* ConditionAnd.m */,
-				CB13E2F11977EF8100BA975C /* ConditionBoolean.h */,
-				CB13E2F21977EF8100BA975C /* ConditionBoolean.m */,
-				CB13E2F31977EF8100BA975C /* ConditionDate.h */,
-				CB13E2F41977EF8100BA975C /* ConditionDate.m */,
-				CB13E2F51977EF8100BA975C /* ConditionDouble.h */,
-				CB13E2F61977EF8100BA975C /* ConditionDouble.m */,
-				CB13E2F71977EF8100BA975C /* ConditionFloat.h */,
-				CB13E2F81977EF8100BA975C /* ConditionFloat.m */,
-				CB13E2F91977EF8100BA975C /* ConditionInteger32.h */,
-				CB13E2FA1977EF8100BA975C /* ConditionInteger32.m */,
-				CB13E2FB1977EF8100BA975C /* ConditionInteger64.h */,
-				CB13E2FC1977EF8100BA975C /* ConditionInteger64.m */,
-				CB13E2FD1977EF8100BA975C /* ConditionOr.h */,
-				CB13E2FE1977EF8100BA975C /* ConditionOr.m */,
-				CB13E2FF1977EF8100BA975C /* ConditionString.h */,
-				CB13E3001977EF8100BA975C /* ConditionString.m */,
-				CB13E3011977EF8100BA975C /* FieldBoolean.h */,
-				CB13E3021977EF8100BA975C /* FieldBoolean.m */,
-				CB13E3031977EF8100BA975C /* FieldDate.h */,
-				CB13E3041977EF8100BA975C /* FieldDate.m */,
-				CB13E3051977EF8100BA975C /* FieldDouble.h */,
-				CB13E3061977EF8100BA975C /* FieldDouble.m */,
-				CB13E3071977EF8100BA975C /* FieldFloat.h */,
-				CB13E3081977EF8100BA975C /* FieldFloat.m */,
-				CB13E3091977EF8100BA975C /* FieldInteger32.h */,
-				CB13E30A1977EF8100BA975C /* FieldInteger32.m */,
-				CB13E30B1977EF8100BA975C /* FieldInteger64.h */,
-				CB13E30C1977EF8100BA975C /* FieldInteger64.m */,
-				CB13E30D1977EF8100BA975C /* FieldString.h */,
-				CB13E30E1977EF8100BA975C /* FieldString.m */,
-				CB13E30F1977EF8100BA975C /* ModelContext.h */,
-				CB13E3101977EF8100BA975C /* ModelContext.m */,
+				CBB8724A19AF6AFB00344E84 /* CategoryModel.h */,
+				CBB8724B19AF6AFB00344E84 /* CategoryModel.m */,
+				CBB8724C19AF6AFB00344E84 /* CategoryModelNutritionCategoryComporatorContext.h */,
+				CBB8724D19AF6AFB00344E84 /* CategoryModelNutritionCategoryComporatorContext.m */,
+				CBB8724E19AF6AFB00344E84 /* CategoryModelNutritionCategoryMealsComporatorContext.h */,
+				CBB8724F19AF6AFB00344E84 /* CategoryModelNutritionCategoryMealsComporatorContext.m */,
+				CBB8725019AF6AFB00344E84 /* CategoryModelNutritionCategoryParentcategoryComporatorContext.h */,
+				CBB8725119AF6AFB00344E84 /* CategoryModelNutritionCategoryParentcategoryComporatorContext.m */,
+				CBB8725219AF6AFB00344E84 /* CategoryModelNutritionCategorySubcategoriesComporatorContext.h */,
+				CBB8725319AF6AFB00344E84 /* CategoryModelNutritionCategorySubcategoriesComporatorContext.m */,
+				CBB8725419AF6AFB00344E84 /* NutritionModel.h */,
+				CBB8725519AF6AFB00344E84 /* NutritionModel.m */,
+				CBB8725619AF6AFB00344E84 /* NutritionModelFoodComporatorContext.h */,
+				CBB8725719AF6AFB00344E84 /* NutritionModelFoodComporatorContext.m */,
+				CBB8725819AF6AFB00344E84 /* NutritionModelMealComporatorContext.h */,
+				CBB8725919AF6AFB00344E84 /* NutritionModelMealComporatorContext.m */,
+				CBB8725A19AF6AFB00344E84 /* NutritionModelMealFoodsComporatorContext.h */,
+				CBB8725B19AF6AFB00344E84 /* NutritionModelMealFoodsComporatorContext.m */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		CBB8725C19AF6AFB00344E84 /* classes */ = {
+			isa = PBXGroup;
+			children = (
+				CBB8725D19AF6AFB00344E84 /* Condition.h */,
+				CBB8725E19AF6AFB00344E84 /* Condition.m */,
+				CBB8725F19AF6AFB00344E84 /* ConditionAnd.h */,
+				CBB8726019AF6AFB00344E84 /* ConditionAnd.m */,
+				CBB8726119AF6AFB00344E84 /* ConditionBoolean.h */,
+				CBB8726219AF6AFB00344E84 /* ConditionBoolean.m */,
+				CBB8726319AF6AFB00344E84 /* ConditionDate.h */,
+				CBB8726419AF6AFB00344E84 /* ConditionDate.m */,
+				CBB8726519AF6AFB00344E84 /* ConditionDouble.h */,
+				CBB8726619AF6AFB00344E84 /* ConditionDouble.m */,
+				CBB8726719AF6AFB00344E84 /* ConditionFloat.h */,
+				CBB8726819AF6AFB00344E84 /* ConditionFloat.m */,
+				CBB8726919AF6AFB00344E84 /* ConditionInteger32.h */,
+				CBB8726A19AF6AFB00344E84 /* ConditionInteger32.m */,
+				CBB8726B19AF6AFB00344E84 /* ConditionInteger64.h */,
+				CBB8726C19AF6AFB00344E84 /* ConditionInteger64.m */,
+				CBB8726D19AF6AFB00344E84 /* ConditionOr.h */,
+				CBB8726E19AF6AFB00344E84 /* ConditionOr.m */,
+				CBB8726F19AF6AFB00344E84 /* ConditionString.h */,
+				CBB8727019AF6AFB00344E84 /* ConditionString.m */,
+				CBB8727119AF6AFB00344E84 /* ContextToMany.h */,
+				CBB8727219AF6AFB00344E84 /* ContextToMany.m */,
+				CBB8727319AF6AFB00344E84 /* ContextToOne.h */,
+				CBB8727419AF6AFB00344E84 /* ContextToOne.m */,
+				CBB8727519AF6AFB00344E84 /* FieldBoolean.h */,
+				CBB8727619AF6AFB00344E84 /* FieldBoolean.m */,
+				CBB8727719AF6AFB00344E84 /* FieldBooleanToMany.h */,
+				CBB8727819AF6AFB00344E84 /* FieldBooleanToMany.m */,
+				CBB8727919AF6AFB00344E84 /* FieldDate.h */,
+				CBB8727A19AF6AFB00344E84 /* FieldDate.m */,
+				CBB8727B19AF6AFB00344E84 /* FieldDateToMany.h */,
+				CBB8727C19AF6AFB00344E84 /* FieldDateToMany.m */,
+				CBB8727D19AF6AFB00344E84 /* FieldDouble.h */,
+				CBB8727E19AF6AFB00344E84 /* FieldDouble.m */,
+				CBB8727F19AF6AFB00344E84 /* FieldDoubleToMany.h */,
+				CBB8728019AF6AFB00344E84 /* FieldDoubleToMany.m */,
+				CBB8728119AF6AFB00344E84 /* FieldFloat.h */,
+				CBB8728219AF6AFB00344E84 /* FieldFloat.m */,
+				CBB8728319AF6AFB00344E84 /* FieldFloatToMany.h */,
+				CBB8728419AF6AFB00344E84 /* FieldFloatToMany.m */,
+				CBB8728519AF6AFB00344E84 /* FieldInteger32.h */,
+				CBB8728619AF6AFB00344E84 /* FieldInteger32.m */,
+				CBB8728719AF6AFB00344E84 /* FieldInteger32ToMany.h */,
+				CBB8728819AF6AFB00344E84 /* FieldInteger32ToMany.m */,
+				CBB8728919AF6AFB00344E84 /* FieldInteger64.h */,
+				CBB8728A19AF6AFB00344E84 /* FieldInteger64.m */,
+				CBB8728B19AF6AFB00344E84 /* FieldInteger64ToMany.h */,
+				CBB8728C19AF6AFB00344E84 /* FieldInteger64ToMany.m */,
+				CBB8728D19AF6AFB00344E84 /* FieldString.h */,
+				CBB8728E19AF6AFB00344E84 /* FieldString.m */,
+				CBB8728F19AF6AFB00344E84 /* FieldStringToMany.h */,
+				CBB8729019AF6AFB00344E84 /* FieldStringToMany.m */,
+				CBB8729119AF6AFB00344E84 /* ModelContext.h */,
+				CBB8729219AF6AFB00344E84 /* ModelContext.m */,
 			);
 			path = classes;
 			sourceTree = "<group>";
 		};
-		CB13E3131977EF8100BA975C /* DTO */ = {
+		CBB8729519AF6AFB00344E84 /* DTO */ = {
 			isa = PBXGroup;
 			children = (
-				CB13E3141977EF8100BA975C /* CategoryModelNutritionCategoryDTO.h */,
-				CB13E3151977EF8100BA975C /* CategoryModelNutritionCategoryDTO.m */,
-				CB13E3161977EF8100BA975C /* CategoryModelNutritionCategoryMealsDTO.h */,
-				CB13E3171977EF8100BA975C /* CategoryModelNutritionCategoryMealsDTO.m */,
-				CB13E3181977EF8100BA975C /* NutritionModelFoodDTO.h */,
-				CB13E3191977EF8100BA975C /* NutritionModelFoodDTO.m */,
-				CB13E31A1977EF8100BA975C /* NutritionModelMealCategoryDTO.h */,
-				CB13E31B1977EF8100BA975C /* NutritionModelMealCategoryDTO.m */,
-				CB13E31C1977EF8100BA975C /* NutritionModelMealCategoryMealsDTO.h */,
-				CB13E31D1977EF8100BA975C /* NutritionModelMealCategoryMealsDTO.m */,
-				CB13E31E1977EF8100BA975C /* NutritionModelMealDTO.h */,
-				CB13E31F1977EF8100BA975C /* NutritionModelMealDTO.m */,
-				CB13E3201977EF8100BA975C /* NutritionModelMealFoodsDTO.h */,
-				CB13E3211977EF8100BA975C /* NutritionModelMealFoodsDTO.m */,
+				CBB8729619AF6AFB00344E84 /* CategoryModelNutritionCategoryDTO.h */,
+				CBB8729719AF6AFB00344E84 /* CategoryModelNutritionCategoryDTO.m */,
+				CBB8729819AF6AFB00344E84 /* CategoryModelNutritionCategoryMealsDTO.h */,
+				CBB8729919AF6AFB00344E84 /* CategoryModelNutritionCategoryMealsDTO.m */,
+				CBB8729A19AF6AFB00344E84 /* NutritionModelFoodDTO.h */,
+				CBB8729B19AF6AFB00344E84 /* NutritionModelFoodDTO.m */,
+				CBB8729C19AF6AFB00344E84 /* NutritionModelMealDTO.h */,
+				CBB8729D19AF6AFB00344E84 /* NutritionModelMealDTO.m */,
+				CBB8729E19AF6AFB00344E84 /* NutritionModelMealFoodsDTO.h */,
+				CBB8729F19AF6AFB00344E84 /* NutritionModelMealFoodsDTO.m */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
 		};
-		CB13E3221977EF8100BA975C /* entities */ = {
+		CBB872A019AF6AFB00344E84 /* entities */ = {
 			isa = PBXGroup;
 			children = (
-				CB13E3231977EF8100BA975C /* Food.h */,
-				CB13E3241977EF8100BA975C /* Food.m */,
-				CB13E3251977EF8100BA975C /* Meal.h */,
-				CB13E3261977EF8100BA975C /* Meal.m */,
-				CB13E3271977EF8100BA975C /* MealCategory.h */,
-				CB13E3281977EF8100BA975C /* MealCategory.m */,
-				CB13E3291977EF8100BA975C /* NutritionCategory.h */,
-				CB13E32A1977EF8100BA975C /* NutritionCategory.m */,
+				CBB872A119AF6AFB00344E84 /* Food.h */,
+				CBB872A219AF6AFB00344E84 /* Food.m */,
+				CBB872A319AF6AFB00344E84 /* Meal.h */,
+				CBB872A419AF6AFB00344E84 /* Meal.m */,
+				CBB872A519AF6AFB00344E84 /* NutritionCategory.h */,
+				CBB872A619AF6AFB00344E84 /* NutritionCategory.m */,
 			);
 			path = entities;
-			sourceTree = "<group>";
-		};
-		CB13E32B1977EF8100BA975C /* models */ = {
-			isa = PBXGroup;
-			children = (
-				CB13E32C1977EF8100BA975C /* CategoryModel.h */,
-				CB13E32D1977EF8100BA975C /* CategoryModel.m */,
-				CB13E32E1977EF8100BA975C /* CategoryModelNutritionCategoryComporatorContext.h */,
-				CB13E32F1977EF8100BA975C /* CategoryModelNutritionCategoryComporatorContext.m */,
-				CB13E3301977EF8100BA975C /* NutritionModel.h */,
-				CB13E3311977EF8100BA975C /* NutritionModel.m */,
-				CB13E3321977EF8100BA975C /* NutritionModelFoodComporatorContext.h */,
-				CB13E3331977EF8100BA975C /* NutritionModelFoodComporatorContext.m */,
-				CB13E3341977EF8100BA975C /* NutritionModelMealCategoryComporatorContext.h */,
-				CB13E3351977EF8100BA975C /* NutritionModelMealCategoryComporatorContext.m */,
-				CB13E3361977EF8100BA975C /* NutritionModelMealComporatorContext.h */,
-				CB13E3371977EF8100BA975C /* NutritionModelMealComporatorContext.m */,
-			);
-			path = models;
 			sourceTree = "<group>";
 		};
 		CBBCDE441976886B00108712 = {
@@ -369,12 +414,12 @@
 		CBBCDEE619768EE000108712 /* ORM */ = {
 			isa = PBXGroup;
 			children = (
-				CB13E2EC1977EF8100BA975C /* classes */,
-				CB13E3111977EF8100BA975C /* DataManager.h */,
-				CB13E3121977EF8100BA975C /* DataManager.m */,
-				CB13E3131977EF8100BA975C /* DTO */,
-				CB13E3221977EF8100BA975C /* entities */,
-				CB13E32B1977EF8100BA975C /* models */,
+				CBB8724919AF6AFB00344E84 /* models */,
+				CBB8725C19AF6AFB00344E84 /* classes */,
+				CBB8729319AF6AFB00344E84 /* DataManager.h */,
+				CBB8729419AF6AFB00344E84 /* DataManager.m */,
+				CBB8729519AF6AFB00344E84 /* DTO */,
+				CBB872A019AF6AFB00344E84 /* entities */,
 			);
 			path = ORM;
 			sourceTree = "<group>";
@@ -477,45 +522,54 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB13E33A1977EF8100BA975C /* ConditionBoolean.m in Sources */,
-				CB13E35A1977EF8100BA975C /* NutritionModelMealCategoryComporatorContext.m in Sources */,
-				CB13E33B1977EF8100BA975C /* ConditionDate.m in Sources */,
-				CB13E34F1977EF8100BA975C /* NutritionModelMealCategoryMealsDTO.m in Sources */,
+				CBB872B019AF6AFB00344E84 /* Condition.m in Sources */,
+				CBB872BA19AF6AFB00344E84 /* ContextToMany.m in Sources */,
+				CBB872D219AF6AFB00344E84 /* Meal.m in Sources */,
+				CBB872BF19AF6AFB00344E84 /* FieldDateToMany.m in Sources */,
+				CBB872CC19AF6AFB00344E84 /* CategoryModelNutritionCategoryDTO.m in Sources */,
+				CBB872AD19AF6AFB00344E84 /* NutritionModelFoodComporatorContext.m in Sources */,
+				CBB872CF19AF6AFB00344E84 /* NutritionModelMealDTO.m in Sources */,
+				CBB872C519AF6AFB00344E84 /* FieldInteger32ToMany.m in Sources */,
+				CBB872BB19AF6AFB00344E84 /* ContextToOne.m in Sources */,
+				CBB872B719AF6AFB00344E84 /* ConditionInteger64.m in Sources */,
+				CBB872A819AF6AFB00344E84 /* CategoryModelNutritionCategoryComporatorContext.m in Sources */,
 				CBBCDE671976886B00108712 /* ViewController.m in Sources */,
-				CB13E3481977EF8100BA975C /* FieldString.m in Sources */,
-				CB13E3421977EF8100BA975C /* FieldBoolean.m in Sources */,
-				CB13E3541977EF8100BA975C /* MealCategory.m in Sources */,
-				CB13E33E1977EF8100BA975C /* ConditionInteger32.m in Sources */,
-				CB13E3401977EF8100BA975C /* ConditionOr.m in Sources */,
-				CB13E3561977EF8100BA975C /* CategoryModel.m in Sources */,
-				CB13E3471977EF8100BA975C /* FieldInteger64.m in Sources */,
-				CB13E3391977EF8100BA975C /* ConditionAnd.m in Sources */,
-				CB13E34D1977EF8100BA975C /* NutritionModelFoodDTO.m in Sources */,
-				CB13E34A1977EF8100BA975C /* DataManager.m in Sources */,
-				CB13E3441977EF8100BA975C /* FieldDouble.m in Sources */,
-				CB13E3571977EF8100BA975C /* CategoryModelNutritionCategoryComporatorContext.m in Sources */,
-				CB13E3581977EF8100BA975C /* NutritionModel.m in Sources */,
-				CB13E3511977EF8100BA975C /* NutritionModelMealFoodsDTO.m in Sources */,
-				CB13E3501977EF8100BA975C /* NutritionModelMealDTO.m in Sources */,
-				CB13E3521977EF8100BA975C /* Food.m in Sources */,
-				CB13E3381977EF8100BA975C /* Condition.m in Sources */,
-				CB13E3591977EF8100BA975C /* NutritionModelFoodComporatorContext.m in Sources */,
-				CB13E3551977EF8100BA975C /* NutritionCategory.m in Sources */,
-				CB13E3451977EF8100BA975C /* FieldFloat.m in Sources */,
-				CB13E34C1977EF8100BA975C /* CategoryModelNutritionCategoryMealsDTO.m in Sources */,
-				CB13E3461977EF8100BA975C /* FieldInteger32.m in Sources */,
-				CB13E35B1977EF8100BA975C /* NutritionModelMealComporatorContext.m in Sources */,
-				CB13E3431977EF8100BA975C /* FieldDate.m in Sources */,
-				CB13E3531977EF8100BA975C /* Meal.m in Sources */,
+				CBB872BD19AF6AFB00344E84 /* FieldBooleanToMany.m in Sources */,
+				CBB872BE19AF6AFB00344E84 /* FieldDate.m in Sources */,
+				CBB872D119AF6AFB00344E84 /* Food.m in Sources */,
+				CBB872AF19AF6AFB00344E84 /* NutritionModelMealFoodsComporatorContext.m in Sources */,
+				CBB872CD19AF6AFB00344E84 /* CategoryModelNutritionCategoryMealsDTO.m in Sources */,
+				CBB872B119AF6AFB00344E84 /* ConditionAnd.m in Sources */,
+				CBB872C919AF6AFB00344E84 /* FieldStringToMany.m in Sources */,
+				CBB872A719AF6AFB00344E84 /* CategoryModel.m in Sources */,
+				CBB872AE19AF6AFB00344E84 /* NutritionModelMealComporatorContext.m in Sources */,
+				CBB872D019AF6AFB00344E84 /* NutritionModelMealFoodsDTO.m in Sources */,
+				CBB872C019AF6AFB00344E84 /* FieldDouble.m in Sources */,
+				CBB872B519AF6AFB00344E84 /* ConditionFloat.m in Sources */,
+				CBB872D319AF6AFB00344E84 /* NutritionCategory.m in Sources */,
+				CBB872BC19AF6AFB00344E84 /* FieldBoolean.m in Sources */,
+				CBB872A919AF6AFB00344E84 /* CategoryModelNutritionCategoryMealsComporatorContext.m in Sources */,
+				CBB872B219AF6AFB00344E84 /* ConditionBoolean.m in Sources */,
+				CBB872CB19AF6AFB00344E84 /* DataManager.m in Sources */,
 				CBBCDE611976886B00108712 /* AppDelegate.m in Sources */,
-				CB13E34B1977EF8100BA975C /* CategoryModelNutritionCategoryDTO.m in Sources */,
-				CB13E33C1977EF8100BA975C /* ConditionDouble.m in Sources */,
+				CBB872B619AF6AFB00344E84 /* ConditionInteger32.m in Sources */,
+				CBB872C819AF6AFB00344E84 /* FieldString.m in Sources */,
+				CBB872C119AF6AFB00344E84 /* FieldDoubleToMany.m in Sources */,
+				CBB872CA19AF6AFB00344E84 /* ModelContext.m in Sources */,
+				CBB872B919AF6AFB00344E84 /* ConditionString.m in Sources */,
+				CBB872AB19AF6AFB00344E84 /* CategoryModelNutritionCategorySubcategoriesComporatorContext.m in Sources */,
 				CBBCDE5D1976886B00108712 /* main.m in Sources */,
-				CB13E33D1977EF8100BA975C /* ConditionFloat.m in Sources */,
-				CB13E33F1977EF8100BA975C /* ConditionInteger64.m in Sources */,
-				CB13E3491977EF8100BA975C /* ModelContext.m in Sources */,
-				CB13E3411977EF8100BA975C /* ConditionString.m in Sources */,
-				CB13E34E1977EF8100BA975C /* NutritionModelMealCategoryDTO.m in Sources */,
+				CBB872B819AF6AFB00344E84 /* ConditionOr.m in Sources */,
+				CBB872AC19AF6AFB00344E84 /* NutritionModel.m in Sources */,
+				CBB872B419AF6AFB00344E84 /* ConditionDouble.m in Sources */,
+				CBB872C719AF6AFB00344E84 /* FieldInteger64ToMany.m in Sources */,
+				CBB872C419AF6AFB00344E84 /* FieldInteger32.m in Sources */,
+				CBB872C219AF6AFB00344E84 /* FieldFloat.m in Sources */,
+				CBB872CE19AF6AFB00344E84 /* NutritionModelFoodDTO.m in Sources */,
+				CBB872AA19AF6AFB00344E84 /* CategoryModelNutritionCategoryParentcategoryComporatorContext.m in Sources */,
+				CBB872B319AF6AFB00344E84 /* ConditionDate.m in Sources */,
+				CBB872C319AF6AFB00344E84 /* FieldFloatToMany.m in Sources */,
+				CBB872C619AF6AFB00344E84 /* FieldInteger64.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

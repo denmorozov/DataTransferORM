@@ -4,6 +4,7 @@
 @interface NutritionModelMealComporatorContext ()
 
 @property (nonatomic, readwrite) FieldString *name;
+@property (nonatomic, readwrite) NutritionModelMealFoodsComporatorContext *foods;
 
 @end
 
@@ -14,9 +15,10 @@
 	self = [super init];
 	if (self)
 	{
-		self.name = [[FieldString alloc] initWithName:@"name"];
+		self.name = [[FieldString alloc] initWithName:@"self.name"];
+		self.foods = [[NutritionModelMealFoodsComporatorContext alloc] init];
 	}
-return self;
+	return self;
 }
 
 

@@ -20,8 +20,6 @@
 	return [self initIsNULLWithFieldName:fieldName withOperation:ConditionAggregateOperationNo];
 }
 
-- (instancetype)initIsNULLWithFieldName:(NSString *)fieldName;
-
 - (instancetype)initWithFieldName:(NSString *)fieldName
 					 withOperator:(ConditionOperator)operator
 						withValue:(NSDate *)value

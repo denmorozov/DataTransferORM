@@ -6,8 +6,8 @@
 #import "NutritionModelMealFoodsDTO.h"
 #import "NutritionModelFoodDTO.h"
 
-typedef Condition* (^NutritionModelMealComporator)(NutritionModelMealComporatorContext *ctx);
-typedef Condition* (^NutritionModelFoodComporator)(NutritionModelFoodComporatorContext *ctx);
+typedef Condition* (^NutritionModelMealComporator)(NutritionModelMealComporatorContext *meal);
+typedef Condition* (^NutritionModelFoodComporator)(NutritionModelFoodComporatorContext *food);
 
 @interface NutritionModel : NSObject
 
